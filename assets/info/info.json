@@ -1,0 +1,130 @@
+{
+    "status": "ok",
+    "totalResults": 37,
+    "articles": [
+        {
+            "source": {
+            "id": "reuters",
+            "name": "Reuters"
+            },
+                "author": "Patrick Wingrove",
+                "title": "Novo Nordisk says Wegovy heart benefits due to more than weight loss",
+                "description": "ALorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet posuere neque. Sed faucibus, dolor eu pellentesque aliquam,dui massa lacinia nibh, non vehicula arcu nisi feugiat nulla. Donec consectetur \\nfaucibus erat eget imperdiet. Praesent tincidunt varius arcu, id sollicitudin metus finibus ut. Nulla quis quam metus.\n Mauris sed ligula sem. Curabitur accumsan dictum lorem eget lobortis. Etiam semper ligula eu odio interdum, iaculis hendrerit quam commodo. Pellentesque consectetur ex est, sed lacinia enim tincidunt at. Sed varius quam a orci suscipit tincidunt id vel enim. Quisque elementum a metus iaculis suscipit. Integer varius lorem leo, ac egestas ipsum tincidunt vitae. Duis ac sapien quis nisl ullamcorper pulvinar. Sed in dui vitae lorem ultricies tempus luctus et nibh. Cras tortor lectus, eleifend id lobortis a, vulputate eget nisl. Mauris pulvinar viverra nulla eu volutpat.Nullam vitae nisl non velit elementum sagittis. Pellentesque pretium aliquet mauris at venenatis. Nunc sed bibendum mauris, ut tincidunt ligula. Sed at congue purus, at venenatis odio. Donec dapibus massa non dapibus pharetra. Sed blandit tellus eget lacus ultricies, vitae tempus lectus congue.\n Nulla eu felis neque. Aliquam purus ligula, feugiat dapibus nibh at, tempus mollis lorem. Donec at magna lobortis, tincidunt mauris nec, vestibulum arcu. Aliquam sit amet sagittis leo. Aliquam tempus accumsan ultrices. Cras tempor, velit nec tempor malesuada, justo nulla consequat felis, congue imperdiet est turpis quis odio. Nullam molestie consectetur odio bibendum lobortis. Cras dapibus mauris ut justo lacinia pellentesque. Nunc at malesuada elit, a eleifend diam. Sed ultricies, sem at venenatis egestas, eros tellus molestie risus, in aliquam turpis dui eu augue. Etiam eget ante venenatis, egestas odio vitae, dignissim risus. Phasellus non mauris maximus, sollicitudin purus nec, viverra ipsum. Integer a nibh rhoncus, consequat sapien non, auctor turpis. Ut nec nunc viverra, vehicula ex nec, volutpat ligula. Cras imperdiet ornare posuere. Nam quis massa non metus blandit scelerisque. Vestibulum felis nisl, mattis a sapien aliquam, tristique condimentum lorem. Pellentesque odio mauris, elementum nec erat vitae, tristique semper erat. Aenean nulla elit, molestie pharetra nisl vitae, lacinia luctus dolor. Quisque vitae pulvinar diam. Suspendisse vestibulum libero vitae mi interdum, sit amet venenatis nibh molestie. Ut hendrerit ex et urna porta, sit amet sodales ligula varius.  Aenean eget ligula ante. Nullam vitae sodales ligula. Pellentesque mi metus, sagittis non nulla feugiat, laoreet pulvinar orci. Duis at ligula nisi. Maecenas consectetur augue id leo condimentum volutpat. Nam efficitur turpis eget dolor tempus, eu dignissim leo pharetra. Fusce sed tempus mi, non bibendum risus. Pellentesque a feugiat quam, viverra sodales tellus. Nullam aliquet purus convallis commodo rhoncus.Cras ipsum metus, tempus ac maximus id, lobortis et mauris. Aliquam tincidunt erat sed fringilla cursus. Sed aliquam sem enim, vel porttitor erat rutrum at. Praesent pulvinar ut arcu sed molestie. Phasellus in risus blandit, sollicitudin orci eu, rutrum tellus. Proin in nulla sit amet est convallis facilisis nec vel ante. Sed neque justo, faucibus consectetur diam eu, fermentum egestas eros. Sed tortor arcu, convallis nec pellentesque sed, consectetur vel ante. Phasellus ut lorem blandit, lacinia.",
+                "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-says-wegovy-heart-benefits-due-more-than-weight-loss-2023-11-11/",
+                "urlToImage": "https://www.reuters.com/resizer/hJR1bcMQyx6YX7YMmoWa_e5mIeA=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/7XXQIDEIWRKN3NZA62CUCEHSMM.jpg",
+                "publishedAt": "2023-11-11T16:21:00Z",
+                "content": "PHILADELPHIA, Nov 11 (Reuters) - Novo Nordisk (NOVOb.CO) on Saturday said the heart protective benefits of its wildly popular Wegovy obesity treatment are due to more than weight loss alone, accordin… [+3928 chars]",
+                "category": "general"
+         },
+        {
+            "source": {
+            "id": "reuters",
+            "name": "Reuters"
+            },
+                "author": "Nidal Al-Mughrabi, Maytaal Angel",
+                "title": "Israel's war on Hamas homes in on Gaza hospitals - Reuters",
+                "description": "Palestinian officials said a baby died and dozens more patients were at risk from Israeli fire around Gaza's <a href=\"/world/middle-east/al-shifa-gazas-largest-hospital-headlines-2023-11-10/\">largest hospital</a> on Saturday, while Israel said it had killed a…",
+                "url": "https://www.reuters.com/world/middle-east/gaza-death-toll-rises-israel-faces-pressure-protect-palestinian-civilians-2023-11-11/",
+                "urlToImage": "https://www.reuters.com/resizer/qjCKOqMPGCs-U_XJWMBs8ZIqKuI=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5UNZF4BLVZIVLHWCPLISPFUE4M.jpg",
+                "publishedAt": "2023-11-11T15:59:48Z",
+                "content": "GAZA/JERUSALEM, Nov 11 (Reuters) - Palestinian officials said a baby died and dozens more patients were at risk from Israeli fire around Gaza's largest hospital on Saturday, while Israel said it had … [+6907 chars]",
+                "category": "general"
+        },
+        {
+            "source": {
+            "id": null,
+            "name": "CBS Sports"
+            },
+                "author": "",
+                "title": "Jim Harbaugh suspension: Michigan legal action not heard before Penn State kickoff; Sherrone Moore will coach - CBS Sports",
+                "description": "Michigan filed a court order in conjunction with Harbaugh's suspension",
+                "url": "https://www.cbssports.com/college-football/news/jim-harbaugh-suspension-michigan-legal-action-not-heard-before-penn-state-kickoff-sherrone-moore-will-coach/",
+                "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/11/10/4e1fb057-00ec-4956-b53e-ab21460bed63/thumbnail/1200x675/676497b6991f6ffd208c39e16d912ad6/usatsi-21703821-1.jpg",
+                "publishedAt": "2023-11-11T15:38:00Z",
+                "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
+                "category": "ensino"
+            },
+    {
+    "source": {
+    "id": "cnn",
+    "name": "CNN"
+    },
+        "author": "Sophie Tanno, Adam Pourahmadi, Zeena Saifi",
+        "title": "Iranian president visits Saudi summit, says meeting is to ‘save the Palestinians’ - CNN",
+        "description": "Iranian President Ebrahim Raisi has arrived in Saudi Arabia for a summit on the Israel-Hamas war, telling reporters that “Palestine is the most important issue in the Islamic world.”",
+        "url": "https://www.cnn.com/2023/11/11/world/iran-leader-saudi-arabia-summit-israel-hamas-war/index.html",
+        "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/231111055045-01-ebrahim-raisi-saudi-arabia-111123.jpg?c=16x9&q=w_800,c_fill",
+        "publishedAt": "2023-11-11T15:32:00Z",
+        "content": "Arab and Muslim leaders decried Israeli war crimes in Gaza at a summit in Riyadh where Iranian President Ebrahim Raisi met Saudi Crown Prince Mohammed bin Salman in a first public meeting.\r\nThe extra… [+4005 chars]",
+        "category": "turismo"
+    },
+    {
+    "source": {
+    "id": null,
+    "name": "CBS Sports"
+    },
+    "author": "",
+    "title": "College football picks, schedule: Predictions against the spread, odds, top 25 games in Week 11 - CBS Sports",
+    "description": "A closer look at the top games for the 11th week of the 2023 college football season",
+    "url": "https://www.cbssports.com/college-football/news/college-football-picks-schedule-predictions-against-the-spread-odds-top-25-games-in-week-11/",
+    "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/11/08/4a6f479c-a809-49db-bd7e-bccbe33b16fe/thumbnail/1200x675/b85785df0743928b44c82be2afb06013/getty-bo-nix-oregon.jpg",
+    "publishedAt": "2023-11-11T14:50:00Z",
+    "content": "A week ago, what was billed as Separation Saturday didn't exactly do justice to its name. Sure, some top 25 teams went down in defeat, but those truly in contention for the College Football Playoff l… [+5003 chars]",
+    "category": "ensino"    
+},
+    {
+    "source": {
+    "id": null,
+    "name": "BBC News"
+    },
+    "author": "https://www.facebook.com/bbcnews",
+    "title": "Pope Francis fires Texan bishop after criticism of reforms - BBC.com",
+    "description": "Joseph Strickland is \"relieved\" from governance following a Vatican investigation.",
+    "url": "https://www.bbc.com/news/world-us-canada-67390366",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1109D/production/_131698796_gettyimages-1783454134.jpg",
+    "publishedAt": "2023-11-11T14:24:37Z",
+    "content": "Pope Francis has fired the Texan bishop Joseph Strickland, a fierce critic who has questioned the Pope's leadership of the Catholic church.\r\nThe Vatican said the bishop would be \"relieved\" of his dut… [+2929 chars]",
+    "category": "turismo"    
+},
+    {
+    "source": {
+    "id": "reuters",
+    "name": "Reuters"
+    },
+    "author": "Michael Holden, Dylan Martinez",
+    "title": "London police scuffle with far-right protesters as pro-Palestinian rally starts - Reuters",
+    "description": "Tens of thousands of pro-Palestinian protesters marched through central London on Saturday following scuffles nearby between far-right protesters and police, who launched a major operation to avert clashes.",
+    "url": "https://www.reuters.com/world/huge-crowds-expected-london-pro-palestinian-rally-police-gear-trouble-2023-11-11/",
+    "urlToImage": "https://www.reuters.com/resizer/UiMP2MmhrMxgFapxBa0xILVqj1o=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/QOC63HF64RJ3FE5W76GYWMIZ7U.jpg",
+    "publishedAt": "2023-11-11T14:14:00Z",
+    "content": "LONDON, Nov 11 (Reuters) - Tens of thousands of pro-Palestinian protesters marched through central London on Saturday following scuffles nearby between far-right protesters and police, who launched a… [+3278 chars]",
+    "category": "curiosidade"    
+},
+    {
+    "source": {
+    "id": "politico",
+    "name": "Politico"
+    },
+    "author": null,
+    "title": "'Travesty in darkness': Trump backs drive to televise his D.C. election-subversion trial - POLITICO",
+    "description": "Trump, who is facing four criminal prosecutions as well as several civil lawsuits, has been trying in recent weeks to leverage those proceedings to amplify his message to voters.",
+    "url": "https://www.politico.com/news/2023/11/11/travesty-in-darkness-trump-backs-drive-to-televise-his-d-c-election-subversion-trial-00126704",
+    "urlToImage": "https://static.politico.com/61/ca/af7e5b0947b4b56b343fab50e79b/trump-fraud-lawsuit-19898.jpg",
+    "publishedAt": "2023-11-11T14:12:36Z",
+    "content": "The five-page submission to U.S. District Court Judge Tanya Chutkan makes no mention of a federal court rule that has been in place for decades prohibiting broadcasting of criminal court proceedings.… [+3969 chars]",
+    "category": "curiosidade"
+    },
+    {
+        "source": {
+        "id": "politico",
+        "name": "Politico"
+        },
+        "author": null,
+        "title": "'Travesty in darkness': Trump backs drive to televise his D.C. election-subversion trial - POLITICO",
+        "description": "Trump, who is facing four criminal prosecutions as well as several civil lawsuits, has been trying in recent weeks to leverage those proceedings to amplify his message to voters.",
+        "url": "https://www.politico.com/news/2023/11/11/travesty-in-darkness-trump-backs-drive-to-televise-his-d-c-election-subversion-trial-00126704",
+        "urlToImage": "https://static.politico.com/61/ca/af7e5b0947b4b56b343fab50e79b/trump-fraud-lawsuit-19898.jpg",
+        "publishedAt": "2023-11-11T14:12:36Z",
+        "content": "The five-page submission to U.S. District Court Judge Tanya Chutkan makes no mention of a federal court rule that has been in place for decades prohibiting broadcasting of criminal court proceedings.… [+3969 chars]",
+        "category": "curiosidade"}]
+}
