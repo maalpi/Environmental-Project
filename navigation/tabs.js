@@ -86,6 +86,7 @@ const Tabs = () => {
             }}/>
 
             <Tab.Screen name="qrCode" component={qrcodeScreen} options={{
+                 tabBarStyle:{ display: 'none'},
                 tabBarIcon: ({focused}) => (               
                         <Image 
                         source = {require('../assets/icons/qrcode_button.png')}
