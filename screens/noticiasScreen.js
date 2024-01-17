@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View,Text, Button, StyleSheet, TouchableOpacity, FlatList} from 'react-native'
+import { View,Text, Button, StyleSheet, TouchableOpacity, FlatList,Image} from 'react-native'
 
 import Header from './componentes_noticias/header'
 import Card from './componentes_noticias/card'
@@ -72,13 +72,13 @@ const NoticiasScreen= ({navigation}) =>{
           navigation.setOptions({
             tabBarStyle: {
                 position:'absolute',
-                bottom: 25,
-                left: 20,
-                right: 20,
+                bottom: 0,
+                left: 0,
+                right: 0,
                 elevation: 0,
                 backgroundColor: '#ffff',
                 borderRadius: 15,
-                height:90,
+                height:70,
                 ... style.shadow
             } // Mostra o navigator quando a tela é rolada para cima
           });
@@ -90,11 +90,35 @@ const NoticiasScreen= ({navigation}) =>{
       }, [Select]);
     
     return (
-        <ScrollView onScroll={handleScroll}>
+        <ScrollView onScroll={handleScroll} className="bg-backgroundprimary">
         <View className="flex-1 "> 
-        <Header navigation={navigation}/> 
+            
+            {/* logo inicio */}
+            <View style ={{flexDirection: 'row'}}>
+                <View style={{ alignItems: 'center', paddingVertical: 38,paddingLeft:25 }}>
+                    <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
+                        Catálogo Ambiental
+                    </Text>    
+                    <Text style={{ fontSize: 16, color: '#c76828', fontStyle: 'italic'  }}>Conheça mais sobre a caatinga</Text>
+                </View>
 
-            <View className="px-4 py-2">
+                <View style={{ paddingLeft: 45,paddingVertical:28 }}>
+                    <Image
+                    source={require('../assets/logo/logo.png')}
+                    style={{ width: 80, height: 80, borderRadius: 25 }}
+                    />
+                </View>
+            </View>
+
+            <View>
+                <Text>Indicação de trilha</Text>
+            </View>
+        
+
+            <View>
+
+            {/* Categoria */}
+            {/* <View className="px-4 py-2">
                 <FlatList data = {Category} horizontal showsHorizontalScrollIndicator={false} renderItem={({item,index}) =>{
                     return(
                         <TouchableOpacity className={ index == Select ? 'px-4 py-1 rounded-md bg-redprimary mr-3' : 'px-4 py-1 rounded-md mr-3 bg-gray-200'} 
@@ -106,16 +130,15 @@ const NoticiasScreen= ({navigation}) =>{
                         </TouchableOpacity>
                     )
                 }}></FlatList>
-            </View>
+            </View>   */}
 
-            <View>
-                
                 <FlatList data={Data} renderItem={({item,index}) =>{
                     return(
-                        <Card navigation={navigation} item={item} cont={index}/>  
+                        <Card navigation={navigation} item={item} cont={index} />  
                     )
                 }} />
             </View>
+
         </View>
         </ScrollView>
     )

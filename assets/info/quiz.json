@@ -1,0 +1,36 @@
+{
+    "status": "ok",
+    "total": 25,
+    "quiz": [
+        {
+        "source": {
+            "id": "uepb",
+            "name": ""
+            },
+                "pergunta": "O rio Paraíba, o rio São Francisco e o rio Paraná são rios que cortam a região Nordeste do Brasil. A afirmativa está Certa ou Errada?",
+                "respostas": ["Errada, pois o rio São Francisco não passa pela região Nordeste do Brasil.","Errada, pois o rio Paraná não passa pela região Nordeste do Brasil.","Certa"],
+                "certa": 2,
+                "dificuldade":"facil"
+         },
+         {
+            "source": {
+                "id": "uepb",
+                "name": ""
+                },
+                    "pergunta": "O rio Paraíba, o rio São Francisco e o rio Paraná são rios que cortam a região Nordeste do Brasil. A afirmativa está Certa ou Errada?",
+                    "respostas": ["Errada, pois o rio São Francisco não passa pela região Nordeste do Brasil.","Errada, pois o rio Paraná não passa pela região Nordeste do Brasil.","Certa"],
+                    "certa": 3,
+                    "dificuldade":"facil"
+        },
+        {
+            "source": {
+                "id": "uepb",
+                "name": ""
+                },
+                    "pergunta": "O rio Paraíba, o rio São Francisco e o rio Paraná são rios que cortam a região Nordeste do Brasil. A afirmativa está Certa ou Errada?",
+                    "respostas": ["Errada, pois o rio São Francisco não passa pela região Nordeste do Brasil.","Errada, pois o rio Paraná não passa pela região Nordeste do Brasil.","Certa"],
+                    "certa": 1,
+                    "dificuldade":"facil"
+        }
+    ]
+}

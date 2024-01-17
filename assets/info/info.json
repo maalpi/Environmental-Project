@@ -14,7 +14,8 @@
                 "urlToImage": "https://www.reuters.com/resizer/hJR1bcMQyx6YX7YMmoWa_e5mIeA=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/7XXQIDEIWRKN3NZA62CUCEHSMM.jpg",
                 "publishedAt": "2023-11-11T16:21:00Z",
                 "content": "PHILADELPHIA, Nov 11 (Reuters) - Novo Nordisk (NOVOb.CO) on Saturday said the heart protective benefits of its wildly popular Wegovy obesity treatment are due to more than weight loss alone, accordin… [+3928 chars]",
-                "category": "general"
+                "category": "general",
+                "diaMes": "17 . JAN"
          },
         {
             "source": {
@@ -28,7 +29,8 @@
                 "urlToImage": "https://www.reuters.com/resizer/qjCKOqMPGCs-U_XJWMBs8ZIqKuI=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5UNZF4BLVZIVLHWCPLISPFUE4M.jpg",
                 "publishedAt": "2023-11-11T15:59:48Z",
                 "content": "GAZA/JERUSALEM, Nov 11 (Reuters) - Palestinian officials said a baby died and dozens more patients were at risk from Israeli fire around Gaza's largest hospital on Saturday, while Israel said it had … [+6907 chars]",
-                "category": "general"
+                "category": "general",
+                "diaMes": "17 . JAN"
         },
         {
             "source": {
@@ -36,13 +38,14 @@
             "name": "CBS Sports"
             },
                 "author": "",
-                "title": "Jim Harbaugh suspension: Michigan legal action not heard before Penn State kickoff; Sherrone Moore will coach - CBS Sports",
+                "title": "Jim Harbaugh suspension: Michigan legal action not heard before Penn State kickoff",
                 "description": "Michigan filed a court order in conjunction with Harbaugh's suspension",
                 "url": "https://www.cbssports.com/college-football/news/jim-harbaugh-suspension-michigan-legal-action-not-heard-before-penn-state-kickoff-sherrone-moore-will-coach/",
                 "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/11/10/4e1fb057-00ec-4956-b53e-ab21460bed63/thumbnail/1200x675/676497b6991f6ffd208c39e16d912ad6/usatsi-21703821-1.jpg",
                 "publishedAt": "2023-11-11T15:38:00Z",
                 "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
-                "category": "ensino"
+                "category": "ensino",
+                "diaMes": "17 . JAN"
             },
     {
     "source": {
@@ -54,9 +57,10 @@
         "description": "Iranian President Ebrahim Raisi has arrived in Saudi Arabia for a summit on the Israel-Hamas war, telling reporters that “Palestine is the most important issue in the Islamic world.”",
         "url": "https://www.cnn.com/2023/11/11/world/iran-leader-saudi-arabia-summit-israel-hamas-war/index.html",
         "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/231111055045-01-ebrahim-raisi-saudi-arabia-111123.jpg?c=16x9&q=w_800,c_fill",
-        "publishedAt": "2023-11-11T15:32:00Z",
+        "publishedAt": "2023-12-11T15:32:00Z",
         "content": "Arab and Muslim leaders decried Israeli war crimes in Gaza at a summit in Riyadh where Iranian President Ebrahim Raisi met Saudi Crown Prince Mohammed bin Salman in a first public meeting.\r\nThe extra… [+4005 chars]",
-        "category": "turismo"
+        "category": "turismo",
+        "diaMes": "17 . JAN"
     },
     {
     "source": {
@@ -64,13 +68,14 @@
     "name": "CBS Sports"
     },
     "author": "",
-    "title": "College football picks, schedule: Predictions against the spread, odds, top 25 games in Week 11 - CBS Sports",
+    "title": "College football picks, schedule: Predictions against the spread, odds, top 25 games in Week 11",
     "description": "A closer look at the top games for the 11th week of the 2023 college football season",
     "url": "https://www.cbssports.com/college-football/news/college-football-picks-schedule-predictions-against-the-spread-odds-top-25-games-in-week-11/",
     "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/11/08/4a6f479c-a809-49db-bd7e-bccbe33b16fe/thumbnail/1200x675/b85785df0743928b44c82be2afb06013/getty-bo-nix-oregon.jpg",
     "publishedAt": "2023-11-11T14:50:00Z",
     "content": "A week ago, what was billed as Separation Saturday didn't exactly do justice to its name. Sure, some top 25 teams went down in defeat, but those truly in contention for the College Football Playoff l… [+5003 chars]",
-    "category": "ensino"    
+    "category": "ensino",
+    "diaMes": "17 . JAN"    
 },
     {
     "source": {
@@ -84,7 +89,8 @@
     "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1109D/production/_131698796_gettyimages-1783454134.jpg",
     "publishedAt": "2023-11-11T14:24:37Z",
     "content": "Pope Francis has fired the Texan bishop Joseph Strickland, a fierce critic who has questioned the Pope's leadership of the Catholic church.\r\nThe Vatican said the bishop would be \"relieved\" of his dut… [+2929 chars]",
-    "category": "turismo"    
+    "category": "turismo",
+    "diaMes": "17 . JAN"    
 },
     {
     "source": {
@@ -92,13 +98,14 @@
     "name": "Reuters"
     },
     "author": "Michael Holden, Dylan Martinez",
-    "title": "London police scuffle with far-right protesters as pro-Palestinian rally starts - Reuters",
+    "title": "London police scuffle with far-right protesters as pro-Palestinian rally starts",
     "description": "Tens of thousands of pro-Palestinian protesters marched through central London on Saturday following scuffles nearby between far-right protesters and police, who launched a major operation to avert clashes.",
     "url": "https://www.reuters.com/world/huge-crowds-expected-london-pro-palestinian-rally-police-gear-trouble-2023-11-11/",
     "urlToImage": "https://www.reuters.com/resizer/UiMP2MmhrMxgFapxBa0xILVqj1o=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/QOC63HF64RJ3FE5W76GYWMIZ7U.jpg",
     "publishedAt": "2023-11-11T14:14:00Z",
     "content": "LONDON, Nov 11 (Reuters) - Tens of thousands of pro-Palestinian protesters marched through central London on Saturday following scuffles nearby between far-right protesters and police, who launched a… [+3278 chars]",
-    "category": "curiosidade"    
+    "category": "curiosidade",
+    "diaMes": "17 . JAN"    
 },
     {
     "source": {
@@ -106,13 +113,14 @@
     "name": "Politico"
     },
     "author": null,
-    "title": "'Travesty in darkness': Trump backs drive to televise his D.C. election-subversion trial - POLITICO",
+    "title": "'Travesty in darkness': Trump backs drive to televise his D.C. election-subversion trial",
     "description": "Trump, who is facing four criminal prosecutions as well as several civil lawsuits, has been trying in recent weeks to leverage those proceedings to amplify his message to voters.",
     "url": "https://www.politico.com/news/2023/11/11/travesty-in-darkness-trump-backs-drive-to-televise-his-d-c-election-subversion-trial-00126704",
     "urlToImage": "https://static.politico.com/61/ca/af7e5b0947b4b56b343fab50e79b/trump-fraud-lawsuit-19898.jpg",
     "publishedAt": "2023-11-11T14:12:36Z",
     "content": "The five-page submission to U.S. District Court Judge Tanya Chutkan makes no mention of a federal court rule that has been in place for decades prohibiting broadcasting of criminal court proceedings.… [+3969 chars]",
-    "category": "curiosidade"
+    "category": "curiosidade",
+    "diaMes": "17 . JAN"
     },
     {
         "source": {
@@ -120,11 +128,12 @@
         "name": "Politico"
         },
         "author": null,
-        "title": "'Travesty in darkness': Trump backs drive to televise his D.C. election-subversion trial - POLITICO",
+        "title": "'Travesty in darkness': Trump backs drive to televise his D.C.",
         "description": "Trump, who is facing four criminal prosecutions as well as several civil lawsuits, has been trying in recent weeks to leverage those proceedings to amplify his message to voters.",
         "url": "https://www.politico.com/news/2023/11/11/travesty-in-darkness-trump-backs-drive-to-televise-his-d-c-election-subversion-trial-00126704",
         "urlToImage": "https://static.politico.com/61/ca/af7e5b0947b4b56b343fab50e79b/trump-fraud-lawsuit-19898.jpg",
         "publishedAt": "2023-11-11T14:12:36Z",
         "content": "The five-page submission to U.S. District Court Judge Tanya Chutkan makes no mention of a federal court rule that has been in place for decades prohibiting broadcasting of criminal court proceedings.… [+3969 chars]",
-        "category": "curiosidade"}]
+        "category": "curiosidade",
+        "diaMes": "17 . JAN"}]
 }

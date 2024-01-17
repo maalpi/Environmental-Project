@@ -1,15 +1,22 @@
-import React from 'react'
-import { View,Text, Button, StyleSheet} from 'react-native'
+import React, { useState } from 'react'
+import { View,Text, Button, StyleSheet, TouchableOpacity,Dimensions} from 'react-native'
+
+import { ArrowLeftIcon, ArrowRightIcon } from 'react-native-heroicons/solid'
+
+import Quiz from './componentes_quiz/Quiz';
+
+const {width,height} = Dimensions.get('window');
+
+const SIZES = {
+    bases: 10,
+    width,
+    height
+}
 
 const ChatScreen= ({navigation}) =>{
+
     return (
-        <View style={styles.container}>
-            <Text>Chat tela</Text>
-            <Button
-            title="Clique aqui"
-            onPress={() => alert('button clicked')}
-            />
-        </View>
+        <Quiz/>
     )
 }
 

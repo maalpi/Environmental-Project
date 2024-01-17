@@ -7,6 +7,7 @@ import qrcodeScreen from '../screens/qrcodeScreen'
 import ChatScreen from '../screens/chatScreen';
 
 import Search from '../screens/componentes_noticias/search';
+import LinearGradient from 'react-native-linear-gradient';
 
 import { StyleSheet } from 'react-native';
 import { Image, Text, View, TouchableOpacity } from 'react-native';
@@ -16,7 +17,7 @@ const Tab = createBottomTabNavigator();
 const CustomTabBarButton = ({children, onPress}) => (
     <TouchableOpacity
         style={{
-            top: -30,
+            top: 0,
             justifyContent:'center',
             alignItems: 'center',
             ...style.shadow
@@ -24,8 +25,8 @@ const CustomTabBarButton = ({children, onPress}) => (
         onPress={onPress}
     >
         <View style={{
-            width:70,
-            height:70,
+            width:50,
+            height:50,
             borderRadius:35,
             backgroundColor: '#e32f45'
         }}>
@@ -42,101 +43,132 @@ const Tabs = () => {
                 tabBarShowLabel:false,
                 tabBarStyle: {
                     position:'absolute',
-                    bottom: 25,
-                    left: 20,
-                    right: 20,
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
                     elevation: 0,
-                    backgroundColor: '#ffff',
+                    backgroundColor: 'transparent',
                     borderRadius: 15,
-                    height:90,
-                    ... style.shadow
-                }
-            }}>
-            <Tab.Screen name="Home" component={HomeScreen} options={{
-                tabBarIcon: ({focused}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
-                        <Image 
-                        source = {require('../assets/icons/home_button.png')}
-                        resizeMode = 'contain'
-                        style = {{
-                            width:25,
-                            height:25,
-                            tintColor:focused ? '#e32f45' : '#748c94'
-                        }}
-                        />
-                        <Text style = {{color: focused ? '#e32f45' : '#748c94', fontSize: 12 }}>Home</Text>
+                    height:70,
+                    
+                },
+                tabBarBackground:() => (
+                    <View>
+                      <LinearGradient
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        colors={["#1FAA70", "#00A2DB"]}
+                        style={{ height: 100 }}
+                      />
                     </View>
-                ),
-            }}/>
+                  ),
+            }}>
+            
             <Tab.Screen name="News" component={noticiasScreen} options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
                         <Image 
-                        source = {require('../assets/icons/news_button.png')}
+                        source = {focused ? require('../assets/icons/portfolio.png') : require('../assets/icons/portfolio-icon-branco.png')}
                         resizeMode = 'contain'
                         style = {{
-                            width:25,
-                            height:25,
-                            tintColor:focused ? '#e32f45' : '#748c94'
+                            width:focused ? 55 : 55,
+                            height:focused ? 55 : 55,
+                            top:focused ? -40 : -10,
+                            backgroundColor:focused? '#E8E7E4' : 'transparent',
+                            borderRadius:focused? 50 : 0,
+                            borderWidth:focused? 2 : 0,
+                            borderColor:'#fff'
                         }}
                         />
-                        <Text style = {{color: focused ? '#e32f45' : '#748c94', fontSize: 12 }}>News</Text>
+                    </View>
+                ),
+            }}/>
+
+            <Tab.Screen name="Home" component={HomeScreen} options={{
+                tabBarIcon: ({focused}) => (
+                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                        <Image 
+                        source = {focused ? require('../assets/icons/Trilha-icon-select.png') : require('../assets/icons/Trilha-icon.png')}
+                        resizeMode = 'contain'
+                        style = {{
+                            width:focused ? 55 : 50,
+                            height:focused ? 55 : 50,
+                            top:focused ? -40 : -10,
+                            backgroundColor:focused? '#E8E7E4' : 'transparent',
+                            borderRadius:focused? 50 : 0,
+                            borderWidth:focused? 2 : 0,
+                            borderColor:'#fff'
+                        }}
+                        />
                     </View>
                 ),
             }}/>
 
             <Tab.Screen name="qrCode" component={qrcodeScreen} options={{
-                 tabBarStyle:{ display: 'none'},
                 tabBarIcon: ({focused}) => (               
-                        <Image 
-                        source = {require('../assets/icons/qrcode_button.png')}
+                    <Image 
+                        source = {focused ? require('../assets/icons/QR-code-icon-select.png') : require('../assets/icons/QR-code-icon.png')}
                         resizeMode = 'contain'
                         style = {{
-                            width:30,
-                            height:30,
-                            tintColor:'#fff',
+                            width:focused ? 55 : 55,
+                            height:focused ? 55 : 55,
+                            top:focused ? -40 : 1,
+                            backgroundColor:focused? '#E8E7E4' : 'transparent',
+                            borderRadius:focused? 50 : 0,
+                            borderWidth:focused? 2 : 0,
+                            borderColor:'#fff'
+                        }}
+                    />
+                    ),
+
+                    // tabBarButton: (props)  => (
+                    //     <CustomTabBarButton {...props}/>
+                    // )
+                }
+                }/>
+
+            <Tab.Screen name="Chat" component={ChatScreen} options={{
+                tabBarIcon: ({focused}) => (
+                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                        <Image 
+                        source = {focused ? require('../assets/icons/Quiz-icon-select.png') : require('../assets/icons/Quiz-icon.png')}
+                        resizeMode = 'contain'
+                        style = {{
+                            width:focused ? 55 : 55,
+                            height:focused ? 55 : 55,
+                            top:focused ? -40 : -10,
+                            backgroundColor:focused? '#E8E7E4' : 'transparent',
+                            borderRadius:focused? 50 : 0,
+                            borderWidth:focused? 2 : 0,
+                            borderColor:'#fff'
                         }}
                         />
-                    ),
-                    tabBarButton: (props)  => (
-                        <CustomTabBarButton {...props}/>
-                    )
-                }}/>
+                        
+                    </View>
+                ),
+            }}/>
 
             <Tab.Screen name="Search" component={procurarScreen} options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
                         <Image 
-                        source = {require('../assets/icons/search_button.png')}
+                        source = {focused ? require('../assets/icons/portfolio.png') : require('../assets/icons/portfolio-icon-branco.png')}
                         resizeMode = 'contain'
                         style = {{
-                            width:25,
-                            height:25,
-                            tintColor:focused ? '#e32f45' : '#748c94'
+                            width:focused ? 55 : 55,
+                            height:focused ? 55 : 55,
+                            top:focused ? -40 : -10,
+                            backgroundColor:focused? '#E8E7E4' : 'transparent',
+                            borderRadius:focused? 50 : 0,
+                            borderWidth:focused? 2 : 0,
+                            borderColor:'#fff'
                         }}
                         />
-                        <Text style = {{color: focused ? '#e32f45' : '#748c94', fontSize: 12 }}>Procurar</Text>
+                        
                     </View>
                 ),
             }}/>
 
-            <Tab.Screen name="Chat" component={ChatScreen} options={{
-                tabBarStyle:{ display: 'none'},
-                tabBarIcon: ({focused}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
-                        <Image 
-                        source = {require('../assets/icons/chat_button.png')}
-                        resizeMode = 'contain'
-                        style = {{
-                            width:25,
-                            height:25,
-                            tintColor:focused ? '#e32f45' : '#748c94'
-                        }}
-                        />
-                        <Text style = {{color: focused ? '#e32f45' : '#748c94', fontSize: 12 }}>Chat</Text>
-                    </View>
-                ),
-            }}/>
 
         </Tab.Navigator>
     );
