@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react"
-import { View,Text, Button, StyleSheet,TouchableOpacity,ScrollView, FlatList,Image,StatusBar,TextInput} from 'react-native'
+import { View,Text, Button, StyleSheet,TouchableOpacity, FlatList,Image,StatusBar,TextInput} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
+import { ScrollView } from 'react-native-virtualized-view'
 
 import { collection, onSnapshot } from "firebase/firestore";
 

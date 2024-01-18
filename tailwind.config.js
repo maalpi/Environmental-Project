@@ -7,7 +7,8 @@ module.exports = {
         redprimary: "#db393c",
         greenprimary:"db393c",
         backgroundprimary: "#E8E7E4",
-        laranjaprimary: "#C73E28"
+        laranjaprimary: "#C73E28",
+        blueprimary: "#3165b0",
     },
   },
   },

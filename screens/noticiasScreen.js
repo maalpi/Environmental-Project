@@ -110,9 +110,32 @@ const NoticiasScreen= ({navigation}) =>{
                 </View>
             </View>
 
-            <View>
-                <Text>Indicação de trilha</Text>
+            <View className="flex-row ml-5"
+            style={{ zIndex: 10 }}>
+                <Image source={require('../assets/icons/Trilha-icon-select.png')} 
+                className= { "h-8 w-8 absolute mt-0.25" }
+                style = {{backgroundColor:'#E8E7E4',
+                          borderRadius:50 ,
+                          }}
+                resizeMethod='resize'></Image>
+                <Text className="text-black ml-9">Indicação de trilha</Text>
             </View>
+            
+            <TouchableOpacity className="flex-1 overflow-hidden items-center justify-center" style={{ zIndex: 0 }}
+            onPress={() => {
+                // Adicione a lógica do seu botão aqui
+                navigation.navigate('Home');
+                console.log('Botão pressionado!');
+              }}>
+                <Image source={require('../assets/logo/caatinga.jpg')} 
+                className= { "h-40 w-full overflow-hidden" }
+                resizeMethod='resize'></Image>
+                 <View style={style.overlay} />
+
+                 <Text className="absolute text-4xl text-white top-14">Nome da Trilha 1 </Text>
+                 <Text className="absolute text-base text-white bottom-9">Info 9999   Info 9999   Info 9999</Text>
+                
+            </TouchableOpacity>
         
 
             <View>
@@ -156,5 +179,9 @@ const style = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.5,
         elevation: 5
-    }
+    },
+    overlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Cor preta semi-transparente
+      },
 })
