@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View,Text,Modal, Animated, StyleSheet, TouchableOpacity,Dimensions} from 'react-native'
+import { View,Text,Modal, Animated, StyleSheet, TouchableOpacity,Dimensions,Image} from 'react-native'
 
 import { XMarkIcon, CheckIcon } from 'react-native-heroicons/solid'
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -157,12 +157,13 @@ const Quiz = ({navigation}) =>{
 
     const renderQuestion = () => {
         return(
-            <View>
-                <View className="flex-row items-end">
+            <View className="w-48 h-56 bg-greenchat rounded-md shadow-lg mt-4">
+                {/* <View className="flex-row items-end">
                     <Text className="text-black text-xl opacity-60 mr-2">{currentQuestionIndex}</Text>
                     <Text className="text-black text-base opacity-60">/ {15}</Text>
-                </View>
-                <Text className="text-black text-2xl font-serif font-bold">
+                </View> */}
+                
+                <Text className="text-black text-base font-serif">
                     {allQuestions[currentQuestionIndex]?.question}
                 </Text>
             </View>
@@ -171,7 +172,7 @@ const Quiz = ({navigation}) =>{
 
     const renderOptions = () => {
         return (
-            <View>
+            <View className="shadow-lg">
                 {
                     allQuestions[currentQuestionIndex]?.options.map(option => (
                         <TouchableOpacity 
@@ -179,14 +180,15 @@ const Quiz = ({navigation}) =>{
                         disabled={isOptionsDisable}
                         key={option}
                         style={{borderWidth:3, borderColor: option==correctOption ? "#84CC16": option==currentOptionsSelected ? "#EF4444" : "#1E90FF"+"40",
-                                backgroundColor:option==correctOption ? "#84CC16"+"20": option==currentOptionsSelected ? "#EF4444"+"20" : "#1E90FF"+"20",
-                                height: 80, borderRadius:20,
+                                backgroundColor:option==correctOption ? "#84CC16"+"20": option==currentOptionsSelected ? "#EF4444"+"20" : "#00A2DB"+"20",
+                                height: 70,width:300, borderRadius:20,
                                 flexDirection: 'row',
                                 alignItems: 'center', justifyContent:'space-between',
-                                paddingHorizontal: 20,
-                                marginVertical: 10
-                                }}>
-                            <Text className = "text-xl text-black indent-20">{option}</Text>
+                                marginLeft: 30,
+                                marginVertical: 5,
+                                }}
+                               >
+                            <Text className = "text-xl text-black indent-20 ml-2">{option}</Text>
 
                             {
                                 option == correctOption ? (
@@ -211,10 +213,10 @@ const Quiz = ({navigation}) =>{
         if (showNextButton){
             return(
                 <TouchableOpacity 
-                className = "mt-5 bg-blue-500 p-6 rounded-lg"
+                className = "mt-3 bg-blue-500 p-6 rounded-lg h-11 items-center"
                 onPress={handleNext}
                 >
-                    <Text className="text-xl text-white text-center">Próximo</Text>
+                    <Text className="mt-3 absolute text-base text-white text-center ">Próximo</Text>
                 </TouchableOpacity>
             )
         }else{
@@ -223,12 +225,34 @@ const Quiz = ({navigation}) =>{
     }
 
     return (
-        <SafeAreaView className="flex-1 py-8 px-4 bg-green-100">
-            
+        <SafeAreaView className="flex-1 py-8 px-4 bg-backgroundprimary">
+            <View>
+            <View style ={{flexDirection: 'row'}}>
+                <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13 }}>
+                    <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
+                        Quiz da caatinga
+                    </Text>    
+                    <View style={{ paddingLeft: 45 }}>
+                    <Image
+                    source={require('../../assets/logo/logo.png')}
+                    style={{ width: 80, height: 80, borderRadius: 25 }}
+                    />
+                    </View>
+                </View>
+            </View>
             {renderProgressBar()}
-
+            <View style ={{flexDirection: 'row', overflow: 'hidden'}}>
+            <View style={{ paddingLeft: 2,marginTop:20 }}>
+                    <Image
+                    source={require('../../assets/logo/lina-menor.png')}
+                    style={{ width: 150, height: 200 }}
+                    resizeMethod='resize' 
+                    />
+                    <View style={styles.leftTriangle} />
+                    </View>
             {renderQuestion()}
-
+            </View>
+            </View>
             {renderOptions()}
 
             {renderNextButton()}
@@ -258,5 +282,25 @@ const Quiz = ({navigation}) =>{
         </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+    leftTriangle: {
+    position:'absolute',
+      width: 15,
+      height: 15,
+      marginLeft:148,
+      backgroundColor: 'transparent',
+      borderStyle: 'solid',
+      borderLeftWidth: 0,
+      borderRightWidth: 10,
+      borderBottomWidth: 10,
+      borderTopWidth: 10,
+      borderLeftColor: 'transparent',
+      borderRightColor: 'transparent',
+      borderBottomColor: 'transparent',
+      borderTopColor: '#1FAA70', // Cor do triângulo
+      transform: [{ rotate: '-50deg' }], // Gira o triângulo para apontar para a esquerda
+    },
+  });
 
 export default Quiz

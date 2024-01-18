@@ -6,10 +6,15 @@ import Card from './componentes_noticias/card'
 import DataInfo from '../assets/info/info.json'
 
 import { ScrollView } from 'react-native-virtualized-view'
+import SplashScreen from "react-native-splash-screen"
 
 const NoticiasScreen= ({navigation}) =>{
     //navigation.setOptions({ tabBarStyle: {display: 'none'}})
-
+    useEffect(()=>{
+        setTimeout(()=>{
+            SplashScreen.hide()
+        },500)
+    })
     const [Data, setData] = useState([]);
     const [Select,setSelect] = useState(0);
     const [Category,setCategory] = React.useState([

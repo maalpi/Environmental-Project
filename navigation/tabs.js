@@ -68,7 +68,7 @@ const Tabs = () => {
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
                         <Image 
-                        source = {focused ? require('../assets/icons/portfolio.png') : require('../assets/icons/portfolio-icon-branco.png')}
+                        source = {focused ? require('../assets/icons/Home-icon.png') : require('../assets/icons/Home-icon-not.png')}
                         resizeMode = 'contain'
                         style = {{
                             width:focused ? 55 : 55,

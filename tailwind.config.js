@@ -9,6 +9,8 @@ module.exports = {
         backgroundprimary: "#E8E7E4",
         laranjaprimary: "#C73E28",
         blueprimary: "#3165b0",
+        greenchat: "#1FAA70",
+
     },
   },
   },

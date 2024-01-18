@@ -4,7 +4,7 @@ import {SafeAreaView, Text, StyleSheet} from 'react-native'
 import { NavigationContainer} from '@react-navigation/native'
 import Tabs from './navigation/tabs'
 import Search from "./screens/componentes_noticias/search"
-
+import SplashScreen from "react-native-splash-screen"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //TELAS DAS NOTICIAS
