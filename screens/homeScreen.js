@@ -29,12 +29,12 @@ const HomeScreen= ({navigation}) =>{
             <ScrollView>
             <View style={styles.imageRow}>
               <Image source={require('../assets/logo/caatinga.jpg')} style={styles.itemImage} />
-              <Image source={require('../assets/logo/caatinga.jpg')} style={styles.itemImage} />
+              <Image source={require('../assets/logo/foto1.jpg')} style={styles.itemImage} />
             </View>
 
             <View style={styles.imageRow}>
-              <Image source={require('../assets/logo/caatinga.jpg')} style={styles.itemImage} />
-              <Image source={require('../assets/logo/caatinga.jpg')} style={styles.itemImage} />
+              <Image source={require('../assets/logo/foto2.jpg')} style={styles.itemImage} />
+              <Image source={require('../assets/logo/foto3.jpg')} style={styles.itemImage} />
             </View>
 
             <View style={styles.imageRow}>
@@ -81,13 +81,13 @@ const HomeScreen= ({navigation}) =>{
                         <View style={styles.overlay} />
                     
                         <View className="absolute items-center justify-center ml-16 mt-7">
-                            <Text className=" text-3xl text-white mr-5">Trilha Facil </Text>
+                            <Text className=" text-3xl text-white mr-5">Trilha Fácil </Text>
                             <Text className=" text-sm text-white pt-6 mr-11">Nessa trilha você irá encontrar o umburada e o mirante</Text>
                         </View>
                 </View>
                 : trilha === 1 ?
                 <View>
-                    <Image source={require('../assets/logo/caatinga.jpg')} 
+                    <Image source={require('../assets/logo/foto1.jpg')} 
                     className= { "h-44 w-full overflow-hidden mt-0" }
                     resizeMethod='resize'></Image>
                         <View style={styles.overlay} />
@@ -99,13 +99,13 @@ const HomeScreen= ({navigation}) =>{
                 </View>
                 : 
                 <View>
-                    <Image source={require('../assets/logo/caatinga.jpg')} 
+                    <Image source={require('../assets/logo/foto3.jpg')} 
                     className= { "h-44 w-full overflow-hidden mt-0" }
                     resizeMethod='resize'></Image>
                         <View style={styles.overlay} />
                 
                         <View className="absolute items-center justify-center ml-16 mt-7">
-                            <Text className=" text-3xl text-white mr-5">Trilha Dificil </Text>
+                            <Text className=" text-3xl text-white mr-5">Trilha Difícil </Text>
                             <Text className=" text-sm text-white pt-6 mr-11">Nessa trilha você irá encontrar o umburada e o mirante</Text>
                         </View>
                 </View>}
@@ -122,32 +122,98 @@ const HomeScreen= ({navigation}) =>{
                     style={styles.bandeira}
                     resizeMethod='resize'></Image>
                     <Text  className="absolute mt-5 text-white opacity-80" style={styles.text1}>SAÍDA</Text>    
-                    <Text  className="absolute mt-9 text-white opacity-80" style={[styles.text1]}> 658</Text>
+                    <Text  className="absolute mt-9 text-amarelotexto opacity-80" style={[styles.text1]}>alt. 658</Text>
                    
                     <Image source={require('../assets/icons/bandeira.png')} 
                     className="absolute ml-14 w-14 h-14"
                     style={[styles.bandeira, styles.rem1]}
                     resizeMethod='resize'></Image>
-                    <Text>EMBURADA</Text>
+                    <Text className="absolute text-white opacity-70" style={styles.emburada}>EMBURADA</Text>
+                    <Text className="absolute text-amarelotexto opacity-70" style={styles.emburadacoord}>alt. 660</Text>
 
                     <Image source={require('../assets/icons/bandeira.png')} 
                     className="absolute ml-8 w-14 h-14"
                     style={[styles.bandeira, styles.rem2]}
                     resizeMethod='resize'></Image>
-                    <Text>MIRANTE</Text>
+                    <Text className="absolute text-white opacity-70" style={styles.almirante}>MIRANTE</Text>
+                    <Text className="absolute text-amarelotexto opacity-70" style={styles.almirantecoord}>alt. 657</Text>
                 </View>
                 : trilha === 1 ?
-                
-                    <Image source={require('../assets/icons/bandeiras-melhorada-1.png')} 
-                        className= { "w-28 overflow-hidden" }
+                <View className="absolute">
+                    <Image source={require('../assets/icons/trilha-media.png')} 
+                        className= { "w-12 ml-12 mt-32 absolute overflow-hidden" }
+                        style={styles.trilhaMedia}
                         resizeMethod='resize'></Image>
-                
-                :
-                <Image source={require('../assets/icons/bandeiras-melhorada-1.png')} 
-                        className= { "w-28 overflow-hidden" }
-                        resizeMethod='resize'></Image> 
-                }
+                    <Image source={require('../assets/icons/bandeira.png')} 
+                    className="absolute ml-9 mt-32 w-14 h-14"
+                    style={styles.bandeira}
+                    resizeMethod='resize'></Image>
+                    <Text  className="absolute  text-white opacity-80" style={styles.text1_1}>SAÍDA</Text>    
+                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_1_1]}>alt. 658</Text>
+                    
+                    {/* Ponto 2 trilha 2 */}
+                    <Image source={require('../assets/icons/bandeira.png')} 
+                    className="absolute ml-14 w-14 h-14"
+                    style={[styles.bandeira,styles.top2_2]}
+                    resizeMethod='resize'></Image>
+                    <Text  className="absolute  text-white opacity-80" style={styles.text1_2}>UMBURADA</Text>    
+                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_2_2]}>alt. 668</Text>
 
+                    {/* Ponto 3 trilha 2 */}
+                    <Image source={require('../assets/icons/bandeira.png')} 
+                    className="absolute ml-9 mt-32 w-14 h-14"
+                    style={[styles.bandeira,styles.top2_3]}
+                    resizeMethod='resize'></Image>
+                    <Text  className="absolute  text-white opacity-80" style={styles.text1_3}>MIRANTE</Text>    
+                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_3_3]}>alt. 657</Text>
+
+                    {/* Ponto 4 trilha 2 */}
+                    <Image source={require('../assets/icons/bandeira.png')} 
+                    className="absolute ml-9 mt-32 w-14 h-14"
+                    style={[styles.bandeira,styles.top2_4]}
+                    resizeMethod='resize'></Image>
+                    <Text  className="absolute  text-white opacity-80" style={styles.text1_4}>TRILHA 2</Text>    
+                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_4_4]}>alt. 632</Text>
+                </View>      
+                :
+                <View className="absolute">
+                    <Image source={require('../assets/icons/trilha-media.png')} 
+                        className= { "w-12 ml-12 mt-32 absolute overflow-hidden" }
+                        style={styles.trilhaMedia}
+                        resizeMethod='resize'></Image>
+                    <Image source={require('../assets/icons/bandeira.png')} 
+                    className="absolute ml-9 mt-32 w-14 h-14"
+                    style={styles.bandeira}
+                    resizeMethod='resize'></Image>
+                    <Text  className="absolute  text-white opacity-80" style={styles.text1_1}>CACTÁCEAS</Text>    
+                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_1_1]}>alt. 652</Text>
+                    
+                    {/* Ponto 2 trilha 2 */}
+                    <Image source={require('../assets/icons/bandeira.png')} 
+                    className="absolute ml-14 w-14 h-14"
+                    style={[styles.bandeira,styles.top2_2]}
+                    resizeMethod='resize'></Image>
+                    <Text  className="absolute  text-white opacity-80" style={styles.text1_2}>DESERTIFICAÇÃO</Text>    
+                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_2_2]}>alt. 654</Text>
+
+                    {/* Ponto 3 trilha 2 */}
+                    <Image source={require('../assets/icons/bandeira.png')} 
+                    className="absolute ml-9 mt-32 w-14 h-14"
+                    style={[styles.bandeira,styles.top2_3]}
+                    resizeMethod='resize'></Image>
+                    <Text  className="absolute  text-white opacity-80" style={styles.text1_3}>BARRIL JARARACAS</Text>    
+                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_3_3]}>alt. 653</Text>
+
+                    {/* Ponto 4 trilha 2 */}
+                    <Image source={require('../assets/icons/bandeira.png')} 
+                    className="absolute ml-9 mt-32 w-14 h-14"
+                    style={[styles.bandeira,styles.top2_4]}
+                    resizeMethod='resize'></Image>
+                    <Text  className="absolute  text-white opacity-80" style={styles.text1_4}>CUPIZEIRO</Text>    
+                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_4_4]}>alt. 640</Text>
+                </View>  
+                }
+                  
                 
 
                 <View className="absolute ml-56 mt-36">
@@ -159,7 +225,7 @@ const HomeScreen= ({navigation}) =>{
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => toggleTrilha(1)}>
-                        <Image source={require('../assets/logo/caatinga.jpg')} 
+                        <Image source={require('../assets/logo/foto1.jpg')} 
                             className={trilha === 1 ? "h-32 w-32 mb-2 rounded-xl mt-2" : "h-24 w-24 mt-4 ml-1 rounded-xl"}
                             style={trilha === 1 ? styles.border : false}
                             resizeMethod='resize'></Image>
@@ -167,7 +233,7 @@ const HomeScreen= ({navigation}) =>{
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => toggleTrilha(2)}>
-                        <Image source={require('../assets/logo/caatinga.jpg')} 
+                        <Image source={require('../assets/logo/foto3.jpg')} 
                             className={trilha === 2 ? "h-32 w-32 mb-2 rounded-xl mt-2" : "h-24 w-24 mt-4 ml-1 rounded-xl"}
                             style={trilha === 2 ? styles.border : false}
                             resizeMethod='resize'></Image>
@@ -252,8 +318,64 @@ const styles = StyleSheet.create({
         marginTop:260
       },text1: {
         marginLeft:102
-      },arrowSymbol: {
+      },text1_1: {
+        marginLeft:93,
+        marginTop:135
+      },text1_1_1: {
+        marginLeft:93,
+        marginTop:152
+      }
+      ,arrowSymbol: {
         fontSize: 20, // Ajuste o tamanho conforme necessário
         fontFamily: 'Arial Unicode MS', // Tente mudar para uma fonte que suporte o caractere ⭥
+      },emburada:{
+        marginLeft:115,
+        marginTop:135
       },
+      emburadacoord:{
+        marginLeft:115,
+        marginTop:153
+      },
+      almirante:{
+        marginTop:272,
+        marginLeft: 98
+      },
+      almirantecoord:{
+        marginTop:292,
+        marginLeft: 98
+      },
+      trilhaMedia:{
+        height:425
+      },
+      top2_2:{
+        marginTop:229
+      },text1_2: {
+        marginLeft:116,
+        marginTop:240
+      },text1_2_2: {
+        marginLeft:116,
+        marginTop:255
+      },
+      top2_3:{
+        marginTop:368,
+        marginLeft:30
+      },
+      text1_3: {
+        marginLeft:90,
+        marginTop:378
+      },text1_3_3: {
+        marginLeft:90,
+        marginTop:392
+      },
+      top2_4:{
+        marginTop:465,
+        marginLeft:50
+      },
+      text1_4: {
+        marginLeft:113,
+        marginTop:480
+      },text1_4_4: {
+        marginLeft:113,
+        marginTop:494
+      }
 });

@@ -163,7 +163,7 @@ const Quiz = ({navigation}) =>{
                     <Text className="text-black text-base opacity-60">/ {15}</Text>
                 </View> */}
                 
-                <Text className="text-black text-base font-serif">
+                <Text className="text-black text-base font-serif px-3 text-left">
                     {allQuestions[currentQuestionIndex]?.question}
                 </Text>
             </View>
@@ -185,7 +185,7 @@ const Quiz = ({navigation}) =>{
                                 flexDirection: 'row',
                                 alignItems: 'center', justifyContent:'space-between',
                                 marginLeft: 30,
-                                marginVertical: 5,
+                                marginVertical: 10,
                                 }}
                                >
                             <Text className = "text-xl text-black indent-20 ml-2">{option}</Text>
@@ -262,10 +262,43 @@ const Quiz = ({navigation}) =>{
             transparent={true}
             visible={showScoreModal}
             >
-                <View style={{flex:1, backgroundColor:'#000000',alignItems:'center',justifyContent:'center'}}>
-                    <View className="bg-white w-11/12 rounded-lg p-6 flex items-center">
-                        <Text className="text-3xl font-bold">{score > 2 ? 'Parabenss!!' : 'Oops!!'}</Text>
+                <View className="flex-1 py-8 px-4 bg-backgroundprimary">
+                    <View style ={{flexDirection: 'row'}}>
+                        <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13 }}>
+                            <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
+                                Quiz da caatinga
+                            </Text>    
+                            <View style={{ paddingLeft: 45 }}>
+                            <Image
+                            source={require('../../assets/logo/logo.png')}
+                            style={{ width: 80, height: 80, borderRadius: 25 }}
+                            />
+                            </View>
+                        </View>
+                    </View>
+                    <View style={{justifyContent:'center',alignItems: 'center'}}>
+                        <Image
+                            source={require('../../assets/logo/cientista.png')}
+                            style={{ width: 250, height: 250, borderRadius: 25,marginTop:55}}
+                        />
+                        <Text style={{ width: 245, height: 120, fontSize: 25,marginTop:10,paddingLeft:5,textAlign:'center',color:'#000'}}>{score > 7 ? 'Parabenss sua pontuação foi!!' : 'Oops!!'}</Text>
+                        <View style={{flexDirection:'row',justifyContent:'flex-start',alignItems:'center',marginBottom:10,top:-80}}>
+                            <Text style={{fontSize: 30, color: score> (2)? "#84CC16": "#EF4444"}}>{score}</Text>
+                            <Text style={{fontSize:20,color:"#000000"}}>/ 15</Text>
+                        </View>
+                        <TouchableOpacity 
+                        onPress={restartQuiz}
+                        className = "absolute bg-blue-500 p-6 " style={{top:420,borderRadius:30}}>
+                            <Text className="text-xl text-white text-center" style={{color:"#FFDD00"}}>Jogar Novamente</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity 
+                        onPress={() => navigation.navigate('Chat')}
+                        className = "absolute mt-5 bg-blue-500 p-6" style={{top:480,borderRadius:30}}>
+                            <Text className="text-xl text-white text-center" style={{color:"#FFDD00"}}>Sair pra tela inicial</Text>
+                        </TouchableOpacity>
+                    </View>
 
+                    {/* <View className=" w-11/12 rounded-lg p-6 flex items-center">
                         <View style={{flexDirection:'row',justifyContent:'flex-start',alignItems:'center',marginVertical:20}}>
                             <Text style={{fontSize: 30, color: score> (2)? "#84CC16": "#EF4444"}}>{score}</Text>
                             <Text style={{fontSize:20,color:"#000000"}}>/ 15</Text>
@@ -275,7 +308,7 @@ const Quiz = ({navigation}) =>{
                         className = "mt-5 bg-blue-500 p-6 rounded-lg">
                             <Text className="text-xl text-white text-center">Recomeçar Quiz</Text>
                         </TouchableOpacity>
-                    </View>
+                    </View> */}
                 </View>
 
             </Modal>

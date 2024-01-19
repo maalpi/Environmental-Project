@@ -1,6 +1,6 @@
 import React, { useState,useRef } from "react"
-import { View,Text, Button, StyleSheet, TouchableOpacity, Linking,Dimensions} from 'react-native'
-
+import { View,Text, Button, StyleSheet, TouchableOpacity, Linking,Dimensions,Image} from 'react-native'
+import LinearGradient from 'react-native-linear-gradient';
 import { RNCamera } from 'react-native-camera'
 import QRCodeScanner from 'react-native-qrcode-scanner'
 
@@ -23,29 +23,37 @@ const QrcodeScreen= ({navigation}) =>{
 
       qrcodeRef.current.reactivate();
   };
-    return (
-      
-        <View style={styles.container}>
-            <TouchableOpacity className ="flex-row px-4 py-3 justify-between items-center  opacity-100" >
-                    <ArrowLeftIcon  color='#000' size={24} onPress={() => navigation.goBack()}/>
-            </TouchableOpacity>
-
-            <QRCodeScanner
-            cameraStyle={{ height: height, width: width }}
+  return (
+    <LinearGradient
+      colors={['#1FAA70', '#00A2DB']}
+      style={{
+        flex: 1,
+        opacity: 0.62,
+      }}>
+      <View style={styles.container}>
+        <Image
+          source={require('../assets/icons/x_branco.png')}
+          style={styles.icon}
+        />
+        <Image
+          source={require('../assets/logo/logo_branca.png')}
+          style={styles.image}
+        />
+        <View style={styles.barcodebox}>
+          <QRCodeScanner
             ref={qrcodeRef}
-            onRead={({data}) =>{  setScanned(true); setBarcodeData(data);  navigateToAnimalScreen(); }}
-            flasMode={RNCamera.Constants.FlashMode.off}
-            />
-
-            <View>
-              <View style={styles.cornerTopLeft} />
-              <View style={styles.cornerTopRight} />
-              <View style={styles.cornerBottomLeft} />
-              <View style={styles.cornerBottomRight} />
-            </View>
+            onRead={({data}) => {
+              setScanned(true);
+              setBarcodeData(data);
+              navigateToAnimalScreen();
+            }}
+            flashMode={RNCamera.Constants.FlashMode.off}
+          />
         </View>
-        
-    )
+        <Text style={styles.text}>CENTRALIZE O QR CODE NA CAIXA ACIMA</Text>
+      </View>
+    </LinearGradient>
+  );
 }
 
 export default QrcodeScreen
@@ -53,48 +61,38 @@ export default QrcodeScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
+    alignItems: 'center',
   },
-  cornerTopLeft: {
-    color:"black",
-    position: "absolute",
-    top: -550,
-    left: 50,
-    width: 20,
-    height: 20,
-    borderTopWidth: 5,
-    borderLeftWidth: 5,
-    borderColor: "white",
+  barcodebox: {
+    position: 'absolute',
+    top: 287,
+    height: 260,
+    width: 260,
+    overflow: 'hidden',
+    borderColor: '#FFAB00',
+    borderStyle: 'solid',
+    borderRadius: 29,
+    borderWidth: 2,
+    opacity: 1,
   },
-  cornerTopRight: {
-    position: "absolute",
-    top: -550,
-    right: 50,
-    width: 20,
-    height: 20,
-    borderTopWidth: 5,
-    borderRightWidth: 5,
-    borderColor: "white",
+  icon: {
+    position: 'absolute',
+    top: 28,
+    left: 30,
+    width: 24,
+    height: 24,
+    opacity: 1,
   },
-  cornerBottomLeft: {
-    position: "absolute",
-    bottom: 250,
-    left: 50,
-    width: 20,
-    height: 20,
-    borderBottomWidth: 5,
-    borderLeftWidth: 5,
-    borderColor: "white",
+  text: {
+    top: 571,
+    fontSize: 14,
+    maxWidth: 156,
+    textAlign: 'center',
   },
-  cornerBottomRight: {
-    position: "absolute",
-    bottom: 250,
-    right: 50,
-    width: 20,
-    height: 20,
-    borderBottomWidth: 5,
-    borderRightWidth: 5,
-    borderColor: "#FFFFFF",
+  image: {
+    position: 'absolute',
+    top: 110,
+    width: 114,
+    height: 114,
   },
 });

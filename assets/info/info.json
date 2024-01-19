@@ -4,136 +4,129 @@
     "articles": [
         {
             "source": {
-            "id": "reuters",
-            "name": "Reuters"
+            "id": "UEPB",
+            "name": "UEPB"
             },
-                "author": "Patrick Wingrove",
-                "title": "Sobre Nós",
-                "description": "A Reserva Olho D&#39;água das Onças está localizada na zona rural do município de Picuí estado da Paraíba. Foi fundada em 2005 e hoje está prestes a ser classificada como Reserva Particular do Patrimônio Natural (RPPN). A reserva possui 20 hectares de área, sendo 75% de Caatinga preservada. A área preservada é circundada por trilhas, permitindo o desenvolvimento de Pesquisa e atividades de Educação Ambiental. Os 25% restantes corresponde a área de sustentabilidade da Reserva, e conta com restaurante, área de camping,  museu da caatinga, viveiro e cactário, loja de produtos regionais e área de lazer composta por quadra poliesportiva, minicampo socyt e espaço kids (Cidade da Criança) com jogos e brinquedos educativos. Ainda está previsto a construção de pousada, anfiteatro e piscina. A Reserva possui parcerias com Universidades e Associações que atuam em prol da conservação e sustentabilidade ambiental, estando suas atividades alinhadas aos Objetivos de Desenvolvimento Sustentabilidade do Milênio (ODM), bem como aos 17 Objetivos de Desenvolvimento Sustentável (ODS) propostos pela Organização das Nações Unidas (ONU).",
-                "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-says-wegovy-heart-benefits-due-more-than-weight-loss-2023-11-11/",
-                "urlToImage": "https://www.reuters.com/resizer/hJR1bcMQyx6YX7YMmoWa_e5mIeA=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/7XXQIDEIWRKN3NZA62CUCEHSMM.jpg",
-                "publishedAt": "2023-11-11T16:21:00Z",
+                "author": "UEPB",
+                "title": "Informações sobre a Reserva Ambiental",
+                "description": "A Reserva Olho D'água das Onças está localizada na zona rural do município de Picuí estado da Paraíba. Foi fundada em 2005 e hoje está prestes a ser classificada como Reserva Particular do Patrimônio Natural (RPPN). A reserva possui 20 hectares de área, sendo 75% de Caatinga preservada. A área preservada é circundada por trilhas, permitindo o desenvolvimento de Pesquisa e atividades de Educação Ambiental. Os 25% restantes corresponde a área de sustentabilidade da Reserva, e conta com restaurante, área de camping,  museu da caatinga, viveiro e cactário, loja de produtos regionais e área de lazer composta por quadra poliesportiva, minicampo socyt e espaço kids (Cidade da Criança) com jogos e brinquedos educativos. Ainda está previsto a construção de pousada, anfiteatro e piscina. \nA Reserva possui parcerias com Universidades e Associações que atuam em prol da conservação e sustentabilidade ambiental, estando suas atividades alinhadas aos Objetivos de Desenvolvimento Sustentabilidade do Milênio (ODM), bem como aos 17 Objetivos de Desenvolvimento Sustentável (ODS) propostos pela Organização das Nações Unidas (ONU).",
+                "url": "https://live.staticflickr.com/65535/53472802470_aca7977881_z.jpg",
+                "urlToImage": "https://live.staticflickr.com/65535/53472802470_aca7977881_z.jpg",
+                "publishedAt": "2024-01-17T16:21:00Z",
                 "content": "PHILADELPHIA, Nov 11 (Reuters) - Novo Nordisk (NOVOb.CO) on Saturday said the heart protective benefits of its wildly popular Wegovy obesity treatment are due to more than weight loss alone, accordin… [+3928 chars]",
-                "category": "general",
+                "category": "informação",
                 "diaMes": "17 . JAN"
          },
         {
             "source": {
-            "id": "reuters",
-            "name": "Reuters"
+            "id": "UEPB",
+            "name": "UEPB"
             },
-                "author": "Nidal Al-Mughrabi, Maytaal Angel",
-                "title": "Israel's war on Hamas homes in on Gaza hospitals - Reuters",
-                "description": "Palestinian officials said a baby died and dozens more patients were at risk from Israeli fire around Gaza's <a href=\"/world/middle-east/al-shifa-gazas-largest-hospital-headlines-2023-11-10/\">largest hospital</a> on Saturday, while Israel said it had killed a…",
-                "url": "https://www.reuters.com/world/middle-east/gaza-death-toll-rises-israel-faces-pressure-protect-palestinian-civilians-2023-11-11/",
-                "urlToImage": "https://www.reuters.com/resizer/qjCKOqMPGCs-U_XJWMBs8ZIqKuI=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5UNZF4BLVZIVLHWCPLISPFUE4M.jpg",
-                "publishedAt": "2023-11-11T15:59:48Z",
+                "author": "UEPB",
+                "title": "Ecoturismo presente na Reserva Olho D'água das Onças ",
+                "description": {
+                    "title": "Conheça o ecoturismo que nossa reserva ambiental proporciona.\n",
+                    "content": [
+                      {
+                        "subtitle": "Trilha ecológica",
+                        "text": "A Reserva possui três trilhas ecológicas georreferenciadas e com placas indicativas sobre os nomes científicos e populares das espécies vegetais. As trilhas contam com pontos de paradas para descanso e rodas de conversa. Além de oferecer um observatório para que os visitantes contemplem o relevo e vegetação da região, além de poder desfrutar de um belo pôr do sol.\nAs trilhas são classificadas de acordo com o nível de dificuldade de acesso. A Trilha 1 baixo nível de dificuldade; Trilha 2 médio nível de dificuldade; Trilha 3 alto nível de dificuldade.\n"
+                    },
+                      {
+                        "subtitle": "Restaurante",
+                        "text": "O restaurante oferece aos visitantes uma experiência incrível para degustação da culinária local.",
+                        "imagem1": "https://live.staticflickr.com/65535/53472467263_fe2943f989_z.jpg",
+                        "imagem2": "https://live.staticflickr.com/65535/53472328291_db85e070a0_z.jpg"
+                      },
+                      {
+                        "subtitle": "Cidade da Criança",
+                        "text": "Local reservado para as crianças praticarem diversas atividades, por meio de jogos educativos.",
+                        "imagem1": "https://live.staticflickr.com/65535/53472666344_84e921fde7_z.jpg",
+                        "imagem2": "https://live.staticflickr.com/65535/53472496893_d82e2566d1_z.jpg"
+                      },
+                      {
+                        "subtitle": "Viveiro e Cactário",
+                        "text": "Produção de mudas de cactáceas típicas da região.",
+                        "imagem1": "https://live.staticflickr.com/65535/53472362006_965cf864dc_z.jpg",
+                        "imagem2": "https://live.staticflickr.com/65535/53472671274_946c1699fd_z.jpg"
+                      },
+                      {
+                        "subtitle": "Museu da Caatinga",
+                        "text": "Acervo de utensílios domésticos e do campo.",
+                        "imagem1": "https://live.staticflickr.com/65535/53471460842_751695168b_z.jpg",
+                        "imagem2": "https://live.staticflickr.com/65535/53472367806_d0b40f1231_z.jpg"
+                      }
+                    ],
+                    "textIndent": 20
+                  },
+                "url": "https://live.staticflickr.com/65535/53472693814_5483417d99_z.jpg",
+                "urlToImage": "https://live.staticflickr.com/65535/53472693814_5483417d99_z.jpg",
+                "publishedAt": "2024-01-17T15:59:48Z",
                 "content": "GAZA/JERUSALEM, Nov 11 (Reuters) - Palestinian officials said a baby died and dozens more patients were at risk from Israeli fire around Gaza's largest hospital on Saturday, while Israel said it had … [+6907 chars]",
-                "category": "general",
+                "category": "turismo",
                 "diaMes": "17 . JAN"
         },
         {
             "source": {
-            "id": null,
-            "name": "CBS Sports"
+            "id": "UEPB",
+            "name": "UEPB"
             },
-                "author": "",
-                "title": "Jim Harbaugh suspension: Michigan legal action not heard before Penn State kickoff",
-                "description": "Michigan filed a court order in conjunction with Harbaugh's suspension",
-                "url": "https://www.cbssports.com/college-football/news/jim-harbaugh-suspension-michigan-legal-action-not-heard-before-penn-state-kickoff-sherrone-moore-will-coach/",
-                "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/11/10/4e1fb057-00ec-4956-b53e-ab21460bed63/thumbnail/1200x675/676497b6991f6ffd208c39e16d912ad6/usatsi-21703821-1.jpg",
-                "publishedAt": "2023-11-11T15:38:00Z",
-                "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
-                "category": "ensino",
+                "author": "UEPB",
+                "title": "Confira informação sobre o projeto de pesquisa",
+                "description": "Em agosto de 2022 iniciou-se o levantamento florístico da Reserva Ecológica Olho d’Água das Onças (REOODO), área de conservação localizada no município de Picuí, Seridó Paraibano, no semiárido brasileiro. \nA execução desse estudo envolve a participação de estudantes e pesquisadores do Laboratório de Botânica (LaBot) e do Laboratório de Ecofisiologia de Plantas da Caatinga (LepCaa), Campus I, da Universidade Estadual da Paraíba (UEPB), e está sendo coordenado pelo Professor Iranildo Melo. O apoio financeiro foi concedido por uma emenda parlamentar do ex-deputado Buba Germano através da execução de um projeto mais amplo coordenado pela Professora Dilma Trovão, o qual abrange estudos sobre a flora, vegetação e aspectos ecológicos e ecofisiológicos das plantas da REOODO. O inventário florístico será finalizado no segundo semestre/2024 e, até então, foram registradas mais de 200 espécies de angiospermas (plantas com flores), várias delas constituindo novos registros para a flora da Paraíba e uma delas representando o primeiro registro para o ecossistema Caatinga. \n\nA execução desse estudo consiste em um passo importante para o conhecimento da flora do Seridó em diferentes aspectos, uma das regiões da Caatinga mais importantes e, paradoxalmente, uma das menos conhecidas floristicamente e que está situada entre os Estados da Paraíba e do Rio Grande do Norte. \nApesar das lacunas no conhecimento da flora do Seridó, nossos resultados evidenciam a REOODO como um importante centro de biodiversidade vegetal no contexto do semiárido nordestino. Outros importantes aspectos a serem destacados sobre este estudo, consistem 1) na oportunidade de treinar jovens pesquisadores em diferentes métodos relacionados às abordagens desenvolvidas mas, principalmente, no treinamento em taxonomia vegetal, uma das áreas da Biologia  que, além do mais, representa a base para os estudos de conservação biológica; 2) por proporcionar a divulgação dos resultados obtidos em eventos científicos como simpósios e congressos, dentre outras naturezas, e na publicação de artigos em importantes revistas das áreas de Botânica e Ecologia do Brasil e do exterior, e 3) a produção de uma coleção de referência para a flora do Seridó, albergada no Herbário Manuel de Arruda Câmara (HACAM), Campus I, Universidade Estadual da Paraíba (UEPB).",
+                "url": "https://live.staticflickr.com/65535/53472535058_119a61e519.jpg",
+                "urlToImage": "https://live.staticflickr.com/65535/53472535058_119a61e519.jpg",
+                "publishedAt": "2024-01-17T15:32:00Z",
+                "content": "Arab and Muslim leaders decried Israeli war crimes in Gaza at a summit in Riyadh where Iranian President Ebrahim Raisi met Saudi Crown Prince Mohammed bin Salman in a first public meeting.\r\nThe extra… [+4005 chars]",
+                "category": "informação",
                 "diaMes": "17 . JAN"
             },
-    {
-    "source": {
-    "id": "cnn",
-    "name": "CNN"
-    },
-        "author": "Sophie Tanno, Adam Pourahmadi, Zeena Saifi",
-        "title": "Iranian president visits Saudi summit, says meeting is to ‘save the Palestinians’ - CNN",
-        "description": "Iranian President Ebrahim Raisi has arrived in Saudi Arabia for a summit on the Israel-Hamas war, telling reporters that “Palestine is the most important issue in the Islamic world.”",
-        "url": "https://www.cnn.com/2023/11/11/world/iran-leader-saudi-arabia-summit-israel-hamas-war/index.html",
-        "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/231111055045-01-ebrahim-raisi-saudi-arabia-111123.jpg?c=16x9&q=w_800,c_fill",
-        "publishedAt": "2023-12-11T15:32:00Z",
-        "content": "Arab and Muslim leaders decried Israeli war crimes in Gaza at a summit in Riyadh where Iranian President Ebrahim Raisi met Saudi Crown Prince Mohammed bin Salman in a first public meeting.\r\nThe extra… [+4005 chars]",
-        "category": "turismo",
-        "diaMes": "17 . JAN"
-    },
-    {
-    "source": {
-    "id": null,
-    "name": "CBS Sports"
-    },
-    "author": "",
-    "title": "College football picks, schedule: Predictions against the spread, odds, top 25 games in Week 11",
-    "description": "A closer look at the top games for the 11th week of the 2023 college football season",
-    "url": "https://www.cbssports.com/college-football/news/college-football-picks-schedule-predictions-against-the-spread-odds-top-25-games-in-week-11/",
-    "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/11/08/4a6f479c-a809-49db-bd7e-bccbe33b16fe/thumbnail/1200x675/b85785df0743928b44c82be2afb06013/getty-bo-nix-oregon.jpg",
-    "publishedAt": "2023-11-11T14:50:00Z",
-    "content": "A week ago, what was billed as Separation Saturday didn't exactly do justice to its name. Sure, some top 25 teams went down in defeat, but those truly in contention for the College Football Playoff l… [+5003 chars]",
-    "category": "ensino",
-    "diaMes": "17 . JAN"    
-},
-    {
-    "source": {
-    "id": null,
-    "name": "BBC News"
-    },
-    "author": "https://www.facebook.com/bbcnews",
-    "title": "Pope Francis fires Texan bishop after criticism of reforms - BBC.com",
-    "description": "Joseph Strickland is \"relieved\" from governance following a Vatican investigation.",
-    "url": "https://www.bbc.com/news/world-us-canada-67390366",
-    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1109D/production/_131698796_gettyimages-1783454134.jpg",
-    "publishedAt": "2023-11-11T14:24:37Z",
-    "content": "Pope Francis has fired the Texan bishop Joseph Strickland, a fierce critic who has questioned the Pope's leadership of the Catholic church.\r\nThe Vatican said the bishop would be \"relieved\" of his dut… [+2929 chars]",
-    "category": "turismo",
-    "diaMes": "17 . JAN"    
-},
-    {
-    "source": {
-    "id": "reuters",
-    "name": "Reuters"
-    },
-    "author": "Michael Holden, Dylan Martinez",
-    "title": "London police scuffle with far-right protesters as pro-Palestinian rally starts",
-    "description": "Tens of thousands of pro-Palestinian protesters marched through central London on Saturday following scuffles nearby between far-right protesters and police, who launched a major operation to avert clashes.",
-    "url": "https://www.reuters.com/world/huge-crowds-expected-london-pro-palestinian-rally-police-gear-trouble-2023-11-11/",
-    "urlToImage": "https://www.reuters.com/resizer/UiMP2MmhrMxgFapxBa0xILVqj1o=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/QOC63HF64RJ3FE5W76GYWMIZ7U.jpg",
-    "publishedAt": "2023-11-11T14:14:00Z",
-    "content": "LONDON, Nov 11 (Reuters) - Tens of thousands of pro-Palestinian protesters marched through central London on Saturday following scuffles nearby between far-right protesters and police, who launched a… [+3278 chars]",
-    "category": "curiosidade",
-    "diaMes": "17 . JAN"    
-},
-    {
-    "source": {
-    "id": "politico",
-    "name": "Politico"
-    },
-    "author": null,
-    "title": "'Travesty in darkness': Trump backs drive to televise his D.C. election-subversion trial",
-    "description": "Trump, who is facing four criminal prosecutions as well as several civil lawsuits, has been trying in recent weeks to leverage those proceedings to amplify his message to voters.",
-    "url": "https://www.politico.com/news/2023/11/11/travesty-in-darkness-trump-backs-drive-to-televise-his-d-c-election-subversion-trial-00126704",
-    "urlToImage": "https://static.politico.com/61/ca/af7e5b0947b4b56b343fab50e79b/trump-fraud-lawsuit-19898.jpg",
-    "publishedAt": "2023-11-11T14:12:36Z",
-    "content": "The five-page submission to U.S. District Court Judge Tanya Chutkan makes no mention of a federal court rule that has been in place for decades prohibiting broadcasting of criminal court proceedings.… [+3969 chars]",
-    "category": "curiosidade",
-    "diaMes": "17 . JAN"
-    },
-    {
-        "source": {
-        "id": "politico",
-        "name": "Politico"
-        },
-        "author": null,
-        "title": "'Travesty in darkness': Trump backs drive to televise his D.C.",
-        "description": "Trump, who is facing four criminal prosecutions as well as several civil lawsuits, has been trying in recent weeks to leverage those proceedings to amplify his message to voters.",
-        "url": "https://www.politico.com/news/2023/11/11/travesty-in-darkness-trump-backs-drive-to-televise-his-d-c-election-subversion-trial-00126704",
-        "urlToImage": "https://static.politico.com/61/ca/af7e5b0947b4b56b343fab50e79b/trump-fraud-lawsuit-19898.jpg",
-        "publishedAt": "2023-11-11T14:12:36Z",
-        "content": "The five-page submission to U.S. District Court Judge Tanya Chutkan makes no mention of a federal court rule that has been in place for decades prohibiting broadcasting of criminal court proceedings.… [+3969 chars]",
-        "category": "curiosidade",
-        "diaMes": "17 . JAN"}]
+        {
+            "source": {
+            "id": null,
+            "name": "UEPB"
+            },
+                "author": "UEPB",
+                "title": "Conheça pontos turisticos da cidade de Picuí",
+                "description": {
+                    "title": "O município de Picuí está localizado na microrregião do Seridó Oriental Paraibano. Além da Reserva Olho D’água das Onças, o município contempla outros pontos turísticos nos âmbitos cultural, ambiental e histórico, como a Igreja Matriz de São Sebastião, monumentos de personalidades importantes, praças que remetem a cultura do município e serras.\n",
+                    "content": [
+                      {
+                        "subtitle": "Igreja Matriz de São Sebastião",
+                        "text": "A igreja foi construída em 1856, devido a uma promessa feita para sanar a pandemia de cólera morbo que assolava a população e matou milhares de pessoas no Nordeste brasileiro, então juntamente com a população o Coronel José Ferreira de Macedo, decidiram recorrer ao Mártir São Sebastião e fizeram a promessa, com o surto cessado foi construída a capela de São Sebastião hoje elevada a Matriz.\n"
+                      },
+                      {
+                        "subtitle": "Serra do Pedro",
+                        "text": "A Serra do Pedro é uma formação geológica, localizada a 5 km da área urbana de Picuí-PB, no sitio Cachoeira do Pedro, onde possui pinturas rupestres em suas rochas. O acesso a serra se dá pela BR-151 que liga Picuí- PB a Carnaúba dos Dantas- RN, ela é o ponto mais alto do município e está situada na formação litológica Seridó.\n"
+                      },
+                      {
+                        "subtitle": "Monumento de Dr. Felipe Tiago Gomes",
+                        "text": "O monumento foi construído em 2010, em homenagem a um dos precursores da educação no município, ele foi idealizador da Campanha Nacional de Escolas da Comunidade (CNEC).\n"
+                      },
+                      {
+                        "subtitle": "Praça Getúlio Vargas",
+                        "text": "Essa praça é localizada no centro da cidade, em frente a antiga escola Professor Lordão, na rua Getúlio Vargas. A praça foi construída na década de 30, atualmente a praça conta com quiosques, e alguns eventos, sobretudo voltados para vitalidade física da população.\n"
+                      },
+                      {
+                        "subtitle": "Praça do boi",
+                        "text": "Foi construída em 2005, em homenagem a titulação da cidade de “Terra da Carne de Sol. Nela contém o famoso garçom cortando a conhecida carne de sol que dá a titulação do município e alguns animais que foram feitos pelo artista plástico José Crisólogo.\n"
+                      },
+                      {
+                        "subtitle": "Praça dos Garimpeiros",
+                        "text": "A praça foi inaugurada em 2012, e é em homenagem aos mineradores do município visto que a extração de minério foi muito presente no município durante a 2° Guerra Mundial, onde foi exportado minérios para equipamentos bélicos, e homenageia também o ex-prefeito, que também era garimpeiro e comercializava minérios, Severino Pereira Gomes. A praça é localizada em frente à Praça do Boi.\n"
+                      },
+                      {
+                        "subtitle": "Praça João Pessoa",
+                        "text": "A praça é localizada em frente a Matriz do município, no centro da cidade. O Coreto, que é palco para cantores do município durante a festa de padroeira do município, o Obelisco e o relógio são os principais pontos da praça.\n"
+                      }
+                    ],
+                    "textIndent": 20
+                  },
+                "url": "https://live.staticflickr.com/65535/53472849065_1de567e371.jpg",
+                "urlToImage": "https://live.staticflickr.com/65535/53472437576_b04717b546_w.jpg",
+                "publishedAt": "2024-01-17T15:38:00Z",
+                "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
+                "category": "turismo",
+                "diaMes": "17 . JAN"
+            }
+    ]
 }

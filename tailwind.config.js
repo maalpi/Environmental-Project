@@ -10,6 +10,7 @@ module.exports = {
         laranjaprimary: "#C73E28",
         blueprimary: "#3165b0",
         greenchat: "#1FAA70",
+        amarelotexto: "#FFDD00"
 
     },
   },

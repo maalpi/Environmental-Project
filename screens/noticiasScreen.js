@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { View,Text, Button, StyleSheet, TouchableOpacity, FlatList,Image} from 'react-native'
+import { View,Text, Button, StyleSheet, TouchableOpacity, FlatList,Image,Dimensions} from 'react-native'
 
 import Header from './componentes_noticias/header'
 import Card from './componentes_noticias/card'
 import DataInfo from '../assets/info/info.json'
+import Video from 'react-native-video';
 
 import { ScrollView } from 'react-native-virtualized-view'
 import SplashScreen from "react-native-splash-screen"
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const NoticiasScreen= ({navigation}) =>{
     //navigation.setOptions({ tabBarStyle: {display: 'none'}})
@@ -15,6 +17,7 @@ const NoticiasScreen= ({navigation}) =>{
             SplashScreen.hide()
         },500)
     })
+
     const [Data, setData] = useState([]);
     const [Select,setSelect] = useState(0);
     const [Category,setCategory] = React.useState([
@@ -42,7 +45,67 @@ const NoticiasScreen= ({navigation}) =>{
 
     ]);
     
-    
+    const [videoPlayed, setVideoPlayed] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
+
+    const handleVideoEnd = () => {
+    // Sua lógica ao término do vídeo...
+    // Por exemplo, navegar para a tela Home
+    navigation.navigate('Home');
+    };
+
+    useEffect(() => {
+    const checkVideoPlayed = async () => {
+        try {
+        // Verifica se o vídeo já foi reproduzido
+        const value = await AsyncStorage.getItem('videoPlayed');
+        if (value === null) {
+            // Se não foi reproduzido, reproduza o vídeo
+            // O vídeo chamará handleVideoLoad quando estiver totalmente carregado
+            setVideoPlayed(false);
+        } else {
+            // Se já foi reproduzido, atualize o estado imediatamente
+            setVideoPlayed(true);
+        }
+        } catch (error) {
+        console.error('Erro ao verificar/reproduzir o vídeo:', error);
+        }
+    };
+
+    checkVideoPlayed();
+    }, []);
+
+    const handleVideoLoad = () => {
+    // O vídeo foi totalmente carregado, agora podemos atualizar o indicador
+    setVideoLoaded(true);
+    navigation.setOptions({
+        tabBarStyle: {display: 'none'}, // Oculta o navigator quando a tela é rolada para baixo
+    });
+    // Configurar um temporizador para mudar o estado após 16 segundos
+    setTimeout(() => {
+        setVideoPlayed(true);
+        navigation.setOptions({
+            tabBarStyle: {
+                position:'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                elevation: 0,
+                backgroundColor: '#ffff',
+                borderRadius: 15,
+                height:70,
+                ... style.shadow
+            } // Mostra o navigator quando a tela é rolada para cima
+        });
+        
+        // Também podemos salvar essa informação no AsyncStorage, se necessário
+        AsyncStorage.setItem('videoPlayed', 'true').catch((error) => {
+        console.error('Erro ao salvar no AsyncStorage:', error);
+        });
+    }, 16000); // 16000 milissegundos = 16 segundos
+    };
+
+
     let cont = 0;
     useEffect(() => {
         const getData = async () => {
@@ -88,17 +151,31 @@ const NoticiasScreen= ({navigation}) =>{
             } // Mostra o navigator quando a tela é rolada para cima
           });
         }
+        
       };
     
       useEffect(() => {
         // Sua lógica de carregamento de dados aqui
       }, [Select]);
     
-    return (
+    return (   
+        <View style={!videoPlayed ? { flex: 1, justifyContent: 'center', alignItems: 'center' } : {flex: 1}}>
+        {!videoPlayed && (
+        <Video
+            source={require('../assets/video/CONVITE_01.mp4')}
+            style={style.backgroundVideo}
+            controls={false}
+            resizeMode="cover"
+            onEnd={handleVideoEnd}
+            onLoad={handleVideoLoad}
+        />
+        )}
+        
+        {/* O restante do seu aplicativo vai aqui */}
+        {videoPlayed && (   
         <ScrollView onScroll={handleScroll} className="bg-backgroundprimary">
         <View className="flex-1 "> 
             
-            {/* logo inicio */}
             <View style ={{flexDirection: 'row'}}>
                 <View style={{ alignItems: 'center', paddingVertical: 38,paddingLeft:25 }}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
@@ -137,38 +214,26 @@ const NoticiasScreen= ({navigation}) =>{
                 resizeMethod='resize'></Image>
                  <View style={style.overlay} />
 
-                 <Text className="absolute text-4xl text-white top-14">Nome da Trilha 1 </Text>
+                 <Text className="absolute text-4xl text-white top-14">Trilha Fácil </Text>
                  <Text className="absolute text-base text-white bottom-9">Info 9999   Info 9999   Info 9999</Text>
                 
             </TouchableOpacity>
         
 
             <View>
-
-            {/* Categoria */}
-            {/* <View className="px-4 py-2">
-                <FlatList data = {Category} horizontal showsHorizontalScrollIndicator={false} renderItem={({item,index}) =>{
-                    return(
-                        <TouchableOpacity className={ index == Select ? 'px-4 py-1 rounded-md bg-redprimary mr-3' : 'px-4 py-1 rounded-md mr-3 bg-gray-200'} 
-                        onPress={() =>{ 
-                            setSelect(index);
-                            //getData();
-                            }}>
-                            <Text className={index == Select ? "text-white" : "text-black"}>{item.name}</Text>
-                        </TouchableOpacity>
-                    )
-                }}></FlatList>
-            </View>   */}
-
                 <FlatList data={Data} renderItem={({item,index}) =>{
                     return(
                         <Card navigation={navigation} item={item} cont={index} />  
                     )
                 }} />
             </View>
-
+            
         </View>
+        
         </ScrollView>
+        
+        )}
+        </View>
     )
 }
 
@@ -188,5 +253,8 @@ const style = StyleSheet.create({
     overlay: {
         ...StyleSheet.absoluteFillObject,
         backgroundColor: 'rgba(0, 0, 0, 0.5)', // Cor preta semi-transparente
+      },backgroundVideo: {
+        width: '100%',
+        height: '100%',
       },
 })
