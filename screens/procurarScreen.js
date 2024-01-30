@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react"
-import { View,Text, Button, StyleSheet,TouchableOpacity, FlatList,Image,StatusBar,TextInput} from 'react-native'
+import { View,Text, Button, StyleSheet,TouchableOpacity, FlatList,Image,StatusBar,TextInput,Modal} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native-virtualized-view'
 
@@ -27,6 +27,10 @@ const FindScreen= ({navigation}) =>{
     const [searchText, setSearchText] = useState('');
 
     const [activeCategory, setActiveCategory] = useState('Fauna'); // Estado para controlar a categoria ativa
+
+    //salvando item pro modal e o stado do modal
+    const [selectedItem, setSelectedItem] = useState(null);  // Adicionado para rastrear o item selecionado
+    const [modalVisible, setModalVisible] = useState(false);
 
     //fauna == 0 e flora == 1
     let fauna_flora = 0;
@@ -76,7 +80,7 @@ const FindScreen= ({navigation}) =>{
     // Mostrando os itens
     const renderItem = ({ item }) => (
         <View style={styles.itemContainer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => handleItemClick(item)}>
                 <Image source={{ uri: item.imagem }} style={styles.itemImage} resizeMethod='resize' />
                 <Text style={styles.itemText} ellipsizeMode="tail">{item.nome}</Text>
             </TouchableOpacity>
@@ -107,9 +111,48 @@ const FindScreen= ({navigation}) =>{
         }
     };
 
+    const handleItemClick = (item) => {
+      setSelectedItem(item);
+      setModalVisible(true);
+    };
+
     return (
     <LinearGradient colors={['#3165b0', '#c76828']} style={{ flex: 1 }}>
       <StatusBar translucent={false}  />
+
+      <Modal animationType="slide" transparent={true} visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
+        
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
+            
+          <View style={{ flex: 0.8, width: '90%', backgroundColor: 'white', borderRadius: 10 }}>
+            {selectedItem && (
+              <>
+                <Image source={{ uri: selectedItem.imagem }} style={{ flex: 1, borderTopLeftRadius: 10,borderTopRightRadius: 10, resizeMode: 'cover' }} />
+                <Text style={{ marginLeft:'5%',fontSize: 20, fontWeight: 'bold', marginBottom: 0, color: '#C73E28',marginTop:5 }}>{selectedItem.nome}</Text>
+                <Text style={{ marginLeft:'5%',fontSize: 15, marginTop: -4, fontWeight: 'bold', fontStyle: 'italic', marginBottom: 5 }}>{selectedItem.nomeCientifico}</Text>
+                <View style={{ marginLeft:'5%',width:'38%',height: '6%', borderRadius: 15, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center',borderWidth:1,borderColor:'grey' }}>
+                  <Text style={{ fontSize: 15, color: 'grey',fontWeight:'bold' }}>{selectedItem.tipo}</Text>
+                </View>
+
+                {activeCategory === 'Fauna' ? (
+                <View style={{ marginLeft: '2%', flex: 1, backgroundColor: 'transparent', borderRadius: 10, overflow: 'hidden' }}>
+                  <ScrollView>
+                    <Text style={{ fontSize: 16, padding: 15, textAlign: 'justify', color: 'grey' }}>
+                      {selectedItem.descricao}
+                    </Text>
+                  </ScrollView>
+                </View>
+                ): <Text></Text>}
+              </>
+      )}
+
+    </View>
+    <TouchableOpacity onPress={() => setModalVisible(false)} style={{position:'absolute', backgroundColor: 'red',top: 77, left: 335, padding: 15 ,alignItems:'center',borderTopRightRadius:10}}>
+              <Text style={{color: 'white' }}>X</Text>
+          </TouchableOpacity>
+  </View>
+</Modal>
+
     <View style={{ flex: 1, backgroundColor: '#f5f5f5' }}>
 
         <View style ={{flexDirection: 'row'}}>
@@ -129,15 +172,15 @@ const FindScreen= ({navigation}) =>{
         </View>
 
         <View style ={{flexDirection: 'row-reverse'}}>
-        <TextInput
-          style={styles.searchBar}
-          placeholder="Digite para pesquisar..."
-          onChangeText={(text) => {
-            setSearchText(text);
-            filterData(data, text);
-          }}
-          value={searchText}
-        />
+          <TextInput
+            style={styles.searchBar}
+            placeholder="Digite para pesquisar..."
+            onChangeText={(text) => {
+              setSearchText(text);
+              filterData(data, text);
+            }}
+            value={searchText}
+          />
 
         <MagnifyingGlassIcon name="search" size={25} color="#3165b0" style={{paddingTop:62,marginRight:20, position: 'absolute'}} />
       </View>
@@ -192,7 +235,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginBottom: -105,
+        marginBottom: '-28%',
         marginTop: 15
       },
       categoryButton: {
@@ -227,7 +270,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
       },
     searchBar: {
-        width: 370,
+        width: '95%',
         height: 40,
         margin: 10,
         paddingHorizontal: 10,

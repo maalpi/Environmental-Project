@@ -14,7 +14,7 @@ const Card = ({navigation,item,cont}) => {
         {cont === 0 ?
         <View className="flex-row py-4 ml-3">
              <MegaphoneIcon color='#3165b0' className="mt-10"></MegaphoneIcon>
-             <Text className=" text-xl text-black"> Noticias </Text> 
+             <Text className=" text-xl text-black"> Curiosidades </Text> 
              </View>
         : null
         }
@@ -24,10 +24,10 @@ const Card = ({navigation,item,cont}) => {
              {/* <Text className="font-bold mb-4 text-2xl text-black font-sans"> Ultimas Noticias </Text>  */}
         
         
-        <TouchableOpacity className="flex-1 shadow-xl relative mb-4 rounded-xl overflow-hidden ml-4 mr-4" onPress={() => navigation.navigate('Leitor',  {item: item, cont: cont})}>  
+        <TouchableOpacity className="flex-1 shadow-xl relative mb-4 rounded-xl overflow-hidden ml-4 mr-4" style={{width:'92%',height:'92%'}}onPress={() => navigation.navigate('Leitor',  {item: item, cont: cont})}>  
             <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
                 <Image source={{uri: item.urlToImage ? item.urlToImage : "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/g7.png?w=1038&h=576&crop=1"}} 
-                className= { "h-32 w-32 rounded-l-xl" }
+                className= { "h-32 w-32 rounded-l-xl"}
                 resizeMethod='resize'></Image>
 
                 <View className="bg-white my-0 mx-0">

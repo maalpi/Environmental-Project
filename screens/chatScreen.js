@@ -25,7 +25,7 @@ const ChatScreen= ({navigation}) =>{
             <View style ={{flexDirection: 'row'}}>
                 <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13 }}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
-                        Quiz da caatinga
+                        Quiz da reserva
                     </Text>    
                     <View style={{ paddingLeft: 45 }}>
                     <Image
@@ -38,10 +38,10 @@ const ChatScreen= ({navigation}) =>{
             
             <View style={{justifyContent:'center',alignItems: 'center'}}>
             <Image
-                source={require('../assets/logo/cientista.png')}
+                source={require('../assets/logo/cientistaXau.gif')}
                 style={{ width: 250, height: 250, borderRadius: 25,marginTop:55}}
             />
-            <Text style={{ width: 245, height: 120, fontSize: 25,marginTop:10,paddingLeft:5,textAlign:'center',color:'#000'}}>Olá! Vamos testar seus conhecimentos sobre a caatinga?</Text>
+            <Text style={{ width: 245, height: 120, fontSize: 25,marginTop:10,paddingLeft:5,textAlign:'center',color:'#000'}}>Olá! Vamos testar seus conhecimentos?</Text>
             </View>
 
       {showQuiz ? ( <Quiz />) : ( 

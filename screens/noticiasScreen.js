@@ -213,9 +213,13 @@ const NoticiasScreen= ({navigation}) =>{
                 className= { "h-40 w-full overflow-hidden" }
                 resizeMethod='resize'></Image>
                  <View style={style.overlay} />
+                 <Image source={require('../assets/logo/logoReserva.png')} 
+                    className= { "absolute overflow-hidden" }
+                    style={{top:'4%',right:'1%'}}
 
+                    resizeMethod='resize'></Image>
                  <Text className="absolute text-4xl text-white top-14">Trilha Fácil </Text>
-                 <Text className="absolute text-base text-white bottom-9">Info 9999   Info 9999   Info 9999</Text>
+                 <Text className="absolute text-base text-white bottom-9">Pontos: 3   Distância: 450 Metros </Text>
                 
             </TouchableOpacity>
         

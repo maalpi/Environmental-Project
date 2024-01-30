@@ -228,9 +228,9 @@ const Quiz = ({navigation}) =>{
         <SafeAreaView className="flex-1 py-8 px-4 bg-backgroundprimary">
             <View>
             <View style ={{flexDirection: 'row'}}>
-                <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13 }}>
+                <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13}}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
-                        Quiz da caatinga
+                        Quiz da reserva
                     </Text>    
                     <View style={{ paddingLeft: 45 }}>
                     <Image
@@ -244,7 +244,7 @@ const Quiz = ({navigation}) =>{
             <View style ={{flexDirection: 'row', overflow: 'hidden'}}>
             <View style={{ paddingLeft: 2,marginTop:20 }}>
                     <Image
-                    source={require('../../assets/logo/lina-menor.png')}
+                    source={require('../../assets/logo/linaVideo.gif')}
                     style={{ width: 150, height: 200 }}
                     resizeMethod='resize' 
                     />
@@ -266,7 +266,7 @@ const Quiz = ({navigation}) =>{
                     <View style ={{flexDirection: 'row'}}>
                         <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13 }}>
                             <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
-                                Quiz da caatinga
+                                Quiz da reserva
                             </Text>    
                             <View style={{ paddingLeft: 45 }}>
                             <Image
@@ -278,8 +278,8 @@ const Quiz = ({navigation}) =>{
                     </View>
                     <View style={{justifyContent:'center',alignItems: 'center'}}>
                         <Image
-                            source={require('../../assets/logo/cientista.png')}
-                            style={{ width: 250, height: 250, borderRadius: 25,marginTop:55}}
+                            source={require('../../assets/logo/cientistaFala.gif')}
+                            style={{ width: 230, height: 230, borderRadius: 25,marginTop:55}}
                         />
                         <Text style={{ width: 245, height: 120, fontSize: 25,marginTop:10,paddingLeft:5,textAlign:'center',color:'#000'}}>{score > 7 ? 'Parabenss sua pontuação foi!!' : 'Oops!!'}</Text>
                         <View style={{flexDirection:'row',justifyContent:'flex-start',alignItems:'center',marginBottom:10,top:-80}}>

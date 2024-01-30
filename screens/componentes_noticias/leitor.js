@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef, useState } from 'react'
-import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image,Platform, StatusBar} from 'react-native'
+import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image,Platform, StatusBar,Linking } from 'react-native'
 import { ArrowLeftIcon, ArrowRightIcon, VideoCameraIcon } from 'react-native-heroicons/solid'
 
 import YoutubePlayer from "react-native-youtube-iframe";
@@ -43,16 +43,26 @@ const Leitor = ({navigation, route}) => {
    
     const [playing, setPlaying] = useState(false);
 
-  const onStateChange = useCallback((state) => {
-    if (state === "ended") {
-      setPlaying(false);
-      Alert.alert("video has finished playing!");
-    }
-  }, []);
+    const onStateChange = useCallback((state) => {
+      if (state === "ended") {
+        setPlaying(false);
+        Alert.alert("video has finished playing!");
+      }
+    }, []);
 
-  const togglePlaying = useCallback(() => {
-    setPlaying((prev) => !prev);
-  }, []);
+    const togglePlaying = useCallback(() => {
+      setPlaying((prev) => !prev);
+    }, []);
+
+    const handleDownload = (fileUrl) => {
+      Linking.openURL(fileUrl)
+        .then((supported) => {
+          if (!supported) {
+            console.error('Não é possível abrir a URL:', fileUrl);
+          }
+        })
+        .catch((error) => console.error('Erro ao abrir a URL:', error));
+    };
 
     return (
         <ScrollView>
@@ -169,14 +179,101 @@ const Leitor = ({navigation, route}) => {
                 </View>
               </View>
             ))}
+
           </View>
-            : 
+            : cont === 4 ?
+            
+            <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
+              <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
+                {item.description.title}
+              </Text>
+    
+              {item.description.content.map((section, index) => (
+                <View key={index} style={{ marginBottom: 10 }}>
+                  {section.subtitle && (
+                    <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 18,lineHeight:24, fontWeight: 'bold',marginBottom:'2%' }}>
+                      {section.subtitle}
+                    </Text>
+                  )}
+      
+                  <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
+                  {section.text}
+                  </Text>
+                  
+                  <View style={{ flexDirection: 'row'}}>
+                  {section.download && (
+                  <View>
+                    <TouchableOpacity onPress={ () => handleDownload(section.download) }>
+                      <Text  style={{ textAlign: 'justify', fontSize: 16, lineHeight: 24, fontWeight: '500',color:'blue'}}>Clique para conheçer o processo de construção da Identidade Visual do Nosso Projeto!</Text>
+                    </TouchableOpacity>
+                </View>
+                  )}
+                  
+                  </View>
+
+                  {section.content && (
+                    section.content.map((sectionTwo,index)=>
+                    <View key={index} style={{ marginBottom: '3%' }}>
+                    {sectionTwo.text && (
+                      <TouchableOpacity onPress={() => handleDownload(sectionTwo.link)}>
+                        <Text style={{ textAlign: 'justify', fontSize: 14.5, lineHeight: 24, fontWeight: '500',color:'blue' }}>
+                          {index+1}. {sectionTwo.text}
+                        </Text>
+                      </TouchableOpacity>
+                    )}
+                  </View>
+                    )
+                  )}
+                </View>
+              ))}
+
+          </View>
+            
+            : cont === 5 ?
+
+              <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
+                <Text style={{ textAlign: 'justify', fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
+                  {item.description.title}
+                </Text>
+      
+                {item.description.content.map((section, index) => (
+                  <View key={index} style={{ marginBottom: 10 }}>
+                    {section.subtitle && (
+                      <Text style={{ textAlign: 'justify', fontSize: 16,lineHeight:24, fontWeight: 'bold' }}>
+                        {section.subtitle}
+                      </Text>
+                    )}
+        
+                    <Text style={{ textAlign: 'justify', fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
+                      {section.text}
+                    </Text>
+                    
+                    
+                    {section.video && (
+                      <View className="flex-1 relative " style={{ paddingHorizontal: '-5'}}>
+                        <YoutubePlayer
+                          height={250}
+                          play={playing}
+                          
+                          videoId={section.video}
+                          onChangeState={onStateChange}
+                        />
+                        </View>
+                    )}
+                    </View>
+                
+              ))}
+
+            </View>
+
+            :
+
             <Text  className= "px-5 py-2 text-base text-justify  ">{item.description}</Text>}
          </View>
 
             
 
-         {cont === 0? <View className="flex-1 relative overflow-hidden">
+         {cont === 0? <View className="flex-1 relative overflow-hidden" >
             <Text className="px-5 py-2 text-l uppercase font-extrabold">Quem somos?</Text>
             <YoutubePlayer
             height={250}
@@ -184,15 +281,6 @@ const Leitor = ({navigation, route}) => {
             videoId={"xOjdUpCJMZw"}
             onChangeState={onStateChange}
             />
-            <View className="mt--16">
-              <Text className="px-5 py-2 text-l uppercase font-extrabold">O que são ODS?</Text>
-              <YoutubePlayer
-              height={250}
-              play={playing}
-              videoId={"CL6obyrHdkM"}
-              onChangeState={onStateChange}
-              />
-            </View>
             {/* <Button title={playing ? "pause" : "play"} onPress={togglePlaying} /> */}
          </View> :
          false}
