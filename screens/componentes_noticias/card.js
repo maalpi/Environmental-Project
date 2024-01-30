@@ -32,11 +32,11 @@ const Card = ({navigation,item,cont}) => {
 
                 <View className="bg-white my-0 mx-0">
                     
-                    <Text className="px-3 py-2 text-sm text-black font-bold w-60 ">{item.title}</Text> 
+                    <Text className="px-3 py-2 text-sm text-black font-bold w-60 " >{item.title}</Text> 
                     <View className="ml-4 mt-24 absolute">
                         <Text className="text-xs text-black ">{item.diaMes}</Text>
                     </View>
-                    <View className="ml-36 mt-24 flex-row-reverse justify-between items-center absolute">
+                    <View className="mt-24 flex-row-reverse justify-between items-center absolute" style={{marginLeft:'37%'}}>
                         <Text className="text-xs  text-laranjaprimary ">SAIBA MAIS</Text>
                     </View>                     
                             

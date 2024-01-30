@@ -147,7 +147,7 @@ const FindScreen= ({navigation}) =>{
       )}
 
     </View>
-    <TouchableOpacity onPress={() => setModalVisible(false)} style={{position:'absolute', backgroundColor: 'red',top: 77, left: 335, padding: 15 ,alignItems:'center',borderTopRightRadius:10}}>
+    <TouchableOpacity onPress={() => setModalVisible(false)} style={{position:'absolute', backgroundColor: 'red',top: '10%', left: '84.2%', padding: 15 ,alignItems:'center',borderTopRightRadius:10}}>
               <Text style={{color: 'white' }}>X</Text>
           </TouchableOpacity>
   </View>
@@ -156,14 +156,14 @@ const FindScreen= ({navigation}) =>{
     <View style={{ flex: 1, backgroundColor: '#f5f5f5' }}>
 
         <View style ={{flexDirection: 'row'}}>
-            <View style={{ alignItems: 'center', paddingVertical: 38,paddingLeft:25 }}>
+            <View style={{ alignItems: 'center',paddingVertical: '13%',paddingLeft:'6%' }}>
                 <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
                     Catálogo Ambiental
                 </Text>    
                 <Text style={{ fontSize: 16, color: '#c76828', fontStyle: 'italic'  }}>Conheça mais sobre a caatinga</Text>
             </View>
 
-            <View style={{ paddingLeft: 45,paddingVertical:28 }}>
+            <View style={{ paddingLeft: '6%',paddingVertical:'10%' }}>
                 <Image
                 source={require('../assets/logo/logo.png')}
                 style={{ width: 80, height: 80, borderRadius: 25 }}

@@ -213,7 +213,7 @@ const Quiz = ({navigation}) =>{
         if (showNextButton){
             return(
                 <TouchableOpacity 
-                className = "mt-3 bg-blue-500 p-6 rounded-lg h-11 items-center"
+                className = "mt-1 bg-blue-500 p-6 rounded-lg h-11 items-center"
                 onPress={handleNext}
                 >
                     <Text className="mt-3 absolute text-base text-white text-center ">Próximo</Text>

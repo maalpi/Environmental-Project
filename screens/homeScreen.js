@@ -18,8 +18,9 @@ const HomeScreen= ({navigation}) =>{
     };
 
     return (
-        <View className="flex-1 "> 
-
+        
+        <View className="flex-1 " contentContainerStyle={{ flexGrow: 1 }}> 
+        
         <Modal isVisible={isModalVisible} backdropColor="black" backdropOpacity={0.9}>
             <TouchableOpacity onPress={toggleModal} >
                 <Image source={require('../assets/icons/close-button.png')}></Image>
@@ -47,15 +48,15 @@ const HomeScreen= ({navigation}) =>{
       </Modal>
 
         {/* logo inicio */}
-        <View style ={{flexDirection: 'row'}}>
-                <View style={{ alignItems: 'center', paddingVertical: 38,paddingLeft:25 }}>
+        <View style ={{flexDirection: 'row'}} className="bg-backgroundprimary">
+                <View style={{ alignItems: 'center', paddingVertical: '13%',paddingLeft:'6%'}}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
                         Educação Ambiental
                     </Text>    
                     <Text style={{ fontSize: 16, color: '#c76828', fontStyle: 'italic'  }}>Conheça mais sobre a caatinga</Text>
                 </View>
 
-                <View style={{ paddingLeft: 45,paddingVertical:28 }}>
+                <View style={{ paddingLeft: '6%',paddingVertical:'10%' }}>
                     <Image
                     source={require('../assets/logo/logo.png')}
                     style={{ width: 80, height: 80, borderRadius: 25 }}
@@ -64,9 +65,7 @@ const HomeScreen= ({navigation}) =>{
             </View>
 
             <View className="flex-1 overflow-hidden rounded-3xl">
-
-                
-
+              
                  <LinearGradient
                     colors={['rgba(45, 130, 29, 0.8)', '#359A22','#2D821D','#2D821D','#000']}  // Cores do gradiente
                     style={styles.gradient}
@@ -75,6 +74,7 @@ const HomeScreen= ({navigation}) =>{
                 
                 {trilha === 0 ?  
                 <View>
+                  
                     <Image source={require('../assets/logo/caatinga.jpg')} 
                     className= { "h-44 w-full overflow-hidden mt-0" }
                     resizeMethod='resize'></Image>
@@ -84,9 +84,10 @@ const HomeScreen= ({navigation}) =>{
                             <Text className=" text-3xl text-white mr-5">Trilha Fácil </Text>
                             <Text className=" text-sm text-white pt-6 mr-11">Nessa trilha você irá encontrar o umburada e o mirante</Text>
                         </View>
+                        
                 </View>
                 : trilha === 1 ?
-                <View>
+                <View >
                     <Image source={require('../assets/logo/foto1.jpg')} 
                     className= { "h-44 w-full overflow-hidden mt-0" }
                     resizeMethod='resize'></Image>
@@ -106,11 +107,12 @@ const HomeScreen= ({navigation}) =>{
                 
                         <View className="absolute items-center justify-center ml-16 mt-7">
                             <Text className=" text-3xl text-white mr-5">Trilha Difícil </Text>
-                            <Text className=" text-sm text-white pt-6 mr-11">Nessa trilha você irá encontrar o umburada e o mirante</Text>
+                            <Text className=" text-sm text-white pt-6 mr-11">Nessa trilha você irá encontrar as cactáceas e o desertificação</Text>
                         </View>
                 </View>}
                 
                 {trilha === 0 ?  
+                <ScrollView>
                 <View className="overflow-hidden">
                     
                     <Image source={require('../assets/icons/bandeiras-melhorada-1.png')} 
@@ -138,7 +140,9 @@ const HomeScreen= ({navigation}) =>{
                     <Text className="absolute text-white opacity-70" style={styles.almirante}>MIRANTE</Text>
                     <Text className="absolute text-amarelotexto opacity-70" style={styles.almirantecoord}>alt. 657</Text>
                 </View>
+                </ScrollView>
                 : trilha === 1 ?
+                
                 <View className="absolute">
                     <Image source={require('../assets/icons/trilha-media.png')} 
                         className= { "w-12 ml-12 mt-32 absolute overflow-hidden" }
@@ -174,7 +178,11 @@ const HomeScreen= ({navigation}) =>{
                     resizeMethod='resize'></Image>
                     <Text  className="absolute  text-white opacity-80" style={styles.text1_4}>TRILHA 2</Text>    
                     <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_4_4]}>alt. 632</Text>
-                </View>      
+
+                    
+                </View>  
+                
+                   
                 :
                 <View className="absolute">
                     <Image source={require('../assets/icons/trilha-media.png')} 
@@ -242,6 +250,7 @@ const HomeScreen= ({navigation}) =>{
                     <TouchableOpacity onPress={toggleModal} style={styles.button} className="mt-2">
                         <Text className="text-white  text-sm">GALERIA</Text>
                     </TouchableOpacity>
+                    
                 </View>
                 
                 </LinearGradient>
@@ -249,6 +258,7 @@ const HomeScreen= ({navigation}) =>{
             </View>
 
         </View>
+       
     )
 }
 
@@ -270,6 +280,7 @@ const styles = StyleSheet.create({
         borderColor:'#fff'
         
       },button: {
+        
         alignItems:'center',
         backgroundColor: 'red',
         padding: 8,
@@ -303,9 +314,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 10,
+        padding:'1%'
       },itemImage: {
-        width: 150,
-        height: 150,
+        width: 130,
+        height: 130,
+        marginLeft:'5%',
         borderRadius: 10
       },bandeira: {
         backgroundColor:'#3165B0' ,

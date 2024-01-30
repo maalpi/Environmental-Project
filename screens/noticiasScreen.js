@@ -177,14 +177,14 @@ const NoticiasScreen= ({navigation}) =>{
         <View className="flex-1 "> 
             
             <View style ={{flexDirection: 'row'}}>
-                <View style={{ alignItems: 'center', paddingVertical: 38,paddingLeft:25 }}>
+                <View style={{ alignItems: 'center', paddingVertical: '13%',paddingLeft:'6%' }}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
                         Catálogo Ambiental
                     </Text>    
                     <Text style={{ fontSize: 16, color: '#c76828', fontStyle: 'italic'  }}>Conheça mais sobre a caatinga</Text>
                 </View>
 
-                <View style={{ paddingLeft: 45,paddingVertical:28 }}>
+                <View style={{ paddingLeft: '6%',paddingVertical:'10%' }}>
                     <Image
                     source={require('../assets/logo/logo.png')}
                     style={{ width: 80, height: 80, borderRadius: 25 }}
