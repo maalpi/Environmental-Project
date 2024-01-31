@@ -24,6 +24,7 @@ const FindScreen= ({navigation}) =>{
     const [DataFlora, setDataFlora] = useState([]);
 
     const [filteredData, setFilteredData] = useState([]);
+    const [filteredDataFlora, setFilteredDataFlora] = useState([]);
     const [searchText, setSearchText] = useState('');
 
     const [activeCategory, setActiveCategory] = useState('Fauna'); // Estado para controlar a categoria ativa
@@ -58,19 +59,28 @@ const FindScreen= ({navigation}) =>{
             list.push({ ...doc.data(), id: doc.id });
           });
           setDataFlora(list);
-          filterData(list, searchText); // Filtra os dados inicialmente
+          filterDataFlora(list, searchText); // Filtra os dados inicialmente
           
         });
     
         return () => unsubscribe();
       }, []);
     
+      
     const filterData = (dataToFilter, text) => {
         const filtered = dataToFilter.filter(item =>
             item.nome && item.nome.toLowerCase().includes(text.toLowerCase())
             );
             console.log(filtered);
             setFilteredData(filtered);
+      };
+
+      const filterDataFlora = (dataToFilter, text) => {
+        const filtered = dataToFilter.filter(item =>
+            item.nome && item.nome.toLowerCase().includes(text.toLowerCase())
+            );
+            console.log(filtered);
+            setFilteredDataFlora(filtered);
       };
 
     const changeCategory = (category) => {
@@ -147,7 +157,7 @@ const FindScreen= ({navigation}) =>{
       )}
 
     </View>
-    <TouchableOpacity onPress={() => setModalVisible(false)} style={{position:'absolute', backgroundColor: 'red',top: '10%', left: '84.2%', padding: 15 ,alignItems:'center',borderTopRightRadius:10}}>
+    <TouchableOpacity onPress={() => setModalVisible(false)} style={{position:'absolute', backgroundColor: 'red',top: '10%', left: '85%', padding: 15 ,alignItems:'center',borderTopRightRadius:10}}>
               <Text style={{color: 'white' }}>X</Text>
           </TouchableOpacity>
   </View>
@@ -177,7 +187,8 @@ const FindScreen= ({navigation}) =>{
             placeholder="Digite para pesquisar..."
             onChangeText={(text) => {
               setSearchText(text);
-              filterData(data, text);
+              filterData(Data, text);
+              filterDataFlora(DataFlora,text);
             }}
             value={searchText}
           />
@@ -213,7 +224,7 @@ const FindScreen= ({navigation}) =>{
 
         <ScrollView style={{backgroundColor: activeCategory === 'Fauna' ? '#c76828' : '#529c44'}} onScroll={handleScroll}>
             <FlatList
-                data={activeCategory === 'Fauna' ? Data : DataFlora}
+                data={activeCategory === 'Fauna' ? filteredData : filteredDataFlora}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id}
                 numColumns={2}

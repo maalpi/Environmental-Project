@@ -21,7 +21,8 @@ const Stack = createNativeStackNavigator();
 export default () => (
         <>
             <NavigationContainer>
-                <Stack.Navigator screenOptions={{headerShown: false, tabBarShowLabel:false}}>
+                <Stack.Navigator screenOptions={{headerShown: false, tabBarShowLabel:false}} >
+                    
                     <Stack.Screen name="Tabs" component={Tabs}/>
                     <Stack.Screen name="earch" component={Search}/> 
                     <Stack.Screen name="Leitor" component={Leitor}/>
