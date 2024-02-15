@@ -140,7 +140,7 @@ const Leitor = ({navigation, route}) => {
             </Modal>
 
           </View>
-            : cont === 3 ? 
+            : cont === 2 ? 
             <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
             <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
               {item.description.title}
@@ -181,7 +181,7 @@ const Leitor = ({navigation, route}) => {
             ))}
 
           </View>
-            : cont === 4 ?
+            : cont === 3 ?
             
             <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
               <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
@@ -229,7 +229,7 @@ const Leitor = ({navigation, route}) => {
 
           </View>
             
-            : cont === 5 ?
+            : cont === 4 ?
 
               <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
                 <Text style={{ textAlign: 'justify', fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>

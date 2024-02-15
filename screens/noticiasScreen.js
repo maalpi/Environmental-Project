@@ -219,7 +219,7 @@ const NoticiasScreen= ({navigation}) =>{
 
                     resizeMethod='resize'></Image>
                  <Text className="absolute text-4xl text-white top-14">Trilha Fácil </Text>
-                 <Text className="absolute text-base text-white bottom-9">Pontos: 3   Distância: 450 Metros </Text>
+                 <Text className="absolute text-base text-white bottom-9">Atrativos: 3   Distância: 450 Metros </Text>
                 
             </TouchableOpacity>
         

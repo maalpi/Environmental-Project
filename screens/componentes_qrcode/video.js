@@ -1,6 +1,6 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react'
-import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image,Platform, StatusBar} from 'react-native'
-import { ArrowLeftIcon, ArrowRightIcon, VideoCameraIcon, AsyncStorage } from 'react-native-heroicons/solid'
+import React, {  useCallback, useState } from 'react'
+import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity} from 'react-native'
+import { ArrowLeftIcon } from 'react-native-heroicons/solid'
 
 import YoutubePlayer from "react-native-youtube-iframe";
 import Modal from 'react-native-modal';
@@ -19,7 +19,7 @@ function Video({navigation}) {
   }, []);
   return (
     <>
-    <View className ="flex-row px-4 py-3 justify-between items-center opacity-100 shadow-lg">
+    <View className ="flex-row px-4 py-3 justify-between items-center opacity-100 shadow-lg bg-backgroundprimary" style={{marginTop:'10%'}}>
              <TouchableOpacity onPress={() => navigation.goBack()}>
                 <ArrowLeftIcon color='#000' size={24}/>
             </TouchableOpacity>

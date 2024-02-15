@@ -230,7 +230,7 @@ const Quiz = ({navigation}) =>{
             <View style ={{flexDirection: 'row'}}>
                 <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13}}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
-                        Quiz da reserva
+                        Quiz ambiental
                     </Text>    
                     <View style={{ paddingLeft: 45 }}>
                     <Image
@@ -244,7 +244,7 @@ const Quiz = ({navigation}) =>{
             <View style ={{flexDirection: 'row', overflow: 'hidden'}}>
             <View style={{ paddingLeft: 2,marginTop:20 }}>
                     <Image
-                    source={require('../../assets/logo/linaVideo.gif')}
+                    source={require('../../assets/logo/linaFala.gif')}
                     style={{ width: 150, height: 200 }}
                     resizeMethod='resize' 
                     />
@@ -266,7 +266,7 @@ const Quiz = ({navigation}) =>{
                     <View style ={{flexDirection: 'row'}}>
                         <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13 }}>
                             <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
-                                Quiz da reserva
+                                Quiz ambiental
                             </Text>    
                             <View style={{ paddingLeft: 45 }}>
                             <Image

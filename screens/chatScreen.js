@@ -38,7 +38,7 @@ const ChatScreen= ({navigation}) =>{
             
             <View style={{justifyContent:'center',alignItems: 'center'}}>
             <Image
-                source={require('../assets/logo/cientistaXau.gif')}
+                source={require('../assets/logo/cientistaALFA.gif')}
                 style={{ width: 250, height: 250, borderRadius: 25,marginTop:55}}
             />
             <Text style={{ width: 245, height: 120, fontSize: 25,marginTop:10,paddingLeft:5,textAlign:'center',color:'#000'}}>Olá! Vamos testar seus conhecimentos?</Text>
