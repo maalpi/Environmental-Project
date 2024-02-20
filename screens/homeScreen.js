@@ -1,13 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import { View,Text, Button, StyleSheet,Image, TouchableOpacity} from 'react-native'
+import { View,Text, Button, StyleSheet,Image, TouchableOpacity,Dimensions} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
 import Modal from 'react-native-modal';
 import { ScrollView } from 'react-native-virtualized-view'
 import { ArrowsUpDownIcon } from 'react-native-heroicons/solid'
 
+import MapView, { PROVIDER_GOOGLE,Marker,Polyline } from 'react-native-maps';
+import MapViewDirections from 'react-native-maps-directions';
+
+const customMapStyle = [
+  {
+    featureType: 'all',
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#d8f8e4', // Defina aqui a cor de fundo desejada
+      },
+    ],
+  },
+];
+
 const HomeScreen= ({navigation}) =>{
     const [isModalVisible, setModalVisible] = useState(false);
     const [trilha,setTrilha] = useState(0);
+
+    const [activeCategory, setActiveCategory] = useState('primeira'); // Estado para controlar a categoria ativa
+
+    const changeCategory = (category) => {
+      setActiveCategory(category);
+  };
 
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
@@ -17,41 +38,97 @@ const HomeScreen= ({navigation}) =>{
         setTrilha(index)
     };
 
+    // COORDENADAS TRILHA UM
+    const [coordinates] = useState([
+      {
+        latitude: -6.4508533,
+        longitude: -36.3063767,
+      },
+      {
+        latitude: -6.4499367,
+        longitude: -36.3078555,
+      },
+      {
+        latitude: -6.4497067,
+        longitude: -36.3091483,
+      },
+    ]);
+
+    // COORDENADAS TRILHA DOIS
+    const [coordinates_two] = useState([
+      {
+        latitude: -6.4508533,
+        longitude: -36.3063767,
+      },
+      {
+        latitude: -6.4499367,
+        longitude: -36.3078555,
+      },
+      {
+        latitude: -6.4497067,
+        longitude: -36.3091483,
+      },
+      {
+        latitude: -6.4481817,
+        longitude: -36.3074767
+      }
+    ]);
+
+    // COORDENADAS TRILHA TRES
+    const [coordinates_three] = useState([
+      {
+        latitude: -6.4504272,
+        longitude: -36.3059944,
+      },
+      {
+        latitude: -6.4496694,
+        longitude: -36.3058889,
+      },
+      {
+        latitude:  -6.4491367,
+        longitude: -36.3062167,
+      },
+      {
+        latitude: -6.4486722,
+        longitude: -36.3062333,
+      },
+      {
+        latitude:  -6.4478025,
+        longitude: -36.30725,
+      },
+      {
+        latitude: -6.4474694,
+        longitude: -36.3076806,
+      },
+      {
+        latitude: -6.4478361,
+        longitude:  -36.3088333,
+      },
+      {
+        latitude:  -6.4473,
+        longitude: -36.3093333,
+      },
+      {
+        latitude: -6.447225,
+        longitude: -36.3086694,
+      },
+      {
+        latitude: -6.447228,
+        longitude: -36.3074444,
+      },
+      {
+        latitude: -6.4497583,
+        longitude:  -36.3059694,
+      }
+    ]);
+
     return (
         
-        <View className="flex-1 " contentContainerStyle={{ flexGrow: 1 }}> 
-        
-        <Modal isVisible={isModalVisible} backdropColor="black" backdropOpacity={0.9}>
-            <TouchableOpacity onPress={toggleModal} >
-                <Image source={require('../assets/icons/close-button.png')}></Image>
-            </TouchableOpacity>
-            <View style={styles.modalContent}>
-            {/* Aqui você pode adicionar suas imagens e qualquer conteúdo adicional */}
-            <ScrollView>
-            <View style={styles.imageRow}>
-              <Image source={require('../assets/logo/caatinga.jpg')} style={styles.itemImage} />
-              <Image source={require('../assets/logo/foto1.jpg')} style={styles.itemImage} />
-            </View>
-
-            <View style={styles.imageRow}>
-              <Image source={require('../assets/logo/foto2.jpg')} style={styles.itemImage} />
-              <Image source={require('../assets/logo/foto3.jpg')} style={styles.itemImage} />
-            </View>
-
-            <View style={styles.imageRow}>
-              <Image source={require('../assets/logo/caatinga.jpg')} style={styles.itemImage} />
-              <Image source={require('../assets/logo/caatinga.jpg')} style={styles.itemImage} />
-            </View>
-            </ScrollView>
-
-            </View>
-      </Modal>
-
-        {/* logo inicio */}
-        <View style ={{flexDirection: 'row'}} className="bg-backgroundprimary">
-                <View style={{ alignItems: 'center', paddingVertical: '13%',paddingLeft:'6%'}}>
+        <View  style={styles.container} className="bg-backgroundprimary"> 
+          <View style ={{flexDirection: 'row'}}>
+                <View style={{ alignItems: 'center', paddingVertical: '13%',paddingLeft:'6%' }}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
-                        Educação Ambiental
+                        Trilhas Ambientais
                     </Text>    
                     <Text style={{ fontSize: 16, color: '#c76828', fontStyle: 'italic'  }}>Conheça mais sobre a caatinga</Text>
                 </View>
@@ -63,200 +140,250 @@ const HomeScreen= ({navigation}) =>{
                     />
                 </View>
             </View>
-
-            <View className="flex-1 overflow-hidden rounded-3xl">
-              
-                 <LinearGradient
-                    colors={['rgba(45, 130, 29, 0.8)', '#359A22','#2D821D','#2D821D','#000']}  // Cores do gradiente
-                    style={styles.gradient}
-                    className=" overflow-hidden"
-                >
+            <View style={{top:'-3%',height:'30%'}}>
+              <Text style={{fontSize: 25, fontWeight:'bold',marginLeft:'6%'}} className="text-laranjaprimary">Escolha a dificultade:</Text>
+              <View style={{flexDirection: 'row', marginLeft:'5%',marginTop:'2%',alignItems:'center'}}>
+              <TouchableOpacity onPress={() => changeCategory('primeira')} 
+                style={[
+                  { alignItems: 'center', backgroundColor: '#fff', width: '22%', height: '93%', borderRadius: 10, marginRight: '10%' }, 
+                  activeCategory === 'primeira' && { backgroundColor: '#1FAA70', width: '27%',height:'95%' }
+                  ]}
+                  >
+                {activeCategory === 'primeira' ? (
+                  <>
+                    <Image 
+                      source={require('../assets/icons/facil_white.png')} 
+                      style={{ top: '7%', right: '1%', height: '25%', width: '32%', marginBottom: '10%' }}
+                      resizeMethod='resize'
+                    />
+                    <Text style={{ color: '#fff', fontSize: 20, marginTop: '12%', fontWeight: 'bold' }}>TRILHA</Text>
+                    <Text style={{ color: '#fff', fontSize: 20, fontWeight: 'bold' }}>FÁCIL</Text>
+                  </>
+                ) : (
+                  <>
+                    <Image 
+                      source={require('../assets/icons/facil.png')} 
+                      style={{ top: '7%', right: '1%', height: '25%', width: '39%', marginBottom: '10%' }}
+                      resizeMethod='resize'
+                    />
+                    <Text style={{ color: '#000', fontSize: 18, marginTop: '12%' }}>TRILHA</Text>
+                    <Text style={{ color: '#000', fontSize: 18 }}>FÁCIL</Text>
+                  </>
+                )}
                 
-                {trilha === 0 ?  
-                <View>
-                  
-                    <Image source={require('../assets/logo/caatinga.jpg')} 
-                    className= { "h-44 w-full overflow-hidden mt-0" }
-                    resizeMethod='resize'></Image>
-                        <View style={styles.overlay} />
+                  </TouchableOpacity>
+                
+                
+                  <TouchableOpacity onPress={() => changeCategory('segunda')} 
+                style={[
+                  { alignItems: 'center', backgroundColor: '#fff', width: '22%', height: '93%', borderRadius: 10, marginRight: '10%' }, 
+                  activeCategory === 'segunda' && { backgroundColor: '#3165b0', width: '27%',height:'95%' }
+                  ]}
+                  >
+                {activeCategory === 'segunda' ? (
+                  <>
+                <Image source={require('../assets/icons/medio_white.png')} 
                     
-                        <View className="absolute items-center justify-center ml-16 mt-7">
-                            <Text className=" text-3xl text-white mr-5">Trilha Fácil </Text>
-                            <Text className=" text-sm text-white pt-6 mr-11">Nessa trilha você irá encontrar o umburada e o mirante</Text>
-                        </View>
-                        
-                </View>
-                : trilha === 1 ?
-                <View >
-                    <Image source={require('../assets/logo/foto1.jpg')} 
-                    className= { "h-44 w-full overflow-hidden mt-0" }
+                    style={{top:'7%',right:'1%',height:'27%',width:'33%',marginBottom:'10%'}}
+
                     resizeMethod='resize'></Image>
-                        <View style={styles.overlay} />
+                    <Text style={{color:'#fff',fontSize:20,marginTop:'12%',fontWeight:'bold'}}>TRILHA</Text>
+                    <Text style={{color:'#fff',fontSize:20,fontWeight:'bold'}}>MEDIA</Text>
+                  </>
+                  ) : (
+                  <>
+                    <Image 
+                      source={require('../assets/icons/medio.png')} 
+                      style={{ top: '7%', right: '1%', height: '31%', width: '40%', marginBottom: '10%' }}
+                      resizeMethod='resize'
+                    />
+                    <Text style={{ color: '#000', fontSize: 18, marginTop: '12%' }}>TRILHA</Text>
+                    <Text style={{ color: '#000', fontSize: 18,  }}>MEDIA</Text>
+                  </>
+                )}
+                </TouchableOpacity>
                 
-                        <View className="absolute items-center justify-center ml-16 mt-7">
-                            <Text className=" text-3xl text-white mr-5">Trilha Média </Text>
-                            <Text className=" text-sm text-white pt-6 mr-11">Nessa trilha você irá encontrar o umburada e o mirante</Text>
-                        </View>
-                </View>
-                : 
-                <View>
-                    <Image source={require('../assets/logo/foto3.jpg')} 
-                    className= { "h-44 w-full overflow-hidden mt-0" }
-                    resizeMethod='resize'></Image>
-                        <View style={styles.overlay} />
+                <TouchableOpacity onPress={() => changeCategory('terceira')} 
+                style={[
+                  { alignItems: 'center', backgroundColor: '#fff', width: '22%', height: '93%', borderRadius: 10, marginRight: '10%' }, 
+                  activeCategory === 'terceira' && { backgroundColor: '#C73E28', width: '27%',height:'95%' }
+                  ]}
+                  >
                 
-                        <View className="absolute items-center justify-center ml-16 mt-7">
-                            <Text className=" text-3xl text-white mr-5">Trilha Difícil </Text>
-                            <Text className=" text-sm text-white pt-6 mr-11">Nessa trilha você irá encontrar as cactáceas e o desertificação</Text>
-                        </View>
-                </View>}
-                
-                {trilha === 0 ?  
-                <ScrollView>
-                <View className="overflow-hidden">
+                {activeCategory === 'terceira' ? (
+                  <>
+                <Image source={require('../assets/icons/dificil.png')} 
                     
-                    <Image source={require('../assets/icons/bandeiras-melhorada-1.png')} 
-                    className= { "w-12 h-80  ml-12 overflow-hidden" }
-                    resizeMethod='resize'></Image>
+                    style={{top:'7%',right:'1%',height:'27%',width:'35%',marginBottom:'10%'}}
 
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-10 mt-2.5 w-14 h-14"
-                    style={styles.bandeira}
                     resizeMethod='resize'></Image>
-                    <Text  className="absolute mt-5 text-white opacity-80" style={styles.text1}>SAÍDA</Text>    
-                    <Text  className="absolute mt-9 text-amarelotexto opacity-80" style={[styles.text1]}>alt. 658</Text>
-                   
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-14 w-14 h-14"
-                    style={[styles.bandeira, styles.rem1]}
-                    resizeMethod='resize'></Image>
-                    <Text className="absolute text-white opacity-70" style={styles.emburada}>EMBURADA</Text>
-                    <Text className="absolute text-amarelotexto opacity-70" style={styles.emburadacoord}>alt. 660</Text>
-
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-8 w-14 h-14"
-                    style={[styles.bandeira, styles.rem2]}
-                    resizeMethod='resize'></Image>
-                    <Text className="absolute text-white opacity-70" style={styles.almirante}>MIRANTE</Text>
-                    <Text className="absolute text-amarelotexto opacity-70" style={styles.almirantecoord}>alt. 657</Text>
-                </View>
-                </ScrollView>
-                : trilha === 1 ?
-                
-                <View className="absolute">
-                    <Image source={require('../assets/icons/trilha-media.png')} 
-                        className= { "w-12 ml-12 mt-32 absolute overflow-hidden" }
-                        style={styles.trilhaMedia}
-                        resizeMethod='resize'></Image>
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-9 mt-32 w-14 h-14"
-                    style={styles.bandeira}
-                    resizeMethod='resize'></Image>
-                    <Text  className="absolute  text-white opacity-80" style={styles.text1_1}>SAÍDA</Text>    
-                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_1_1]}>alt. 658</Text>
-                    
-                    {/* Ponto 2 trilha 2 */}
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-14 w-14 h-14"
-                    style={[styles.bandeira,styles.top2_2]}
-                    resizeMethod='resize'></Image>
-                    <Text  className="absolute  text-white opacity-80" style={styles.text1_2}>UMBURADA</Text>    
-                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_2_2]}>alt. 668</Text>
-
-                    {/* Ponto 3 trilha 2 */}
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-9 mt-32 w-14 h-14"
-                    style={[styles.bandeira,styles.top2_3]}
-                    resizeMethod='resize'></Image>
-                    <Text  className="absolute  text-white opacity-80" style={styles.text1_3}>MIRANTE</Text>    
-                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_3_3]}>alt. 657</Text>
-
-                    {/* Ponto 4 trilha 2 */}
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-9 mt-32 w-14 h-14"
-                    style={[styles.bandeira,styles.top2_4]}
-                    resizeMethod='resize'></Image>
-                    <Text  className="absolute  text-white opacity-80" style={styles.text1_4}>TRILHA 2</Text>    
-                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_4_4]}>alt. 632</Text>
-
-                    
-                </View>  
-                
-                   
-                :
-                <View className="absolute">
-                    <Image source={require('../assets/icons/trilha-media.png')} 
-                        className= { "w-12 ml-12 mt-32 absolute overflow-hidden" }
-                        style={styles.trilhaMedia}
-                        resizeMethod='resize'></Image>
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-9 mt-32 w-14 h-14"
-                    style={styles.bandeira}
-                    resizeMethod='resize'></Image>
-                    <Text  className="absolute  text-white opacity-80" style={styles.text1_1}>CACTÁCEAS</Text>    
-                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_1_1]}>alt. 652</Text>
-                    
-                    {/* Ponto 2 trilha 2 */}
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-14 w-14 h-14"
-                    style={[styles.bandeira,styles.top2_2]}
-                    resizeMethod='resize'></Image>
-                    <Text  className="absolute  text-white opacity-80" style={styles.text1_2}>DESERTIFICAÇÃO</Text>    
-                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_2_2]}>alt. 654</Text>
-
-                    {/* Ponto 3 trilha 2 */}
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-9 mt-32 w-14 h-14"
-                    style={[styles.bandeira,styles.top2_3]}
-                    resizeMethod='resize'></Image>
-                    <Text  className="absolute  text-white opacity-80" style={styles.text1_3}>BARRIL JARARACAS</Text>    
-                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_3_3]}>alt. 653</Text>
-
-                    {/* Ponto 4 trilha 2 */}
-                    <Image source={require('../assets/icons/bandeira.png')} 
-                    className="absolute ml-9 mt-32 w-14 h-14"
-                    style={[styles.bandeira,styles.top2_4]}
-                    resizeMethod='resize'></Image>
-                    <Text  className="absolute  text-white opacity-80" style={styles.text1_4}>CUPIZEIRO</Text>    
-                    <Text  className="absolute mt-12 text-amarelotexto opacity-80" style={[styles.text1_4_4]}>alt. 640</Text>
-                </View>  
-                }
-                  
-                
-
-                <View className="absolute ml-56 mt-36">
-                    <TouchableOpacity onPress={() => toggleTrilha(0)}>
-                        <Image source={require('../assets/logo/caatinga.jpg')} 
-                        className={trilha === 0 ? "h-32 w-32 mb-2 rounded-xl" : "h-24 w-24 mt-4 ml-1 rounded-xl"}
-                        style={trilha === 0 ? styles.border : false}
-                        resizeMethod='resize'></Image>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => toggleTrilha(1)}>
-                        <Image source={require('../assets/logo/foto1.jpg')} 
-                            className={trilha === 1 ? "h-32 w-32 mb-2 rounded-xl mt-2" : "h-24 w-24 mt-4 ml-1 rounded-xl"}
-                            style={trilha === 1 ? styles.border : false}
-                            resizeMethod='resize'></Image>
-                            
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => toggleTrilha(2)}>
-                        <Image source={require('../assets/logo/foto3.jpg')} 
-                            className={trilha === 2 ? "h-32 w-32 mb-2 rounded-xl mt-2" : "h-24 w-24 mt-4 ml-1 rounded-xl"}
-                            style={trilha === 2 ? styles.border : false}
-                            resizeMethod='resize'></Image>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={toggleModal} style={styles.button} className="mt-2">
-                        <Text className="text-white  text-sm">GALERIA</Text>
-                    </TouchableOpacity>
-                    
-                </View>
-                
-                </LinearGradient>
-                
+                  <Text style={{color:'#fff',fontSize:20,marginTop:'12%',fontWeight:'bold'}} >TRILHA</Text>
+                  <Text style={{color:'#fff',fontSize:20,fontWeight:'bold'}} >DIFICIL</Text>
+                  </>
+                  ) : (
+                    <>
+                    <Image 
+                      source={require('../assets/icons/dificil.png')} 
+                      style={{ top: '7%', right: '1%', height: '25%', width: '39%', marginBottom: '10%' }}
+                      resizeMethod='resize'
+                    />
+                    <Text style={{ color: '#000', fontSize: 18, marginTop: '12%' }}>TRILHA</Text>
+                    <Text style={{ color: '#000', fontSize: 18,  }}>DIFICIL</Text>
+                  </>
+                  )}
+                </TouchableOpacity>
+              </View>
             </View>
+            <View style={{ top:'-10%',marginLeft: '7%',borderRadius:1000, overflow: 'hidden', height: '60%',width:'85%', shadowColor: "#000",
+                            shadowOffset: {
+                              width: 0,
+                              height: 2,
+                            },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
 
+                            elevation: 5}} 
+                            className="bg-blueprimary">
+              
+              {activeCategory == 'primeira' &&(             
+              <MapView
+              provider={PROVIDER_GOOGLE}
+              style={styles.map}
+              initialRegion={{
+                latitude: coordinates[0].latitude, 
+                longitude: coordinates[0].longitude - 0.0012,
+                latitudeDelta: 0.0072,
+                longitudeDelta: 0.0051,
+              }}
+              customMapStyle={customMapStyle}>
+              <Marker coordinate={coordinates[0]} />
+              <Marker coordinate={coordinates[1]} />
+              <Marker coordinate={coordinates[2]} />
+              <Polyline
+                coordinates={coordinates}
+                strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
+                strokeColors={['#7F0000']}
+                strokeWidth={6}/>
+              </MapView>
+              )}
+              {activeCategory == 'segunda' && (
+              <MapView
+                provider={PROVIDER_GOOGLE}
+                style={styles.map}
+                initialRegion={{
+                  latitude: coordinates_two[0].latitude + 0.0005, 
+                  longitude: coordinates_two[0].longitude - 0.0012,
+                  latitudeDelta: 0.0052,
+                  longitudeDelta: 0.0011,
+                }}
+                customMapStyle={customMapStyle}>
+                <Marker coordinate={coordinates_two[0]} />
+                <Marker coordinate={coordinates_two[1]} />
+                <Marker coordinate={coordinates_two[3]} />
+                <Polyline
+                  coordinates={coordinates_two}
+                  strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
+                  strokeColors={['#7F0000']}
+                  strokeWidth={6}/>
+              </MapView>
+              )}
+              {activeCategory == 'terceira' && (
+                <MapView
+                  provider={PROVIDER_GOOGLE}
+                  style={styles.map}
+                  initialRegion={{
+                    latitude: coordinates_three[0].latitude + 0.0005, 
+                    longitude: coordinates_three[0].longitude - 0.0013,
+                    latitudeDelta: 0.0072,
+                    longitudeDelta: 0.0011,
+                  }}
+                  customMapStyle={customMapStyle}>
+                  <Marker coordinate={coordinates_three[0]} />
+                  <Marker coordinate={coordinates_three[5]} />
+                  <Marker coordinate={coordinates_three[10]} />
+                   <Polyline
+                    coordinates={coordinates_three}
+                    strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
+                    strokeColors={['#7F0000']}
+                    strokeWidth={4}/> 
+                 
+                </MapView>
+              )}              
+          </View>
+          
+          <View style={{position:'absolute',bottom:'9%',alignItems:'center',marginLeft:'2%'}}>
+          {activeCategory == 'primeira' &&(
+              <View style={{flexDirection:'row'}}>
+                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopLeftRadius:20,borderBottomLeftRadius:20}}>
+                  <Text style={{fontSize:26}}>2.0</Text>
+                  <Text style={{fontSize:24}}>KM</Text>
+                </View>
+                
+                  <LinearGradient
+                    colors={['#1FAA70', 'white']}
+                    style={styles.container_gradient}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 0, y: 1 }}
+                  >
+                    <Text style={{fontSize:26,fontWeight: 'bold',color:'#fff'}}>2</Text>
+                    <Text style={{fontSize:24,fontWeight: 'bold',color:'#1FAA70'}}>PONTOS</Text>
+                  </LinearGradient>
+                
+                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopRightRadius:20,borderBottomRightRadius:20}}>
+                  <Text style={{fontSize:26}}>NIVEL</Text>
+                  <Text style={{fontSize:26}}>FACIL</Text>
+                </View>
+              </View>
+          )}
+
+          {activeCategory == 'segunda' &&(
+              <View style={{flexDirection:'row'}}>
+                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopLeftRadius:20,borderBottomLeftRadius:20}}>
+                  <Text style={{fontSize:26}}>2.0</Text>
+                  <Text style={{fontSize:24}}>KM</Text>
+                </View>
+                
+                  <LinearGradient
+                    colors={['#3165b0', 'white']}
+                    style={styles.container_gradient}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 0, y: 1 }}
+                  >
+                    <Text style={{fontSize:26,fontWeight: 'bold',color:'#fff'}}>3</Text>
+                    <Text style={{fontSize:24,fontWeight: 'bold',color:'#3165b0'}}>PONTOS</Text>
+                  </LinearGradient>
+                
+                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopRightRadius:20,borderBottomRightRadius:20}}>
+                  <Text style={{fontSize:26}}>NIVEL</Text>
+                  <Text style={{fontSize:26}}>MEDIA</Text>
+                </View>
+              </View>
+          )}
+
+        {activeCategory == 'terceira' &&(
+              <View style={{flexDirection:'row'}}>
+                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopLeftRadius:20,borderBottomLeftRadius:20}}>
+                  <Text style={{fontSize:26}}>2.0</Text>
+                  <Text style={{fontSize:24}}>KM</Text>
+                </View>
+                
+                  <LinearGradient
+                    colors={['#C73E28', 'white']}
+                    style={styles.container_gradient}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 0, y: 1 }}
+                  >
+                    <Text style={{fontSize:26,fontWeight: 'bold',color:'#fff'}}>9</Text>
+                    <Text style={{fontSize:24,fontWeight: 'bold',color:'#C73E28'}}>PONTOS</Text>
+                  </LinearGradient>
+                
+                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopRightRadius:20,borderBottomRightRadius:20}}>
+                  <Text style={{fontSize:26}}>NIVEL</Text>
+                  <Text style={{fontSize:26}}>DIFICIL</Text>
+                </View>
+              </View>
+          )}
+          </View>
         </View>
        
     )
@@ -265,130 +392,17 @@ const HomeScreen= ({navigation}) =>{
 export default HomeScreen
 
 const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        alignItems:'center',
-        justifyContent:'center',
-        backgroundColor: '#8fcbbc'
-    },overlay: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: 'rgba(45, 130, 29, 0.6)' // Cor preta semi-transparente
-      },gradient: {
-        flex: 1, // Para ocupar todo o espaço disponível
-      },border: {
-        borderWidth:2,
-        borderColor:'#fff'
-        
-      },button: {
-        
-        alignItems:'center',
-        backgroundColor: 'red',
-        padding: 8,
-        width:100,
-        height:35,
-        borderRadius: 10,
-      },
-      buttonText: {
-        color: 'white',
-        
-      },
-      modalContent: {
-        backgroundColor: 'transparent',
-        padding: 20,
-        borderRadius: 10,
-      },
-      modalImage: {
-        width: 200,
-        height: 200,
-        marginBottom: 10,
-      },
-      closeButton: {
-        backgroundColor: 'red',
-        padding: 10,
-        borderRadius: 5,
-        marginTop: 10,
-      },
-      closeButtonText: {
-        color: 'white',
-      },imageRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 10,
-        padding:'1%'
-      },itemImage: {
-        width: 130,
-        height: 130,
-        marginLeft:'5%',
-        borderRadius: 10
-      },bandeira: {
-        backgroundColor:'#3165B0' ,
-        borderRadius:50,
-        borderWidth: 2,
-        borderColor:'#C8942B'
-      },rem1: {
-        marginTop:133
-      },rem2: {
-        marginTop:260
-      },text1: {
-        marginLeft:102
-      },text1_1: {
-        marginLeft:93,
-        marginTop:135
-      },text1_1_1: {
-        marginLeft:93,
-        marginTop:152
-      }
-      ,arrowSymbol: {
-        fontSize: 20, // Ajuste o tamanho conforme necessário
-        fontFamily: 'Arial Unicode MS', // Tente mudar para uma fonte que suporte o caractere ⭥
-      },emburada:{
-        marginLeft:115,
-        marginTop:135
-      },
-      emburadacoord:{
-        marginLeft:115,
-        marginTop:153
-      },
-      almirante:{
-        marginTop:272,
-        marginLeft: 98
-      },
-      almirantecoord:{
-        marginTop:292,
-        marginLeft: 98
-      },
-      trilhaMedia:{
-        height:425
-      },
-      top2_2:{
-        marginTop:229
-      },text1_2: {
-        marginLeft:116,
-        marginTop:240
-      },text1_2_2: {
-        marginLeft:116,
-        marginTop:255
-      },
-      top2_3:{
-        marginTop:368,
-        marginLeft:30
-      },
-      text1_3: {
-        marginLeft:90,
-        marginTop:378
-      },text1_3_3: {
-        marginLeft:90,
-        marginTop:392
-      },
-      top2_4:{
-        marginTop:465,
-        marginLeft:50
-      },
-      text1_4: {
-        marginLeft:113,
-        marginTop:480
-      },text1_4_4: {
-        marginLeft:113,
-        marginTop:494
-      }
-});
+  container: {
+    flex: 1,
+    
+  },
+  map: {
+    flex: 1,
+    
+  },container_gradient: {
+    
+    alignItems: 'center',
+    
+    width:'36%',height:'100%',alignItems:'center',padding:6
+  },
+ });
