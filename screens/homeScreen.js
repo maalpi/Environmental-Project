@@ -123,8 +123,7 @@ const HomeScreen= ({navigation}) =>{
     ]);
 
     return (
-        
-        <View  style={styles.container} className="bg-backgroundprimary"> 
+        <View className="flex-1 bg-backgroundprimary">
           <View style ={{flexDirection: 'row'}}>
                 <View style={{ alignItems: 'center', paddingVertical: '13%',paddingLeft:'6%' }}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
@@ -140,251 +139,118 @@ const HomeScreen= ({navigation}) =>{
                     />
                 </View>
             </View>
-            <View style={{top:'-3%',height:'30%'}}>
-              <Text style={{fontSize: 25, fontWeight:'bold',marginLeft:'6%'}} className="text-laranjaprimary">Escolha a dificultade:</Text>
-              <View style={{flexDirection: 'row', marginLeft:'5%',marginTop:'2%',alignItems:'center'}}>
-              <TouchableOpacity onPress={() => changeCategory('primeira')} 
-                style={[
-                  { alignItems: 'center', backgroundColor: '#fff', width: '22%', height: '93%', borderRadius: 10, marginRight: '10%' }, 
-                  activeCategory === 'primeira' && { backgroundColor: '#1FAA70', width: '27%',height:'95%' }
-                  ]}
-                  >
-                {activeCategory === 'primeira' ? (
-                  <>
-                    <Image 
-                      source={require('../assets/icons/facil_white.png')} 
-                      style={{ top: '7%', right: '1%', height: '25%', width: '32%', marginBottom: '10%' }}
-                      resizeMethod='resize'
-                    />
-                    <Text style={{ color: '#fff', fontSize: 20, marginTop: '12%', fontWeight: 'bold' }}>TRILHA</Text>
-                    <Text style={{ color: '#fff', fontSize: 20, fontWeight: 'bold' }}>FÁCIL</Text>
-                  </>
-                ) : (
-                  <>
-                    <Image 
-                      source={require('../assets/icons/facil.png')} 
-                      style={{ top: '7%', right: '1%', height: '25%', width: '39%', marginBottom: '10%' }}
-                      resizeMethod='resize'
-                    />
-                    <Text style={{ color: '#000', fontSize: 18, marginTop: '12%' }}>TRILHA</Text>
-                    <Text style={{ color: '#000', fontSize: 18 }}>FÁCIL</Text>
-                  </>
-                )}
-                
-                  </TouchableOpacity>
-                
-                
-                  <TouchableOpacity onPress={() => changeCategory('segunda')} 
-                style={[
-                  { alignItems: 'center', backgroundColor: '#fff', width: '22%', height: '93%', borderRadius: 10, marginRight: '10%' }, 
-                  activeCategory === 'segunda' && { backgroundColor: '#3165b0', width: '27%',height:'95%' }
-                  ]}
-                  >
-                {activeCategory === 'segunda' ? (
-                  <>
-                <Image source={require('../assets/icons/medio_white.png')} 
-                    
-                    style={{top:'7%',right:'1%',height:'27%',width:'33%',marginBottom:'10%'}}
 
-                    resizeMethod='resize'></Image>
-                    <Text style={{color:'#fff',fontSize:20,marginTop:'12%',fontWeight:'bold'}}>TRILHA</Text>
-                    <Text style={{color:'#fff',fontSize:20,fontWeight:'bold'}}>MEDIA</Text>
-                  </>
-                  ) : (
-                  <>
-                    <Image 
-                      source={require('../assets/icons/medio.png')} 
-                      style={{ top: '7%', right: '1%', height: '31%', width: '40%', marginBottom: '10%' }}
-                      resizeMethod='resize'
-                    />
-                    <Text style={{ color: '#000', fontSize: 18, marginTop: '12%' }}>TRILHA</Text>
-                    <Text style={{ color: '#000', fontSize: 18,  }}>MEDIA</Text>
-                  </>
-                )}
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={() => changeCategory('terceira')} 
-                style={[
-                  { alignItems: 'center', backgroundColor: '#fff', width: '22%', height: '93%', borderRadius: 10, marginRight: '10%' }, 
-                  activeCategory === 'terceira' && { backgroundColor: '#C73E28', width: '27%',height:'95%' }
-                  ]}
-                  >
-                
-                {activeCategory === 'terceira' ? (
-                  <>
-                <Image source={require('../assets/icons/dificil.png')} 
-                    
-                    style={{top:'7%',right:'1%',height:'27%',width:'35%',marginBottom:'10%'}}
+          <View style={{marginTop:'-8%',marginBottom:'3%'}}>
+            <Text style={{fontWeight:'bold',marginLeft:'6%',fontSize:27}}>Escolha sua trilha:</Text>
+            <Text style={{marginTop:'-1%',marginLeft:'6%'}}>As trilhas são separadas por dificultade</Text>
+          </View>
 
-                    resizeMethod='resize'></Image>
-                  <Text style={{color:'#fff',fontSize:20,marginTop:'12%',fontWeight:'bold'}} >TRILHA</Text>
-                  <Text style={{color:'#fff',fontSize:20,fontWeight:'bold'}} >DIFICIL</Text>
-                  </>
-                  ) : (
-                    <>
-                    <Image 
-                      source={require('../assets/icons/dificil.png')} 
-                      style={{ top: '7%', right: '1%', height: '25%', width: '39%', marginBottom: '10%' }}
-                      resizeMethod='resize'
-                    />
-                    <Text style={{ color: '#000', fontSize: 18, marginTop: '12%' }}>TRILHA</Text>
-                    <Text style={{ color: '#000', fontSize: 18,  }}>DIFICIL</Text>
-                  </>
-                  )}
-                </TouchableOpacity>
-              </View>
+          <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}}onPress={() => navigation.navigate('Facil')}>  
+            <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
+                <Image source={{ uri: 'https://live.staticflickr.com/65535/53472362006_965cf864dc_w.jpg' }} 
+                className= { "h-32 w-32 rounded-l-xl"}
+                style={{height:'100%',width:'35%'}}
+                resizeMethod='resize'></Image>
+
+                <View className="">
+                    <View style={{backgroundColor:"#2D821D",color:"#fff",width:"220%",alignItems:'center'}}>
+                      <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA FÁCIL</Text> 
+                    </View>
+                    <View className="absolute" style={{marginTop:"35%",width:'110%',marginLeft:'8%'}}>
+                        <Text style={{fontWeight:'bold',fontSize:22}}>Trilha Fácil</Text>
+                        <View style={{backgroundColor:"#2D821D",color:"#fff",width:"50%",alignItems:'center',borderRadius:70}}>
+                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >2 PONTOS</Text> 
+                        </View>
+                        <View style={{flexDirection:"row",marginTop:'4.5%'}}>
+                          <Image source={require('../assets/icons/passos.png')} style={{ width: '10%', height: '100%', borderRadius: 25 }}></Image>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>2.0km</Text>
+                          <Image source={require('../assets/icons/relogio.png')} style={{ width: '10%', height: '100%', borderRadius: 25,marginLeft:'20%' }}></Image>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>40min</Text>
+                        </View>
+                    </View>
+                    <View className="absolute" style={{marginLeft:'8%',marginTop:'100%',height:'130%',width:'200%'}}>
+                        <View style={{flexDirection:'row'}}>
+                          <Text style={{fontSize:14}}>Pontos de visita: umburada e mirante</Text>
+                          <Text style={{marginTop:'7.5%',left:'24%',position:'absolute',fontSize:14.5,color:"#2D821D",fontWeight:'bold'}}>ver mais...</Text>
+                        </View>
+                        
+                    </View>                     
+                            
+                </View>     
             </View>
-            <View style={{ top:'-10%',marginLeft: '7%',borderRadius:1000, overflow: 'hidden', height: '60%',width:'85%', shadowColor: "#000",
-                            shadowOffset: {
-                              width: 0,
-                              height: 2,
-                            },
-                            shadowOpacity: 0.25,
-                            shadowRadius: 3.84,
+        </TouchableOpacity>
 
-                            elevation: 5}} 
-                            className="bg-blueprimary">
-              
-              {activeCategory == 'primeira' &&(             
-              <MapView
-              provider={PROVIDER_GOOGLE}
-              style={styles.map}
-              initialRegion={{
-                latitude: coordinates[0].latitude, 
-                longitude: coordinates[0].longitude - 0.0012,
-                latitudeDelta: 0.0072,
-                longitudeDelta: 0.0051,
-              }}
-              customMapStyle={customMapStyle}>
-              <Marker coordinate={coordinates[0]} />
-              <Marker coordinate={coordinates[1]} />
-              <Marker coordinate={coordinates[2]} />
-              <Polyline
-                coordinates={coordinates}
-                strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
-                strokeColors={['#7F0000']}
-                strokeWidth={6}/>
-              </MapView>
-              )}
-              {activeCategory == 'segunda' && (
-              <MapView
-                provider={PROVIDER_GOOGLE}
-                style={styles.map}
-                initialRegion={{
-                  latitude: coordinates_two[0].latitude + 0.0005, 
-                  longitude: coordinates_two[0].longitude - 0.0012,
-                  latitudeDelta: 0.0052,
-                  longitudeDelta: 0.0011,
-                }}
-                customMapStyle={customMapStyle}>
-                <Marker coordinate={coordinates_two[0]} />
-                <Marker coordinate={coordinates_two[1]} />
-                <Marker coordinate={coordinates_two[3]} />
-                <Polyline
-                  coordinates={coordinates_two}
-                  strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
-                  strokeColors={['#7F0000']}
-                  strokeWidth={6}/>
-              </MapView>
-              )}
-              {activeCategory == 'terceira' && (
-                <MapView
-                  provider={PROVIDER_GOOGLE}
-                  style={styles.map}
-                  initialRegion={{
-                    latitude: coordinates_three[0].latitude + 0.0005, 
-                    longitude: coordinates_three[0].longitude - 0.0013,
-                    latitudeDelta: 0.0072,
-                    longitudeDelta: 0.0011,
-                  }}
-                  customMapStyle={customMapStyle}>
-                  <Marker coordinate={coordinates_three[0]} />
-                  <Marker coordinate={coordinates_three[5]} />
-                  <Marker coordinate={coordinates_three[10]} />
-                   <Polyline
-                    coordinates={coordinates_three}
-                    strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
-                    strokeColors={['#7F0000']}
-                    strokeWidth={4}/> 
-                 
-                </MapView>
-              )}              
-          </View>
-          
-          <View style={{position:'absolute',bottom:'9%',alignItems:'center',marginLeft:'2%'}}>
-          {activeCategory == 'primeira' &&(
-              <View style={{flexDirection:'row'}}>
-                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopLeftRadius:20,borderBottomLeftRadius:20}}>
-                  <Text style={{fontSize:26}}>2.0</Text>
-                  <Text style={{fontSize:24}}>KM</Text>
-                </View>
-                
-                  <LinearGradient
-                    colors={['#1FAA70', 'white']}
-                    style={styles.container_gradient}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 0, y: 1 }}
-                  >
-                    <Text style={{fontSize:26,fontWeight: 'bold',color:'#fff'}}>2</Text>
-                    <Text style={{fontSize:24,fontWeight: 'bold',color:'#1FAA70'}}>PONTOS</Text>
-                  </LinearGradient>
-                
-                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopRightRadius:20,borderBottomRightRadius:20}}>
-                  <Text style={{fontSize:26}}>NIVEL</Text>
-                  <Text style={{fontSize:26}}>FACIL</Text>
-                </View>
-              </View>
-          )}
+        <TouchableOpacity className=" shadow-2xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}}onPress={() => navigation.navigate('Media')}>  
+            <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
+                <Image source={{ uri: 'https://live.staticflickr.com/65535/53555958611_b12a2a98fa_w.jpg' }} 
+                className= { "h-32 w-32 rounded-l-xl"}
+                style={{height:'100%',width:'35%'}}
+                resizeMethod='resize'></Image>
 
-          {activeCategory == 'segunda' &&(
-              <View style={{flexDirection:'row'}}>
-                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopLeftRadius:20,borderBottomLeftRadius:20}}>
-                  <Text style={{fontSize:26}}>2.0</Text>
-                  <Text style={{fontSize:24}}>KM</Text>
-                </View>
-                
-                  <LinearGradient
-                    colors={['#3165b0', 'white']}
-                    style={styles.container_gradient}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 0, y: 1 }}
-                  >
-                    <Text style={{fontSize:26,fontWeight: 'bold',color:'#fff'}}>3</Text>
-                    <Text style={{fontSize:24,fontWeight: 'bold',color:'#3165b0'}}>PONTOS</Text>
-                  </LinearGradient>
-                
-                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopRightRadius:20,borderBottomRightRadius:20}}>
-                  <Text style={{fontSize:26}}>NIVEL</Text>
-                  <Text style={{fontSize:26}}>MEDIA</Text>
-                </View>
-              </View>
-          )}
+                <View className="bg-red my-0 mx-0">
+                    <View style={{backgroundColor:"#3165B0",color:"#fff",width:"200%",alignItems:'center'}}>
+                      <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA MÉDIA</Text> 
+                    </View>
+                    <View className="absolute" style={{marginTop:"35%",width:'119%',marginLeft:'8%'}}>
+                        <Text style={{fontWeight:'bold',fontSize:22}}>Trilha Média</Text>
+                        <View style={{backgroundColor:"#3165B0",color:"#fff",width:"50%",alignItems:'center',borderRadius:70}}>
+                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >3 PONTOS</Text> 
+                        </View>
+                        <View style={{flexDirection:"row",marginTop:'4.5%'}}>
+                          <Image source={require('../assets/icons/passos.png')} style={{ width: '10%', height: '100%', borderRadius: 25 }}></Image>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>2.0km</Text>
+                          <Image source={require('../assets/icons/relogio.png')} style={{ width: '10%', height: '100%', borderRadius: 25,marginLeft:'20%' }}></Image>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>40min</Text>
+                        </View>
+                    </View>
+                    <View className="absolute" style={{marginLeft:'9%',marginTop:'95%',height:'130%',width:'190%'}}>
+                        <View style={{flexDirection:'row'}}>
+                          <Text style={{fontSize:14}}>Pontos de visita: umburada, mirante e ponto 3</Text>
+                          <Text style={{marginTop:'7.5%',left:'53%',position:'absolute',fontSize:14.5,color:"#3165B0",fontWeight:'bold'}}>ver mais...</Text>
+                        </View>
+                        
+                    </View>                     
+                            
+                </View>     
+            </View>
+        </TouchableOpacity>
 
-        {activeCategory == 'terceira' &&(
-              <View style={{flexDirection:'row'}}>
-                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopLeftRadius:20,borderBottomLeftRadius:20}}>
-                  <Text style={{fontSize:26}}>2.0</Text>
-                  <Text style={{fontSize:24}}>KM</Text>
-                </View>
-                
-                  <LinearGradient
-                    colors={['#C73E28', 'white']}
-                    style={styles.container_gradient}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 0, y: 1 }}
-                  >
-                    <Text style={{fontSize:26,fontWeight: 'bold',color:'#fff'}}>9</Text>
-                    <Text style={{fontSize:24,fontWeight: 'bold',color:'#C73E28'}}>PONTOS</Text>
-                  </LinearGradient>
-                
-                <View style={{backgroundColor:'#fff',width:'30%',height:'100%',alignItems:'center',padding:6,borderTopRightRadius:20,borderBottomRightRadius:20}}>
-                  <Text style={{fontSize:26}}>NIVEL</Text>
-                  <Text style={{fontSize:26}}>DIFICIL</Text>
-                </View>
-              </View>
-          )}
-          </View>
+        <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}}onPress={() => navigation.navigate('Leitor',  {item: item, cont: cont})}>  
+            <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
+                <Image source={{ uri: 'https://live.staticflickr.com/65535/53555963791_e76a4e3118_w.jpg' }} 
+                className= { "h-32 w-32 rounded-l-xl"}
+                style={{height:'100%',width:'35%'}}
+                resizeMethod='resize'></Image>
+
+                <View className="bg-red my-0 mx-0">
+                    <View style={{backgroundColor:"#C76828",color:"#fff",width:"200%",alignItems:'center'}}>
+                      <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA DIFÍCIL</Text> 
+                    </View>
+                    <View className="absolute" style={{marginTop:"35%",width:'112%',marginLeft:'8%'}}>
+                        <Text style={{fontWeight:'bold',fontSize:22}}>Trilha Difícil</Text>
+                        <View style={{backgroundColor:"#C76828",color:"#fff",width:"50%",alignItems:'center',borderRadius:70}}>
+                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >9 PONTOS</Text> 
+                        </View>
+                        <View style={{flexDirection:"row",marginTop:'4.5%'}}>
+                          <Image source={require('../assets/icons/passos.png')} style={{ width: '10%', height: '100%', borderRadius: 25 }}></Image>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>2.0km</Text>
+                          <Image source={require('../assets/icons/relogio.png')} style={{ width: '10%', height: '100%', borderRadius: 25,marginLeft:'20%' }}></Image>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>40min</Text>
+                        </View>
+                    </View>
+                    <View className="absolute" style={{marginLeft:'8%',marginTop:'95%',height:'130%',width:'200%'}}>
+                        <View style={{flexDirection:'row'}}>
+                          <Text style={{fontSize:14}}>Pontos de visita: Cactáceas, marsupial,Olho D'Água</Text>
+                          <Text style={{marginTop:'7%',left:'63%',position:'absolute',fontSize:14.5,color:"#C76828",fontWeight:'bold'}}>ver mais...</Text>
+                        </View>
+                        
+                    </View>                     
+                            
+                </View>     
+            </View>
+        </TouchableOpacity>
         </View>
+
        
     )
 }
@@ -405,4 +271,6 @@ const styles = StyleSheet.create({
     
     width:'36%',height:'100%',alignItems:'center',padding:6
   },
+  Shadow: {
+    shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32, elevation: 16,}
  });

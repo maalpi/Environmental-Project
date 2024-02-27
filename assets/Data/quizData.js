@@ -174,12 +174,6 @@ export default data = [
         dificulty: "media"
     },
     {
-        question:"Quando falamos de mudanças climáticas devemos saber que as ações desenvolvidas pelo homem sobre o meio ambiente favorecem o lançamento de:",
-        options:["Foguetes para a reparação da camada de ozônio.","Algas para produção de oxigênio.","Gases que destroem a camada de ozônio e favorece o aquecimento do Planeta."],
-        correct_option:"Gases que destroem a camada de ozônio e favorece o aquecimento do Planeta.",
-        dificulty: "media"
-    },
-    {
         question:"A caatinga do tipo arbustiva e arbórea engloba uma grande variedade de árvores de grande porte sendo elas:",
         options:["Catingueira, Umburana e Juazeiro.","Seringueira, Andiroba e Pupunha.","Palmeira, Angico e Pinheiro."],
         correct_option:"Catingueira, Umburana e Juazeiro.",

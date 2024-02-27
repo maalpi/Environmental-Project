@@ -14,6 +14,9 @@ import Leitor from "./screens/componentes_noticias/leitor"
 import Animal from "./screens/componentes_qrcode/animal"
 import Video from "./screens/componentes_qrcode/video"
 import Quiz from "./screens/componentes_quiz/Quiz"
+
+import Media from "./screens/componentes_mapa/trilhaMedia"
+import Dificil from "./screens/componentes_mapa/trilhaDificil"
 //TELAS DO QRCODE
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +32,9 @@ export default () => (
                     <Stack.Screen name="Animal" component={Animal}/>
                     <Stack.Screen name="Video" component={Video}/>
                     <Stack.Screen name="Quiz" component={Quiz}/>
+                    
+                    <Stack.Screen name="Media" component={Media}/>
+                    <Stack.Screen name="Dificil" component={Dificil}/>
                 </Stack.Navigator>
             </NavigationContainer>
 

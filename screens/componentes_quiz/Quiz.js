@@ -64,7 +64,7 @@ const selectRandomQuestions = () => {
 const Quiz = ({navigation}) =>{
 
     const [allQuestions, setAllQuestions] = useState(selectRandomQuestions());
-    console.log(allQuestions);
+    
 
     const [currentQuestionIndex,setCurrentQuestionIndex] = useState(0);
     const [currentOptionsSelected,setCurrentOptionsSelected] = useState(null);
@@ -73,7 +73,8 @@ const Quiz = ({navigation}) =>{
     const [score,setScore] = useState(0);
     const [showNextButton,setShowNextButton] = useState(false);
     const [showScoreModal,setShowScoreModal] = useState(false);
-
+    const [modalVisible, setModalVisible] = useState(false);
+    const [acerto,setAcerto] = useState(false);
 
     const [progress,setProgress] = useState(new Animated.Value(0));
     const progressAnim = progress.interpolate({
@@ -88,9 +89,13 @@ const Quiz = ({navigation}) =>{
         setIsOptionsDisable(true);
         if (selectedOption == correct_option){
             setScore(score + 1);
+            setAcerto(true);
             
+        }else {
+            setAcerto(false);
         }
         setShowNextButton(true);
+
     }
 
     const handleNext = () => {
@@ -133,7 +138,6 @@ const Quiz = ({navigation}) =>{
     }
 
     const renderProgressBar = () => {
-        console.log(progressAnim);
         return (
             <View style={{
                 width: '100%',
@@ -181,27 +185,15 @@ const Quiz = ({navigation}) =>{
                         key={option}
                         style={{borderWidth:3, borderColor: option==correctOption ? "#84CC16": option==currentOptionsSelected ? "#EF4444" : "#1E90FF"+"40",
                                 backgroundColor:option==correctOption ? "#84CC16"+"20": option==currentOptionsSelected ? "#EF4444"+"20" : "#00A2DB"+"20",
-                                height: 70,width:300, borderRadius:20,
+                                height: '19.5%',width:'85%', borderRadius:20,
                                 flexDirection: 'row',
                                 alignItems: 'center', justifyContent:'space-between',
                                 marginLeft: 30,
                                 marginVertical: 10,
                                 }}
                                >
-                            <Text className = "text-xl text-black indent-20 ml-2">{option}</Text>
+                            <Text className = " text-black ml-2" style={{padding:"5%", fontSize:15}}>{option}</Text>
 
-                            {
-                                option == correctOption ? (
-                                    <View style={{width:30,height:30,borderRadius:30/2}} className="bg-green-500 items-center justify-center">
-                                        <CheckIcon color='#000' size={20}/>
-                                    </View>
-                                ) : option == currentOptionsSelected ?(
-                                    <View style={{width:30,height:30,borderRadius:30/2}} className="bg-red-500 items-center justify-center">
-                                        <XMarkIcon color='#000'/>
-                                    </View>
-
-                                ) : null
-                            }
                         </TouchableOpacity>
                     ))
                 }
@@ -212,12 +204,34 @@ const Quiz = ({navigation}) =>{
     const renderNextButton = () => {
         if (showNextButton){
             return(
+                <>
+                <View>
+                     {acerto == true ? 
+                     <View className="items-center">
+                        <View style={{width:50,height:50,borderRadius:20/2}} className="bg-green-500 items-center justify-center">
+                            <CheckIcon color='#fff' size={30}/>
+                        </View>
+                            <Text style={{fontWeight:'bold',fontSize:26}}>Parabéns, você acertou</Text> 
+                            <Text style={{fontWeight:'bold',fontSize:24,paddingBottom:5}}>Continue assim!!!</Text>
+                        </View>
+                        : 
+                        <View className="items-center">
+                       <View style={{width:60,height:60,borderRadius:20/2}} className="bg-red-500 items-center justify-center">
+                         <XMarkIcon color='#fff'/>
+                        </View>
+                            <Text style={{fontWeight:'bold',fontSize:24}}>Opss, você errou</Text>
+                            <Text style={{fontWeight:'bold',fontSize:24}}>Mais sorte na proxima!!!</Text> 
+                        </View>
+                        }
+                </View>
                 <TouchableOpacity 
-                className = "mt-1 bg-blue-500 p-6 rounded-lg h-11 items-center"
+                className = " bg-blue-500 p-6 rounded-lg h-11 items-center"
+                style={{marginTop:'3%'}}
                 onPress={handleNext}
-                >
-                    <Text className="mt-3 absolute text-base text-white text-center ">Próximo</Text>
+                >   
+                    <Text className="mt-3 text-base text-white text-center absolute " style={{fontWeight:'bold'}}>Próximo</Text>
                 </TouchableOpacity>
+                </>
             )
         }else{
             return null
@@ -255,7 +269,21 @@ const Quiz = ({navigation}) =>{
             </View>
             {renderOptions()}
 
-            {renderNextButton()}
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={showNextButton}
+                onRequestClose={() => {
+                    setModalVisible(!showNextButton);
+                }}
+            >
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                    <View style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', padding: 20, borderRadius: 10 }}>
+                        
+                            {renderNextButton()}
+                    </View>
+                </View>
+            </Modal>
 
             <Modal
             animationType="slide"
@@ -283,8 +311,8 @@ const Quiz = ({navigation}) =>{
                         />
                         <Text style={{ width: 245, height: 120, fontSize: 25,marginTop:10,paddingLeft:5,textAlign:'center',color:'#000'}}>{score > 7 ? 'Parabenss sua pontuação foi!!' : 'Oops!!'}</Text>
                         <View style={{flexDirection:'row',justifyContent:'flex-start',alignItems:'center',marginBottom:10,top:-80}}>
-                            <Text style={{fontSize: 30, color: score> (2)? "#84CC16": "#EF4444"}}>{score}</Text>
-                            <Text style={{fontSize:20,color:"#000000"}}>/ 15</Text>
+                            <Text style={{fontSize: 30,fontWeight:'bold',marginTop:'8%', color: score> (2)? "#84CC16": "#EF4444"}}>{score}</Text>
+                            <Text style={{fontSize:20,color:"#000000",fontWeight:'bold',marginTop:'8.5%'}}> / 15</Text>
                         </View>
                         <TouchableOpacity 
                         onPress={restartQuiz}
@@ -298,17 +326,6 @@ const Quiz = ({navigation}) =>{
                         </TouchableOpacity>
                     </View>
 
-                    {/* <View className=" w-11/12 rounded-lg p-6 flex items-center">
-                        <View style={{flexDirection:'row',justifyContent:'flex-start',alignItems:'center',marginVertical:20}}>
-                            <Text style={{fontSize: 30, color: score> (2)? "#84CC16": "#EF4444"}}>{score}</Text>
-                            <Text style={{fontSize:20,color:"#000000"}}>/ 15</Text>
-                        </View>
-                        <TouchableOpacity 
-                        onPress={restartQuiz}
-                        className = "mt-5 bg-blue-500 p-6 rounded-lg">
-                            <Text className="text-xl text-white text-center">Recomeçar Quiz</Text>
-                        </TouchableOpacity>
-                    </View> */}
                 </View>
 
             </Modal>
