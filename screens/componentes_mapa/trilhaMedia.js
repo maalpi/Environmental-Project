@@ -69,7 +69,7 @@ const Media = ({navigation}) => {
                         initialRegion={{
                         latitude: coordinates_two[0].latitude + 0.0005, 
                         longitude: coordinates_two[0].longitude - 0.0012,
-                        latitudeDelta: 0.0052,
+                        latitudeDelta: 0.0072,
                         longitudeDelta: 0.0011,
                         }}
                         customMapStyle={customMapStyle}>
@@ -80,7 +80,7 @@ const Media = ({navigation}) => {
                         coordinates={coordinates_two}
                         strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
                         strokeColors={['#7F0000']}
-                        strokeWidth={6}/>
+                        strokeWidth={4}/>
                     </MapView>
                 </View>
                 </View>
@@ -96,7 +96,7 @@ const Media = ({navigation}) => {
                 <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha Média:</Text>   
                 <Text>Inserir alguma frase de efeito</Text>
                 <Image source={require('../../assets/logo/caatinga.jpg')} 
-                style ={{width:'100%',overflow:'hidden',height:'53%',marginTop:'5%'}}
+                style ={{width:'100%',overflow:'hidden',height:'50%',marginTop:'5%'}}
                 resizeMethod='resize'></Image>
             </View>
 
@@ -125,11 +125,20 @@ const Media = ({navigation}) => {
                     <Text style={{fontWeight:'bold',fontSize:15}}> 3 Pontos:</Text>
 
                 </View>
-                <ScrollView style={{marginLeft:'9%',height:'7.5%',width:'70%'}} indicatorStyle={{backgroundColor: 'red'}}>
+                <ScrollView style={{marginLeft:'9%',height:'10%',width:'70%'}} indicatorStyle={{backgroundColor: 'red'}}>
+                    <View style={{flexDirection:'row'}}>
+                        <Image source={require('../../assets/icons/bandeiraAzul.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
+                        <Text style={{fontWeight:'bold',color:'#3165B0',fontSize:13}}>Saída</Text>
+                    </View>
+                    <Text style={styles.linha}>|</Text>
+                    <Text style={styles.linha}>|</Text>
+                    <Text style={styles.linha}>|</Text>
+
                     <View style={{flexDirection:'row'}}>
                         <Image source={require('../../assets/icons/bandeiraAzul.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
                         <Text style={{fontWeight:'bold',color:'#3165B0',fontSize:13}}>Umburada</Text>
                     </View>
+                    <Text style={styles.linha}>|</Text>
                     <Text style={styles.linha}>|</Text>
                     <Text style={styles.linha}>|</Text>
                     
@@ -140,7 +149,8 @@ const Media = ({navigation}) => {
                     
                     <Text style={styles.linha}>|</Text>
                     <Text style={styles.linha}>|</Text>
-                    
+                    <Text style={styles.linha}>|</Text>
+
                     <View style={{flexDirection:'row'}}>
                         <Image source={require('../../assets/icons/bandeiraAzul.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
                         <Text style={{fontWeight:'bold',color:'#3165B0',fontSize:13}}>Ponto 3</Text>
@@ -164,7 +174,7 @@ const styles = StyleSheet.create({
         paddingVertical: '3%',
         paddingHorizontal: '4%',
         width:'70%',
-        marginTop:'7%',
+        marginTop:'5%',
         marginLeft:'12%',
         borderRadius:10,
         flexDirection:'row',

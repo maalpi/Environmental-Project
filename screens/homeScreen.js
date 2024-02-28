@@ -215,7 +215,7 @@ const HomeScreen= ({navigation}) =>{
             </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}}onPress={() => navigation.navigate('Leitor',  {item: item, cont: cont})}>  
+        <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}} onPress={() => navigation.navigate('Dificil')}>  
             <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
                 <Image source={{ uri: 'https://live.staticflickr.com/65535/53555963791_e76a4e3118_w.jpg' }} 
                 className= { "h-32 w-32 rounded-l-xl"}
@@ -229,7 +229,7 @@ const HomeScreen= ({navigation}) =>{
                     <View className="absolute" style={{marginTop:"35%",width:'112%',marginLeft:'8%'}}>
                         <Text style={{fontWeight:'bold',fontSize:22}}>Trilha Difícil</Text>
                         <View style={{backgroundColor:"#C76828",color:"#fff",width:"50%",alignItems:'center',borderRadius:70}}>
-                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >9 PONTOS</Text> 
+                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >10 PONTOS</Text> 
                         </View>
                         <View style={{flexDirection:"row",marginTop:'4.5%'}}>
                           <Image source={require('../assets/icons/passos.png')} style={{ width: '10%', height: '100%', borderRadius: 25 }}></Image>

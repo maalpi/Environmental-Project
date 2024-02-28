@@ -206,7 +206,7 @@ const NoticiasScreen= ({navigation}) =>{
             <TouchableOpacity className="flex-1 overflow-hidden items-center justify-center" style={{ zIndex: 0 }}
             onPress={() => {
                 // Adicione a lógica do seu botão aqui
-                navigation.navigate('Home');
+                navigation.navigate('Facil');
                 console.log('Botão pressionado!');
               }}>
                 <Image source={require('../assets/logo/caatinga.jpg')} 
@@ -219,7 +219,7 @@ const NoticiasScreen= ({navigation}) =>{
 
                     resizeMethod='resize'></Image>
                  <Text className="absolute text-4xl text-white top-14">Trilha Fácil </Text>
-                 <Text className="absolute text-base text-white bottom-9">Atrativos: 3   Distância: 450 Metros </Text>
+                 <Text className="absolute text-base text-white bottom-9">Atrativos: 2   Distância: 450 Metros </Text>
                 
             </TouchableOpacity>
         
