@@ -43,10 +43,12 @@ const Carrossel = ({data}) =>{
                 return (
                         <View style={{width: SIZE}} key={index}>
                             <Animated.View style={[styles.imageContainer,style]}>
-                                <Image 
-                                source={{uri: item.image ? item.image : "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/g7.png?w=1038&h=576&crop=1"}} 
-                                style={styles.image}
-                                resizeMode="cover"/>
+                                <View style={{width:'200%'}}>
+                                    <Image 
+                                    source={{uri: item.image ? item.image : "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/g7.png?w=1038&h=576&crop=1"}} 
+                                    style={styles.image}
+                                    resizeMode="cover"/>
+                                </View>
                             </Animated.View>
                             
                         </View>   
@@ -65,10 +67,12 @@ const styles = StyleSheet.create({
         overflow:'hidden',
     },
     image:{
-        width:'125%',      
+        width:'60%',
         height:undefined,
         aspectRatio:1,
-        resizeMode:"cover"
+        resizeMode:"contain",
+        transform: [{ translateX: -26}]
+        
     },
     dotView:{
         flexDirection: 'row',
