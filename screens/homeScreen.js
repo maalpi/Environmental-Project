@@ -180,7 +180,7 @@ const HomeScreen= ({navigation}) =>{
             </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className=" shadow-2xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}}onPress={() => navigation.navigate('Media')}>  
+        <TouchableOpacity className=" shadow-2xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}} onPress={() => navigation.navigate('Media')}>  
             <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
                 <Image source={{ uri: 'https://live.staticflickr.com/65535/53555958611_b12a2a98fa_w.jpg' }} 
                 className= { "h-32 w-32 rounded-l-xl"}

@@ -102,9 +102,19 @@ const Media = ({navigation}) => {
                         }}
                         customMapStyle={customMapStyle}>
                         <Marker coordinate={coordinates_three[0]} />
-                        <Marker coordinate={coordinates_three[1]} />
-                        <Marker coordinate={coordinates_three[2]} />
-                        <Marker coordinate={coordinates_three[6]} />
+                        <Marker coordinate={coordinates_three[1]} description={'Ponto UM'} icon={require('../../assets/logo/Marker2.png')}
+                        onPress={() => {
+                          toggleModal(); // Alternar o modal
+                          navigation.navigate('Cactaceas'); // Navegar para 'Mirante'
+                      }}/>
+                        
+
+                        <Marker coordinate={coordinates_three[9]} description={'Ponto UM'} icon={require('../../assets/logo/Marker2.png')}
+                        onPress={() => {
+                         
+                          navigation.navigate('OlhoDagua'); // Navegar para 'Mirante'
+                      }}/>
+                        
                         <Marker coordinate={coordinates_three[8]} />
                         <Polyline
                         coordinates={coordinates_three}

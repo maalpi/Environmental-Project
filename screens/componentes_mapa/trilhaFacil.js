@@ -55,7 +55,7 @@ const Media = ({navigation}) => {
 
                     <View style={{alignItems:'center'}}> 
                         <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha Fácil:</Text>   
-                        <Text>Inserir alguma frase de efeito</Text>
+                        <Text>Clique nos marcadores para ver informações</Text>
                     </View>
 
                     <View style={styles.viewMapa} >
@@ -69,14 +69,27 @@ const Media = ({navigation}) => {
                         longitudeDelta: 0.0021,
                         }}
                         customMapStyle={customMapStyle}>
-                        <Marker coordinate={coordinates[0]} />
-                        <Marker coordinate={coordinates[1]} />
-                        <Marker coordinate={coordinates[2]} />
+                        <Marker coordinate={coordinates[0]}
+                       style={{width:'20%'}}
+                       icon={require('../../assets/logo/Marker2.png')}
+                        onPress={() => {
+                              toggleModal(); // Alternar o modal
+                              navigation.navigate('Media'); // Navegar para 'Media'
+                          }}>
+                           
+                        </Marker>
+                        <Marker coordinate={coordinates[1]} description={'Ponto UM'} icon={require('../../assets/logo/Marker2.png')}/>
+                        
+                        <Marker coordinate={coordinates[2]} description={'Ponto UM'} icon={require('../../assets/logo/Marker2.png')}
+                        onPress={() => {
+                          toggleModal(); // Alternar o modal
+                          navigation.navigate('Mirante'); // Navegar para 'Mirante'
+                      }}/>
                         <Polyline
                         coordinates={coordinates}
                         strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
                         strokeColors={['#7F0000']}
-                        strokeWidth={4}/>
+                        strokeWidth={6}/>
                     </MapView>
                 </View>
                 </View>
@@ -200,6 +213,11 @@ const styles = StyleSheet.create({
             shadowRadius: 3.84,
             elevation: 5
       },
+      markerImage: {
+        width: 20,
+        height: 20,
+        resizeMode:"contain"
+      }
   });
 
 export default Media

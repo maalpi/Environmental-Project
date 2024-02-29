@@ -12,6 +12,9 @@ import NoticiasScreen from "./screens/noticiasScreen"
 import Header from "./screens/componentes_noticias/header"
 import Leitor from "./screens/componentes_noticias/leitor"
 import Animal from "./screens/componentes_qrcode/animal"
+import Mirante from "./screens/componentes_qrcode/mirante"
+import Cactaceas from "./screens/componentes_qrcode/cactaceas"
+import OlhoDagua from "./screens/componentes_qrcode/olhoDagua"
 import Video from "./screens/componentes_qrcode/video"
 import Quiz from "./screens/componentes_quiz/Quiz"
 import Facil from "./screens/componentes_mapa/trilhaFacil"
@@ -30,6 +33,9 @@ export default () => (
                     <Stack.Screen name="earch" component={Search}/> 
                     <Stack.Screen name="Leitor" component={Leitor}/>
                     <Stack.Screen name="Animal" component={Animal}/>
+                    <Stack.Screen name="Mirante" component={Mirante}/>
+                    <Stack.Screen name="Cactaceas" component={Cactaceas}/>
+                    <Stack.Screen name="OlhoDagua" component={OlhoDagua}/>
                     <Stack.Screen name="Video" component={Video}/>
                     <Stack.Screen name="Quiz" component={Quiz}/>
                     <Stack.Screen name="Facil" component={Facil}/>
