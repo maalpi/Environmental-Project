@@ -25,7 +25,7 @@ const ChatScreen= ({navigation}) =>{
             <View style ={{flexDirection: 'row'}}>
                 <View style={{ alignItems: 'center',paddingLeft:25, flexDirection: 'row',marginBottom:13 }}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
-                        Quiz da reserva
+                        Quiz Ambiental
                     </Text>    
                     <View style={{ paddingLeft: 45 }}>
                     <Image

@@ -75,10 +75,15 @@ const Media = ({navigation}) => {
                         customMapStyle={customMapStyle}>
                         <Marker coordinate={coordinates_two[0]} />
                         <Marker coordinate={coordinates_two[1]} />
+                        <Marker coordinate={coordinates_two[2]} description={'Ponto UM'} icon={require('../../assets/logo/Marker2.png')}
+                        onPress={() => {
+                          toggleModal(); // Alternar o modal
+                          navigation.navigate('Mirante'); // Navegar para 'Mirante'
+                      }}/>
                         <Marker coordinate={coordinates_two[3]} />
                         <Polyline
                         coordinates={coordinates_two}
-                        strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
+                        strokeColor="#3165B0" // fallback for when `strokeColors` is not supported by the map-provider
                         strokeColors={['#7F0000']}
                         strokeWidth={4}/>
                     </MapView>
@@ -153,7 +158,7 @@ const Media = ({navigation}) => {
 
                     <View style={{flexDirection:'row'}}>
                         <Image source={require('../../assets/icons/bandeiraAzul.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
-                        <Text style={{fontWeight:'bold',color:'#3165B0',fontSize:13}}>Ponto 3</Text>
+                        <Text style={{fontWeight:'bold',color:'#3165B0',fontSize:13}}>Umburana</Text>
                     </View>
                     
                 </ScrollView>

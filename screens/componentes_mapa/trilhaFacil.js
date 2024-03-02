@@ -87,7 +87,7 @@ const Media = ({navigation}) => {
                       }}/>
                         <Polyline
                         coordinates={coordinates}
-                        strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
+                        strokeColor="#2D821D" // fallback for when `strokeColors` is not supported by the map-provider
                         strokeColors={['#7F0000']}
                         strokeWidth={6}/>
                     </MapView>
@@ -145,7 +145,7 @@ const Media = ({navigation}) => {
 
                     <View style={{flexDirection:'row'}}>
                         <Image source={require('../../assets/icons/bandeiraVerde.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
-                        <Text style={{fontWeight:'bold',color:'#2D821D',fontSize:13}}>Umburada</Text>
+                        <Text style={{fontWeight:'bold',color:'#2D821D',fontSize:13}}>Umburana</Text>
                     </View>
                     <Text style={styles.linha}>|</Text>
                     <Text style={styles.linha}>|</Text>
