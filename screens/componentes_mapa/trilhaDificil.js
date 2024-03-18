@@ -86,8 +86,8 @@ const Media = ({navigation}) => {
                     </TouchableOpacity>
 
                     <View style={{alignItems:'center'}}> 
-                        <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha Difícil:</Text>   
-                        <Text>Inserir alguma frase de efeito</Text>
+                        <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha do Marsupial:</Text>   
+                        <Text>Contemple as belezas naturais da região</Text>
                     </View>
 
                     <View style={styles.viewMapa} >
@@ -102,14 +102,14 @@ const Media = ({navigation}) => {
                         }}
                         customMapStyle={customMapStyle}>
                         <Marker coordinate={coordinates_three[0]} />
-                        <Marker coordinate={coordinates_three[1]} description={'Ponto UM'} icon={require('../../assets/logo/Marker2.png')}
+                        <Marker coordinate={coordinates_three[1]} description={'Ponto UM'} icon={require('../../assets/logo/MarkerMarrom.png')}
                         onPress={() => {
                           toggleModal(); // Alternar o modal
                           navigation.navigate('Cactaceas'); // Navegar para 'Mirante'
                       }}/>
                         
 
-                        <Marker coordinate={coordinates_three[9]} description={'Ponto UM'} icon={require('../../assets/logo/Marker2.png')}
+                        <Marker coordinate={coordinates_three[9]} description={'Ponto UM'} icon={require('../../assets/logo/MarkerMarrom.png')}
                         onPress={() => {
                          
                           navigation.navigate('OlhoDagua'); // Navegar para 'Mirante'
@@ -118,11 +118,12 @@ const Media = ({navigation}) => {
                         <Marker coordinate={coordinates_three[8]} />
                         <Polyline
                         coordinates={coordinates_three}
-                        strokeColor="#C8942B" // fallback for when `strokeColors` is not supported by the map-provider
+                        strokeColor="#C76828" // fallback for when `strokeColors` is not supported by the map-provider
                         strokeColors={['#7F0000']}
                         strokeWidth={4}/>
                     </MapView>
                 </View>
+                <Image source={require('../../assets/icons/CirculoMarro.png')} style={{ position: 'absolute', left: '40%', bottom: '1%'}} resizeMode='cover'></Image>
                 </View>
             </Modal>
 
@@ -133,8 +134,8 @@ const Media = ({navigation}) => {
             </View>
             
             <View style={{alignItems:'center'}}> 
-                <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha Difícil:</Text>   
-                <Text>Inserir alguma frase de efeito</Text>
+                <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha do Marsupial:</Text>   
+                <Text>Contemple as belezas naturais da região</Text>
                 <Image source={require('../../assets/logo/caatinga.jpg')} 
                 style ={{width:'100%',overflow:'hidden',height:'50%',marginTop:'5%'}}
                 resizeMethod='resize'></Image>
@@ -142,22 +143,20 @@ const Media = ({navigation}) => {
 
             <View style={{marginTop:'-35%',marginLeft:'10%'}}>
                 <View style={{flexDirection:'row'}}>
-                    <Text style={{fontWeight:'bold',fontSize:28}}>Trilha Difícil</Text>
-                    
-                        <Image source={require('../../assets/icons/passos.png')} style={{ width: '5%', height: '50%', borderRadius: 25,marginLeft:'10%',marginTop:'2.5%' }}></Image>
-                        <Text style={{fontSize:16,marginTop:'2.5%'}}>5.0km</Text>
-                        <Image source={require('../../assets/icons/relogio.png')} style={{ width: '5%', height: '50%', borderRadius: 25,marginLeft:'5%',marginTop:'2.5%' }}></Image>
-                        <Text style={{fontSize:16,marginTop:'2.5%'}}>1:30hrs</Text>
-                   
+                    <Text style={{fontWeight:'bold',fontSize:28}}>Trilha do Marsupial</Text>
                 </View>
                 <View style={{backgroundColor:"#C76828",color:"#fff",width:"30%",alignItems:'center',flexDirection:'row',borderRadius:20}}>
                     <Image source={require('../../assets/icons/ponto.png')} style={{ width:8,height:8, borderRadius: 25,marginLeft:'5%'}}></Image>
                     <Text  style={{color:"#fff",fontWeight:"bold",fontSize:14}} > Trilha Difícil</Text> 
+                    <Image source={require('../../assets/icons/passos.png')} style={{ width: '15%', height: '50%', borderRadius: 25,marginLeft:'20%',marginTop:'2.5%' }}></Image>
+                    <Text style={{fontSize:16,marginTop:'2.5%'}}>1300m</Text>
+                    <Image source={require('../../assets/icons/relogio.png')} style={{ width: '15%', height: '60%', borderRadius: 25,marginLeft:'10%',marginTop:'2.5%' }}></Image>
+                    <Text style={{fontSize:16,marginTop:'2.5%'}}>1:30hr</Text>
                 </View>
 
                 <View style={{marginTop:'3%'}}>
                     <Text style={{fontWeight:'bold',fontSize:20}}>Descrição:</Text>
-                    <Text style={{paddingRight:'13%',textAlign: 'justify', lineHeight:20,marginTop:'2%',color:'#000'}}>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took </Text>
+                    <Text style={{paddingRight:'13%',textAlign: 'justify', lineHeight:20,marginTop:'2%',color:'#000'}}> Classificada em alto nível de dificuldade, o nome da trilha faz referência ao marsupial Gracilinanus agilis, popularmente conhecido por catita, encontrado na região.</Text>
                 </View>
 
                 <View style={{flexDirection:'row',marginTop:'3%'}}>

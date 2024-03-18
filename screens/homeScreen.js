@@ -157,8 +157,8 @@ const HomeScreen= ({navigation}) =>{
                       <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA FÁCIL</Text> 
                     </View>
                     <View className="absolute" style={{marginTop:"35%",width:'110%',marginLeft:'8%'}}>
-                        <Text style={{fontWeight:'bold',fontSize:22}}>Trilha Fácil</Text>
-                        <View style={{backgroundColor:"#2D821D",color:"#fff",width:"50%",alignItems:'center',borderRadius:70}}>
+                        <Text style={{fontWeight:'bold',fontSize:21.5,width:'160%'}}>Trilha do Mirante</Text>
+                        <View style={{backgroundColor:"#2D821D",color:"#fff",width:"50%",alignItems:'center',borderRadius:70,marginTop:'4%'}}>
                           <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >2 PONTOS</Text> 
                         </View>
                         <View style={{flexDirection:"row",marginTop:'4.5%'}}>
@@ -192,8 +192,8 @@ const HomeScreen= ({navigation}) =>{
                       <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA MÉDIA</Text> 
                     </View>
                     <View className="absolute" style={{marginTop:"35%",width:'119%',marginLeft:'8%'}}>
-                        <Text style={{fontWeight:'bold',fontSize:22}}>Trilha Média</Text>
-                        <View style={{backgroundColor:"#3165B0",color:"#fff",width:"50%",alignItems:'center',borderRadius:70}}>
+                        <Text style={{fontWeight:'bold',fontSize:21.5,width:'170%'}}>Trilha do Olho d’Água</Text>
+                        <View style={{backgroundColor:"#3165B0",color:"#fff",width:"50%",alignItems:'center',borderRadius:70,marginTop:'3%'}}>
                           <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >3 PONTOS</Text> 
                         </View>
                         <View style={{flexDirection:"row",marginTop:'4.5%'}}>
@@ -227,8 +227,8 @@ const HomeScreen= ({navigation}) =>{
                       <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA DIFÍCIL</Text> 
                     </View>
                     <View className="absolute" style={{marginTop:"35%",width:'112%',marginLeft:'8%'}}>
-                        <Text style={{fontWeight:'bold',fontSize:22}}>Trilha Difícil</Text>
-                        <View style={{backgroundColor:"#C76828",color:"#fff",width:"50%",alignItems:'center',borderRadius:70}}>
+                        <Text style={{fontWeight:'bold',fontSize:22,width:'150%'}}>Trilha do Marsupial</Text>
+                        <View style={{backgroundColor:"#C76828",color:"#fff",width:"50%",alignItems:'center',borderRadius:70,marginTop:'3%'}}>
                           <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >10 PONTOS</Text> 
                         </View>
                         <View style={{flexDirection:"row",marginTop:'4.5%'}}>
@@ -243,15 +243,15 @@ const HomeScreen= ({navigation}) =>{
                           <Text style={{fontSize:14}}>Pontos de visita: Cactáceas, marsupial,Olho D'Água</Text>
                           <Text style={{marginTop:'7%',left:'63%',position:'absolute',fontSize:14.5,color:"#C76828",fontWeight:'bold'}}>ver mais...</Text>
                         </View>
-                        
-                    </View>                     
-                            
-                </View>     
+
+                    </View>
+
+                </View>
             </View>
         </TouchableOpacity>
         </View>
 
-       
+
     )
 }
 
