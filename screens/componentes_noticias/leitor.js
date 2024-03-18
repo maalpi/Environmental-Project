@@ -140,7 +140,7 @@ const Leitor = ({navigation, route}) => {
             </Modal>
 
           </View>
-            : cont === 2 ? 
+            : cont === 2 || 6 ? 
             <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
             <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
               {item.description.title}
@@ -265,6 +265,38 @@ const Leitor = ({navigation, route}) => {
               ))}
 
             </View>
+
+            : cont === 5 ?
+
+            <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
+              <Text style={{ textAlign: 'justify', fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
+                {item.description.title}
+              </Text>
+    
+              {item.description.content.map((section, index) => (
+                <View key={index} style={{ marginBottom: 0 }}>
+                  {section.subtitle && (
+                    <Text style={{ textAlign: 'justify', fontSize: 16,lineHeight:24, fontWeight: 'bold' }}>
+                      {section.subtitle}
+                    </Text>
+                  )}
+  
+                  {section.video && (
+                    <View className="flex-1 relative " style={{ paddingHorizontal: '-2'}}>
+                      <YoutubePlayer
+                        height={250}
+                        play={playing}
+                        
+                        videoId={section.video}
+                        onChangeState={onStateChange}
+                      />
+                      </View>
+                  )}
+                  </View>
+              
+            ))}
+
+          </View>
 
             :
 

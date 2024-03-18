@@ -37,91 +37,6 @@ const HomeScreen= ({navigation}) =>{
     const toggleTrilha = (index) =>{
         setTrilha(index)
     };
-
-    // COORDENADAS TRILHA UM
-    const [coordinates] = useState([
-      {
-        latitude: -6.4508533,
-        longitude: -36.3063767,
-      },
-      {
-        latitude: -6.4499367,
-        longitude: -36.3078555,
-      },
-      {
-        latitude: -6.4497067,
-        longitude: -36.3091483,
-      },
-    ]);
-
-    // COORDENADAS TRILHA DOIS
-    const [coordinates_two] = useState([
-      {
-        latitude: -6.4508533,
-        longitude: -36.3063767,
-      },
-      {
-        latitude: -6.4499367,
-        longitude: -36.3078555,
-      },
-      {
-        latitude: -6.4497067,
-        longitude: -36.3091483,
-      },
-      {
-        latitude: -6.4481817,
-        longitude: -36.3074767
-      }
-    ]);
-
-    // COORDENADAS TRILHA TRES
-    const [coordinates_three] = useState([
-      {
-        latitude: -6.4504272,
-        longitude: -36.3059944,
-      },
-      {
-        latitude: -6.4496694,
-        longitude: -36.3058889,
-      },
-      {
-        latitude:  -6.4491367,
-        longitude: -36.3062167,
-      },
-      {
-        latitude: -6.4486722,
-        longitude: -36.3062333,
-      },
-      {
-        latitude:  -6.4478025,
-        longitude: -36.30725,
-      },
-      {
-        latitude: -6.4474694,
-        longitude: -36.3076806,
-      },
-      {
-        latitude: -6.4478361,
-        longitude:  -36.3088333,
-      },
-      {
-        latitude:  -6.4473,
-        longitude: -36.3093333,
-      },
-      {
-        latitude: -6.447225,
-        longitude: -36.3086694,
-      },
-      {
-        latitude: -6.447228,
-        longitude: -36.3074444,
-      },
-      {
-        latitude: -6.4497583,
-        longitude:  -36.3059694,
-      }
-    ]);
-
     return (
         <View className="flex-1 bg-backgroundprimary">
           <View style ={{flexDirection: 'row'}}>
@@ -140,9 +55,8 @@ const HomeScreen= ({navigation}) =>{
                 </View>
             </View>
 
-          <View style={{marginTop:'-8%',marginBottom:'3%'}}>
+          <View style={{marginTop:'-10%',marginBottom:'3%'}}>
             <Text style={{fontWeight:'bold',marginLeft:'6%',fontSize:27}}>Escolha sua trilha:</Text>
-            <Text style={{marginTop:'-1%',marginLeft:'6%'}}>As trilhas são separadas por dificultade</Text>
           </View>
 
           <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}}onPress={() => navigation.navigate('Facil')}>  
@@ -163,9 +77,9 @@ const HomeScreen= ({navigation}) =>{
                         </View>
                         <View style={{flexDirection:"row",marginTop:'4.5%'}}>
                           <Image source={require('../assets/icons/passos.png')} style={{ width: '10%', height: '100%', borderRadius: 25 }}></Image>
-                          <Text style={{fontSize:13,paddingLeft:'2%'}}>2.0km</Text>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>450m</Text>
                           <Image source={require('../assets/icons/relogio.png')} style={{ width: '10%', height: '100%', borderRadius: 25,marginLeft:'20%' }}></Image>
-                          <Text style={{fontSize:13,paddingLeft:'2%'}}>40min</Text>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>30min</Text>
                         </View>
                     </View>
                     <View className="absolute" style={{marginLeft:'8%',marginTop:'100%',height:'130%',width:'200%'}}>
@@ -192,15 +106,15 @@ const HomeScreen= ({navigation}) =>{
                       <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA MÉDIA</Text> 
                     </View>
                     <View className="absolute" style={{marginTop:"35%",width:'119%',marginLeft:'8%'}}>
-                        <Text style={{fontWeight:'bold',fontSize:21.5,width:'170%'}}>Trilha do Olho d’Água</Text>
+                        <Text style={{fontWeight:'bold',fontSize:20.5,width:'170%'}}>Trilha do Olho d’Água</Text>
                         <View style={{backgroundColor:"#3165B0",color:"#fff",width:"50%",alignItems:'center',borderRadius:70,marginTop:'3%'}}>
                           <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >3 PONTOS</Text> 
                         </View>
                         <View style={{flexDirection:"row",marginTop:'4.5%'}}>
                           <Image source={require('../assets/icons/passos.png')} style={{ width: '10%', height: '100%', borderRadius: 25 }}></Image>
-                          <Text style={{fontSize:13,paddingLeft:'2%'}}>2.0km</Text>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>830m</Text>
                           <Image source={require('../assets/icons/relogio.png')} style={{ width: '10%', height: '100%', borderRadius: 25,marginLeft:'20%' }}></Image>
-                          <Text style={{fontSize:13,paddingLeft:'2%'}}>40min</Text>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>60min</Text>
                         </View>
                     </View>
                     <View className="absolute" style={{marginLeft:'9%',marginTop:'95%',height:'130%',width:'190%'}}>
@@ -217,7 +131,7 @@ const HomeScreen= ({navigation}) =>{
 
         <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}} onPress={() => navigation.navigate('Dificil')}>  
             <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
-                <Image source={{ uri: 'https://live.staticflickr.com/65535/53555963791_e76a4e3118_w.jpg' }} 
+                <Image source={{ uri: 'https://live.staticflickr.com/65535/53349610231_3bf6747101_o.jpg' }} 
                 className= { "h-32 w-32 rounded-l-xl"}
                 style={{height:'100%',width:'35%'}}
                 resizeMethod='resize'></Image>
@@ -228,17 +142,17 @@ const HomeScreen= ({navigation}) =>{
                     </View>
                     <View className="absolute" style={{marginTop:"35%",width:'112%',marginLeft:'8%'}}>
                         <Text style={{fontWeight:'bold',fontSize:22,width:'150%'}}>Trilha do Marsupial</Text>
-                        <View style={{backgroundColor:"#C76828",color:"#fff",width:"50%",alignItems:'center',borderRadius:70,marginTop:'3%'}}>
-                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >10 PONTOS</Text> 
+                        <View style={{backgroundColor:"#C76828",color:"#fff",width:"50%",alignItems:'center',borderRadius:70,marginTop:'2%'}}>
+                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >9 PONTOS</Text> 
                         </View>
                         <View style={{flexDirection:"row",marginTop:'4.5%'}}>
                           <Image source={require('../assets/icons/passos.png')} style={{ width: '10%', height: '100%', borderRadius: 25 }}></Image>
-                          <Text style={{fontSize:13,paddingLeft:'2%'}}>2.0km</Text>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>1.3km</Text>
                           <Image source={require('../assets/icons/relogio.png')} style={{ width: '10%', height: '100%', borderRadius: 25,marginLeft:'20%' }}></Image>
-                          <Text style={{fontSize:13,paddingLeft:'2%'}}>40min</Text>
+                          <Text style={{fontSize:13,paddingLeft:'2%'}}>90min</Text>
                         </View>
                     </View>
-                    <View className="absolute" style={{marginLeft:'8%',marginTop:'95%',height:'130%',width:'200%'}}>
+                    <View className="absolute" style={{marginLeft:'8%',marginTop:'93%',height:'130%',width:'200%'}}>
                         <View style={{flexDirection:'row'}}>
                           <Text style={{fontSize:14}}>Pontos de visita: Cactáceas, marsupial,Olho D'Água</Text>
                           <Text style={{marginTop:'7%',left:'63%',position:'absolute',fontSize:14.5,color:"#C76828",fontWeight:'bold'}}>ver mais...</Text>

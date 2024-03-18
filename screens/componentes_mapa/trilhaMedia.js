@@ -123,7 +123,7 @@ const Media = ({navigation}) => {
 
                 <View style={{marginTop:'3%'}}>
                     <Text style={{fontWeight:'bold',fontSize:20}}>Descrição:</Text>
-                    <Text style={{paddingRight:'13%',textAlign: 'justify', lineHeight:20,marginTop:'2%',color:'#000'}}>Classificada em médio nível de dificuldade e dá acesso ao Olho D'água, localizado a 830 metros do início da trilha. O tempo estimado para completar todo o percurso é de 60 minutos.</Text>
+                    <Text style={{paddingRight:'13%',textAlign: 'justify', lineHeight:20,marginTop:'2%',color:'#000'}}>Classificada em médio nível de dificuldade e dá acesso ao Olho D'água, localizado a 830 metros do início da trilha.</Text>
                 </View>
 
                 <View style={{flexDirection:'row',marginTop:'3%'}}>

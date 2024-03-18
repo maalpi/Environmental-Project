@@ -20,6 +20,8 @@ import Quiz from "./screens/componentes_quiz/Quiz"
 import Facil from "./screens/componentes_mapa/trilhaFacil"
 import Media from "./screens/componentes_mapa/trilhaMedia"
 import Dificil from "./screens/componentes_mapa/trilhaDificil"
+import QrcodeODS from "./screens/componentes_qrcode/QrcodeODS"
+import QrcodePainel from "./screens/componentes_qrcode/QrcodePainel"
 //TELAS DO QRCODE
 
 const Stack = createNativeStackNavigator();
@@ -28,7 +30,6 @@ export default () => (
         <>
             <NavigationContainer>
                 <Stack.Navigator screenOptions={{headerShown: false, tabBarShowLabel:false}} >
-                    
                     <Stack.Screen name="Tabs" component={Tabs}/>
                     <Stack.Screen name="earch" component={Search}/> 
                     <Stack.Screen name="Leitor" component={Leitor}/>
@@ -40,6 +41,8 @@ export default () => (
                     <Stack.Screen name="Quiz" component={Quiz}/>
                     <Stack.Screen name="Facil" component={Facil}/>
                     <Stack.Screen name="Media" component={Media}/>
+                    <Stack.Screen name="QrcodeODS" component={QrcodeODS}/>
+                    <Stack.Screen name="QrcodePainel" component={QrcodePainel}/>
                     <Stack.Screen name="Dificil" component={Dificil}/>
                 </Stack.Navigator>
             </NavigationContainer>

@@ -151,6 +151,7 @@ const FindScreen= ({navigation}) =>{
                       {selectedItem.descricao}
                     </Text>
                   </ScrollView>
+                  <Text style={{marginLeft:'40%', color: 'grey',fontSize:12}}>Creditos Imagem: Valécia Estrela</Text>
                 </View>
                 ): <Text></Text>}
               </>

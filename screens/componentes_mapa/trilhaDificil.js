@@ -34,10 +34,10 @@ const Media = ({navigation}) => {
           latitude: -6.4496694,
           longitude: -36.3058889,
         },
-        {
-          latitude:  -6.4491367,
-          longitude: -36.3062167,
-        },
+        // {
+        //   latitude:  -6.4491367,
+        //   longitude: -36.3062167,
+        // },
         {
           latitude: -6.4486722,
           longitude: -36.3062333,
@@ -107,15 +107,11 @@ const Media = ({navigation}) => {
                           toggleModal(); // Alternar o modal
                           navigation.navigate('Cactaceas'); // Navegar para 'Mirante'
                       }}/>
-                        
 
-                        <Marker coordinate={coordinates_three[9]} description={'Ponto UM'} icon={require('../../assets/logo/MarkerMarrom.png')}
+                        <Marker coordinate={coordinates_three[8]} description={'Ponto UM'} icon={require('../../assets/logo/MarkerMarrom.png')}
                         onPress={() => {
-                         
                           navigation.navigate('OlhoDagua'); // Navegar para 'Mirante'
                       }}/>
-                        
-                        <Marker coordinate={coordinates_three[8]} />
                         <Polyline
                         coordinates={coordinates_three}
                         strokeColor="#C76828" // fallback for when `strokeColors` is not supported by the map-provider
@@ -127,7 +123,7 @@ const Media = ({navigation}) => {
                 </View>
             </Modal>
 
-            <View style={{marginTop:'7.5%',marginLeft:'5%'}}>
+            <View style={{marginTop:'5.5%',marginLeft:'5%'}}>
              <TouchableOpacity onPress={() => navigation.goBack()}>
                 <ArrowLeftIcon color='#C76828' size={24}/>
             </TouchableOpacity>
@@ -136,7 +132,7 @@ const Media = ({navigation}) => {
             <View style={{alignItems:'center'}}> 
                 <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha do Marsupial:</Text>   
                 <Text>Contemple as belezas naturais da região</Text>
-                <Image source={require('../../assets/logo/caatinga.jpg')} 
+                <Image source={{uri: 'https://live.staticflickr.com/65535/53349610231_3bf6747101_o.jpg' }} 
                 style ={{width:'100%',overflow:'hidden',height:'50%',marginTop:'5%'}}
                 resizeMethod='resize'></Image>
             </View>
@@ -156,7 +152,7 @@ const Media = ({navigation}) => {
 
                 <View style={{marginTop:'3%'}}>
                     <Text style={{fontWeight:'bold',fontSize:20}}>Descrição:</Text>
-                    <Text style={{paddingRight:'13%',textAlign: 'justify', lineHeight:20,marginTop:'2%',color:'#000'}}> Classificada em alto nível de dificuldade, o nome da trilha faz referência ao marsupial Gracilinanus agilis, popularmente conhecido por catita, encontrado na região.</Text>
+                    <Text style={{paddingRight:'13%',textAlign: 'justify', lineHeight:20,marginTop:'2%',color:'#000'}}>O nome da trilha faz referência ao marsupial Gracilinanus agilis, popularmente conhecido por catita, encontrado na região.</Text>
                 </View>
 
                 <View style={{flexDirection:'row',marginTop:'3%'}}>
@@ -164,7 +160,7 @@ const Media = ({navigation}) => {
                     <Text style={{fontWeight:'bold',fontSize:15}}> 10 Pontos:</Text>
 
                 </View>
-                <ScrollView style={{marginLeft:'9%',height:'10%',width:'70%'}} indicatorStyle={{backgroundColor: 'red'}}>
+                <ScrollView style={{marginLeft:'9%',height:'10.5%',width:'70%'}} indicatorStyle={{backgroundColor: 'red'}}>
                     <View style={{flexDirection:'row'}}>
                         <Image source={require('../../assets/icons/bandeiraMarrom.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
                         <Text style={{fontWeight:'bold',color:'#C76828',fontSize:13}}>Saída</Text>
@@ -178,15 +174,6 @@ const Media = ({navigation}) => {
                         <Text style={{fontWeight:'bold',color:'#C76828',fontSize:13}}>Portal das Cactáceas</Text>
                     </View>
                     
-                    <Text style={styles.linha}>|</Text>
-                    <Text style={styles.linha}>|</Text>
-                    <Text style={styles.linha}>|</Text>
-                    
-                    <View style={{flexDirection:'row'}}>
-                        <Image source={require('../../assets/icons/bandeiraMarrom.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
-                        <Text style={{fontWeight:'bold',color:'#C76828',fontSize:13}}>Área de desertificação</Text>
-                    </View>
-
                     <Text style={styles.linha}>|</Text>
                     <Text style={styles.linha}>|</Text>
                     <Text style={styles.linha}>|</Text>
@@ -277,7 +264,7 @@ const styles = StyleSheet.create({
         paddingVertical: '3%',
         paddingHorizontal: '4%',
         width:'70%',
-        marginTop:'5%',
+        marginTop:'4.5%',
         marginLeft:'12%',
         borderRadius:10,
         flexDirection:'row',
@@ -289,7 +276,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 18,
         fontWeight: 'bold',
-        marginLeft:'4%'
+        marginLeft:'4%',
       },
       linha: {
         fontWeight:'bold',

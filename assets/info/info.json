@@ -57,9 +57,9 @@
                       },
                       {
                         "subtitle": "Vivendo ODS",
-                        "text": "Jogo presente na reserva.",
-                        "imagem1": "https://live.staticflickr.com/65535/53471460842_751695168b_z.jpg",
-                        "imagem2": "https://live.staticflickr.com/65535/53472367806_d0b40f1231_z.jpg"
+                        "text": "Jogo educativo presente na reserva.",
+                        "imagem1": "https://live.staticflickr.com/65535/53595257177_25c931d69f_o.jpg",
+                        "imagem2": "https://live.staticflickr.com/65535/53596451054_35d8be8bac_o.jpg"
                       }
                     ],
                     "textIndent": 20
@@ -236,6 +236,77 @@
                 "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
                 "category": "ensino",
                 "diaMes": "29 . JAN"
-            }
+            },
+
+            {
+              "source": {
+              "id": null,
+              "name": "UEPB"
+              },
+                  "author": "UEPB",
+                  "title": "Vídeos Infantis",
+                  "description": {
+                      "title": "Videos educativos infantis para seu filho aprender sobre educação ambiental !!!\n",
+                      "content": [
+                        {
+                          "subtitle": "Oque são ODS?",
+                          "video": "1SyGLbBUj1g"
+                        },
+                        {
+                          "subtitle": "Conservação e Unidade de Conservação (UC)",
+                          "video": "Gzi1-iDvPo8"
+                        }
+                      ],
+                      "textIndent": 20
+                    },
+                  "url": "https://live.staticflickr.com/65535/53560037513_20d0e58522_w.jpg",
+                  "urlToImage": "https://live.staticflickr.com/65535/53595303507_f659344778_o.png",
+                  "publishedAt": "2024-03-14T15:38:00Z",
+                  "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
+                  "category": "ensino",
+                  "diaMes": "14 . MAR"
+              },
+
+              {
+                "source": {
+                "id": null,
+                "name": "UEPB e IFPB"
+                },
+                    "author": "UEPB e IFPB",
+                    "title": "Créditos",
+                    "description": {
+                        "title": "Créditos pelo desenvolvimento do aplicativo.\n",
+                        "content": [
+                          {
+                            "subtitle": "Estudantes do IFPB - Campina Grande",
+                            "text": "Eduardo dos Reis Souza - Dev\nemail:  eduardodosreissouza@gmail.com\n\nMateus Penha Albuquerque Pierre - Dev\nemail:  pierremateus81@gmail.com\n "
+                          },
+                          {
+                            "subtitle": "Orientadores",
+                            "text": "Prof. Danyllo Wagner Albuquerque - IFPB\nemail:  danyllo.albuquerque@ifpb.edu.br\n\nProfa. Dra. Joseline Molozzi - UEPB\nemail:  jmolozzi@servidor.uepb.edu.br "
+                          },
+                          {
+                            "subtitle": "Designers",
+                            "text": "Pedro Sheldon de Lima Alcantara - IFCE\nemail:  eduardodosreissouza@gmail.com\n"
+                          },
+                          {
+                            "subtitle": "Coletas de Informações e Pesquisa",
+                            "text": "Laboratório de Ecologia de Bentos (LEB)\n\nGrupo de Extensão e Pesquisa em Gestão e Educação Ambiental (GGEA)"
+                          },
+                          {
+                            "subtitle": "Imagens",
+                            "text": "Valécia Estrela\n\nLaboratório de Botânica (LaBot)\n\nLaboratório de Ecofisiologia de Plantas da Caatinga (LepCaa)"
+                          }
+                
+                        ],
+                        "textIndent": 20
+                      },
+                    "url": "https://live.staticflickr.com/65535/53596506684_bae431a197_o.png",
+                    "urlToImage": "https://live.staticflickr.com/65535/53596506684_bae431a197_o.png",
+                    "publishedAt": "2024-03-18T15:38:00Z",
+                    "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
+                    "category": "ensino",
+                    "diaMes": "18 . MAR"
+                }
     ]
 }
