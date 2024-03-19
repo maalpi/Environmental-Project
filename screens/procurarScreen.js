@@ -71,7 +71,6 @@ const FindScreen= ({navigation}) =>{
         const filtered = dataToFilter.filter(item =>
             item.nome && item.nome.toLowerCase().includes(text.toLowerCase())
             );
-            console.log(filtered);
             setFilteredData(filtered);
       };
 
@@ -79,7 +78,6 @@ const FindScreen= ({navigation}) =>{
         const filtered = dataToFilter.filter(item =>
             item.nome && item.nome.toLowerCase().includes(text.toLowerCase())
             );
-            console.log(filtered);
             setFilteredDataFlora(filtered);
       };
 

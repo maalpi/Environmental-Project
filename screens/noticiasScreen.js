@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View,Text, Button, StyleSheet, TouchableOpacity, FlatList,Image,Dimensions} from 'react-native'
 
-import Header from './componentes_noticias/header'
 import Card from './componentes_noticias/card'
-import DataInfo from '../assets/info/info.json'
 import Video from 'react-native-video';
 
 import { ScrollView } from 'react-native-virtualized-view'
@@ -158,7 +156,7 @@ const NoticiasScreen= ({navigation}) =>{
         // Sua lógica de carregamento de dados aqui
       }, [Select]);
     
-    return (   
+    return (
         <View style={!videoPlayed ? { flex: 1, justifyContent: 'center', alignItems: 'center' } : {flex: 1}}>
         {!videoPlayed && (
         <Video
@@ -207,7 +205,6 @@ const NoticiasScreen= ({navigation}) =>{
             onPress={() => {
                 // Adicione a lógica do seu botão aqui
                 navigation.navigate('Facil');
-                console.log('Botão pressionado!');
               }}>
                 <Image source={require('../assets/logo/caatinga.jpg')} 
                 className= { "h-40 w-full overflow-hidden" }

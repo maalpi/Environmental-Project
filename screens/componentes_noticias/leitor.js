@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef, useState } from 'react'
-import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image,Platform, StatusBar,Linking } from 'react-native'
+import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image,Platform, StatusBar,Linking, Alert } from 'react-native'
 import { ArrowLeftIcon, ArrowRightIcon, VideoCameraIcon } from 'react-native-heroicons/solid'
 
 import YoutubePlayer from "react-native-youtube-iframe";
@@ -26,7 +26,6 @@ const Leitor = ({navigation, route}) => {
     const dia = dateObj.getDate();
     let mes = dateObj.toLocaleString('default', { month: 'long' });
     const ano = dateObj.getFullYear();
-    console.log(cont);
     
 
     const data = [
@@ -140,7 +139,7 @@ const Leitor = ({navigation, route}) => {
             </Modal>
 
           </View>
-            : cont === 2 || 6 ? 
+            : cont === 2? 
             <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
             <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
               {item.description.title}
@@ -294,6 +293,48 @@ const Leitor = ({navigation, route}) => {
                   )}
                   </View>
               
+            ))}
+
+          </View>
+
+            : cont === 6 ?
+            <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
+            <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
+              {item.description.title}
+            </Text>
+    
+            {item.description.content.map((section, index) => (
+              <View key={index} style={{ marginBottom: 10 }}>
+                {section.subtitle && (
+                  <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'bold' }}>
+                    {section.subtitle}
+                  </Text>
+                )}
+    
+                <Text style={{ textAlign: 'justify', textIndent: 20, fontSize: 16,lineHeight:24, fontWeight: 'normal' }}>
+                  {section.text}
+                </Text>
+                
+                <View style={{ flexDirection: 'row'}}>
+                {section.imagem1 && (
+                <TouchableOpacity onPress={() => openImageModal(section.imagem1)}>
+                    <Image
+                    source={{ uri: section.imagem1 }}
+                    style={{ width: 150, height: 150,borderRadius:10, marginVertical: 10, marginLeft: 10 }}
+                    />
+                </TouchableOpacity>
+                )}
+                
+                {section.imagem2 && (
+                    <TouchableOpacity onPress={() => openImageModal(section.imagem2)}>
+                        <Image
+                        source={{ uri: section.imagem2 }}
+                        style={{ width: 150, height: 150,borderRadius:10, marginVertical: 10, marginLeft:35 }}
+                        />
+                </TouchableOpacity>
+                )}
+                </View>
+              </View>
             ))}
 
           </View>
