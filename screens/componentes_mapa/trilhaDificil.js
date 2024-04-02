@@ -1,9 +1,8 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react'
-import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image,Platform, StatusBar,Linking } from 'react-native'
-import { ArrowLeftIcon, ArrowRightIcon, VideoCameraIcon } from 'react-native-heroicons/solid'
+import React, {useState, useEffect } from 'react'
+import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image } from 'react-native'
+import { ArrowLeftIcon} from 'react-native-heroicons/solid'
 
-import MapView, { PROVIDER_GOOGLE,Marker,Polyline } from 'react-native-maps';
-import MapViewDirections from 'react-native-maps-directions';
+import MapView, { Marker, Polyline } from 'react-native-maps';
 import Modal from 'react-native-modal';
 
 const customMapStyle = [
@@ -92,8 +91,8 @@ const Media = ({navigation}) => {
 
                     <View style={styles.viewMapa} >
                         <MapView
-                        provider={PROVIDER_GOOGLE}
                         style={styles.map}
+                        showsUserLocation={true}
                         initialRegion={{
                         latitude: coordinates_three[0].latitude + 0.0015, 
                         longitude: coordinates_three[0].longitude - 0.0015,
@@ -102,13 +101,13 @@ const Media = ({navigation}) => {
                         }}
                         customMapStyle={customMapStyle}>
                         <Marker coordinate={coordinates_three[0]} />
-                        <Marker coordinate={coordinates_three[1]} description={'Ponto UM'} icon={require('../../assets/logo/MarkerMarrom.png')}
+                        <Marker coordinate={coordinates_three[1]} description={'Ponto UM'} image={require('../../assets/logo/MarkerMarrom.png')}
                         onPress={() => {
                           toggleModal(); // Alternar o modal
                           navigation.navigate('Cactaceas'); // Navegar para 'Mirante'
                       }}/>
 
-                        <Marker coordinate={coordinates_three[8]} description={'Ponto UM'} icon={require('../../assets/logo/MarkerMarrom.png')}
+                        <Marker coordinate={coordinates_three[8]} description={'Ponto UM'} image={require('../../assets/logo/MarkerMarrom.png')}
                         onPress={() => {
                           navigation.navigate('OlhoDagua'); // Navegar para 'Mirante'
                       }}/>

@@ -151,13 +151,13 @@ const FindScreen= ({navigation}) =>{
                   </ScrollView>
                   <Text style={{marginLeft:'40%', color: 'grey',fontSize:12}}>Creditos Imagem: Valécia Estrela</Text>
                 </View>
-                ): <Text></Text>}
+                ) : <Text></Text>}
               </>
       )}
 
     </View>
-    <TouchableOpacity onPress={() => setModalVisible(false)} style={{position:'absolute', backgroundColor: 'red',top: '10%', left: '85%', padding: 15 ,alignItems:'center',borderTopRightRadius:10}}>
-              <Text style={{color: 'white' }}>X</Text>
+    <TouchableOpacity onPress={() => setModalVisible(false)} style={{position:'absolute', backgroundColor: 'red',top: '10%', left: '86.8%', padding: '3%' ,alignItems:'center',justifyContent:'center', borderTopRightRadius:10}}>
+              <Text style={{color: 'white', textAlign:'center' }}>X</Text>
           </TouchableOpacity>
   </View>
 </Modal>

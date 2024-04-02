@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { View,Text, Button, StyleSheet,Image, TouchableOpacity,Dimensions} from 'react-native'
-import LinearGradient from 'react-native-linear-gradient';
-import Modal from 'react-native-modal';
-import { ScrollView } from 'react-native-virtualized-view'
-import { ArrowsUpDownIcon } from 'react-native-heroicons/solid'
+import { View,Text, StyleSheet,Image, TouchableOpacity,PermissionsAndroid } from 'react-native'
 
-import MapView, { PROVIDER_GOOGLE,Marker,Polyline } from 'react-native-maps';
-import MapViewDirections from 'react-native-maps-directions';
 
 const customMapStyle = [
   {
@@ -61,7 +55,7 @@ const HomeScreen= ({navigation}) =>{
 
           <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}}onPress={() => navigation.navigate('Facil')}>  
             <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
-                <Image source={{ uri: 'https://live.staticflickr.com/65535/53472362006_965cf864dc_w.jpg' }} 
+                <Image source={{ uri: 'https://live.staticflickr.com/65535/53626516105_de36a3ea17_o.jpg' }} 
                 className= { "h-32 w-32 rounded-l-xl"}
                 style={{height:'100%',width:'35%'}}
                 resizeMethod='resize'></Image>
@@ -96,13 +90,13 @@ const HomeScreen= ({navigation}) =>{
 
         <TouchableOpacity className=" shadow-2xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}} onPress={() => navigation.navigate('Media')}>  
             <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
-                <Image source={{ uri: 'https://live.staticflickr.com/65535/53555958611_b12a2a98fa_w.jpg' }} 
+                <Image source={{ uri: 'https://live.staticflickr.com/65535/53626068181_6df82de05d_o.jpg' }} 
                 className= { "h-32 w-32 rounded-l-xl"}
                 style={{height:'100%',width:'35%'}}
                 resizeMethod='resize'></Image>
 
                 <View className="bg-red my-0 mx-0">
-                    <View style={{backgroundColor:"#3165B0",color:"#fff",width:"200%",alignItems:'center'}}>
+                    <View style={{backgroundColor:"#3165B0",color:"#fff",width:"220%",alignItems:'center'}}>
                       <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA MÉDIA</Text> 
                     </View>
                     <View className="absolute" style={{marginTop:"35%",width:'119%',marginLeft:'8%'}}>
@@ -137,7 +131,7 @@ const HomeScreen= ({navigation}) =>{
                 resizeMethod='resize'></Image>
 
                 <View className="bg-red my-0 mx-0">
-                    <View style={{backgroundColor:"#C76828",color:"#fff",width:"200%",alignItems:'center'}}>
+                    <View style={{backgroundColor:"#C76828",color:"#fff",width:"220%",alignItems:'center'}}>
                       <Text  style={{color:"#fff",fontWeight:"bold",padding:7,fontSize:15}} >TRILHA DIFÍCIL</Text> 
                     </View>
                     <View className="absolute" style={{marginTop:"35%",width:'112%',marginLeft:'8%'}}>
@@ -152,7 +146,7 @@ const HomeScreen= ({navigation}) =>{
                           <Text style={{fontSize:13,paddingLeft:'2%'}}>90min</Text>
                         </View>
                     </View>
-                    <View className="absolute" style={{marginLeft:'8%',marginTop:'93%',height:'130%',width:'200%'}}>
+                    <View className="absolute" style={{marginLeft:'9%',marginTop:'95%',height:'130%',width:'190%'}}>
                         <View style={{flexDirection:'row'}}>
                           <Text style={{fontSize:14}}>Pontos de visita: Cactáceas, marsupial,Olho D'Água</Text>
                           <Text style={{marginTop:'7%',left:'63%',position:'absolute',fontSize:14.5,color:"#C76828",fontWeight:'bold'}}>ver mais...</Text>
@@ -180,10 +174,10 @@ const styles = StyleSheet.create({
     flex: 1,
     
   },container_gradient: {
-    
     alignItems: 'center',
-    
-    width:'36%',height:'100%',alignItems:'center',padding:6
+    width:'36%',
+    height:'100%',
+    padding:6,
   },
   Shadow: {
     shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32, elevation: 16,}

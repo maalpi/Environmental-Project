@@ -2,7 +2,11 @@
  * @format
  */
 
-import {AppRegistry} from 'react-native';
+import {AppRegistry, Text} from 'react-native';
+
+Text.defaultProps = Text.defaultProps || {};
+Text.defaultProps.allowFontScaling = false;
+
 import App from './App';
 import {name as appName} from './app.json';
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { View,Text, Button, StyleSheet, TouchableOpacity, FlatList,Image,Dimensions} from 'react-native'
+import { View,Text, Button, StyleSheet, TouchableOpacity, FlatList,Image,PermissionsAndroid} from 'react-native';
 
-import Card from './componentes_noticias/card'
+import Card from './componentes_noticias/card';
 import Video from 'react-native-video';
 
-import { ScrollView } from 'react-native-virtualized-view'
-import SplashScreen from "react-native-splash-screen"
+import { ScrollView } from 'react-native-virtualized-view';
+import SplashScreen from 'react-native-splash-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const NoticiasScreen= ({navigation}) =>{
@@ -43,6 +43,7 @@ const NoticiasScreen= ({navigation}) =>{
 
     ]);
     
+    const [PermissionGranted, setPermissionGranted] = useState(false);
     const [videoPlayed, setVideoPlayed] = useState(false);
     const [videoLoaded, setVideoLoaded] = useState(false);
 
@@ -103,8 +104,6 @@ const NoticiasScreen= ({navigation}) =>{
     }, 16000); // 16000 milissegundos = 16 segundos
     };
 
-
-    let cont = 0;
     useEffect(() => {
         const getData = async () => {
           try {
@@ -156,9 +155,30 @@ const NoticiasScreen= ({navigation}) =>{
         // Sua lógica de carregamento de dados aqui
       }, [Select]);
     
+      useEffect(() => {
+        const requestLocationPermission = async () => {
+          try {
+            const permissions = [
+              PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+              PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
+            ];
+    
+            const granted = await PermissionsAndroid.requestMultiple(permissions);
+    
+            setPermissionGranted(
+              Object.values(granted).every((status) => status === PermissionsAndroid.RESULTS.GRANTED)
+            );
+            setPermissionGranted(true);
+          } catch (err) {
+            console.warn(err);
+          }
+        };
+          requestLocationPermission();
+      },[]);
+
     return (
         <View style={!videoPlayed ? { flex: 1, justifyContent: 'center', alignItems: 'center' } : {flex: 1}}>
-        {!videoPlayed && (
+        {PermissionGranted && !videoPlayed && (
         <Video
             source={require('../assets/video/CONVITE_01.mp4')}
             style={style.backgroundVideo}
@@ -206,7 +226,7 @@ const NoticiasScreen= ({navigation}) =>{
                 // Adicione a lógica do seu botão aqui
                 navigation.navigate('Facil');
               }}>
-                <Image source={require('../assets/logo/caatinga.jpg')} 
+                <Image source={{ uri: 'https://live.staticflickr.com/65535/53626516105_de36a3ea17_o.jpg' }}
                 className= { "h-40 w-full overflow-hidden" }
                 resizeMethod='resize'></Image>
                  <View style={style.overlay} />

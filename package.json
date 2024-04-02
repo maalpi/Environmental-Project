@@ -27,7 +27,6 @@
     "react-native-heroicons": "^3.2.0",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-maps": "1.10.2",
-    "react-native-maps-directions": "^1.9.0",
     "react-native-modal": "^13.0.1",
     "react-native-permissions": "^3.10.1",
     "react-native-qrcode-scanner": "^1.5.5",

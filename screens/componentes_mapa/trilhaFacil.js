@@ -1,10 +1,11 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react';
-import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image,Platform, StatusBar,Linking } from 'react-native';
-import { ArrowLeftIcon, ArrowRightIcon, VideoCameraIcon } from 'react-native-heroicons/solid';
+import React, { useState,useEffect } from 'react';
+import { View,Text,ScrollView, Button, StyleSheet, TouchableOpacity,Image, Platform  } from 'react-native';
+import { ArrowLeftIcon } from 'react-native-heroicons/solid';
 
-import MapView, { PROVIDER_GOOGLE,Marker,Polyline } from 'react-native-maps';
-import MapViewDirections from 'react-native-maps-directions';
+import MapView, { Marker, Polyline } from 'react-native-maps';
 import Modal from 'react-native-modal';
+
+const isAndroid = Platform.OS === 'android';
 
 const customMapStyle = [
     {
@@ -60,7 +61,7 @@ const Media = ({navigation}) => {
 
                     <View style={styles.viewMapa} >
                         <MapView
-                        provider={PROVIDER_GOOGLE}
+                        showsUserLocation={true}
                         style={styles.map}
                         initialRegion={{
                         latitude: coordinates[0].latitude + 0.0005,
@@ -69,21 +70,15 @@ const Media = ({navigation}) => {
                         longitudeDelta: 0.0021,
                         }}
                         customMapStyle={customMapStyle}>
-                        <Marker coordinate={coordinates[0]}
-                       style={{width:'20%'}}
-                       icon={require('../../assets/logo/MarkerVerde.png')}
-                        onPress={() => {
-                              toggleModal(); // Alternar o modal
-                              navigation.navigate('Media'); // Navegar para 'Media'
-                          }}>
+                        
 
-                        </Marker>
+                        <Marker coordinate={coordinates[0]} />
 
-                        <Marker coordinate={coordinates[2]} description={'Ponto UM'} icon={require('../../assets/logo/MarkerVerde.png')}
+                        <Marker coordinate={coordinates[2]} description={'Ponto UM'} image={require('../../assets/logo/MarkerVerde.png')}
                         onPress={() => {
-                          toggleModal(); // Alternar o modal
                           navigation.navigate('Mirante'); // Navegar para 'Mirante'
                       }}/>
+
                         <Polyline
                         coordinates={coordinates}
                         strokeColor="#2D821D" // fallback for when `strokeColors` is not supported by the map-provider
@@ -104,7 +99,7 @@ const Media = ({navigation}) => {
             <View style={{alignItems:'center'}}>
                 <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha do Mirante:</Text>
                 <Text>Contemple as belezas naturais da região.</Text>
-                <Image source={require('../../assets/logo/caatinga.jpg')}
+                <Image source={{ uri: 'https://live.staticflickr.com/65535/53626516105_de36a3ea17_o.jpg' }}
                 style ={{width:'100%',overflow:'hidden',height:'50%',marginTop:'5%'}}
                 resizeMethod="resize"></Image>
             </View>
