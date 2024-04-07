@@ -1,43 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { View,Text, StyleSheet,Image, TouchableOpacity,PermissionsAndroid } from 'react-native'
+import React, { useState } from 'react';
+import { View,Text, StyleSheet,Image, TouchableOpacity } from 'react-native';
 
-
-const customMapStyle = [
-  {
-    featureType: 'all',
-    elementType: 'geometry',
-    stylers: [
-      {
-        color: '#d8f8e4', // Defina aqui a cor de fundo desejada
-      },
-    ],
-  },
-];
-
-const HomeScreen= ({navigation}) =>{
-    const [isModalVisible, setModalVisible] = useState(false);
-    const [trilha,setTrilha] = useState(0);
-
-    const [activeCategory, setActiveCategory] = useState('primeira'); // Estado para controlar a categoria ativa
-
-    const changeCategory = (category) => {
-      setActiveCategory(category);
-  };
-
-    const toggleModal = () => {
-        setModalVisible(!isModalVisible);
-    };
-
-    const toggleTrilha = (index) =>{
-        setTrilha(index)
-    };
+const HomeScreen = ({navigation}) =>{
     return (
         <View className="flex-1 bg-backgroundprimary">
           <View style ={{flexDirection: 'row'}}>
                 <View style={{ alignItems: 'center', paddingVertical: '13%',paddingLeft:'6%' }}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
                         Trilhas Ambientais
-                    </Text>    
+                    </Text>
                     <Text style={{ fontSize: 16, color: '#c76828', fontStyle: 'italic'  }}>Conheça mais sobre a caatinga</Text>
                 </View>
 
@@ -116,14 +87,14 @@ const HomeScreen= ({navigation}) =>{
                           <Text style={{fontSize:14}}>Pontos de visita: umburada, mirante e ponto 3</Text>
                           <Text style={{marginTop:'7.5%',left:'53%',position:'absolute',fontSize:14.5,color:"#3165B0",fontWeight:'bold'}}>ver mais...</Text>
                         </View>
-                        
-                    </View>                     
-                            
-                </View>     
+
+                    </View>
+
+                </View>
             </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: "#000",shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}} onPress={() => navigation.navigate('Dificil')}>  
+        <TouchableOpacity className=" shadow-xl relative mb-4 rounded-xl overflow-hidden" style={{width:'90%',height:'20.5%',marginLeft:'4%',shadowColor: '#000',shadowOffset: { width: 0, height: 8,}, shadowOpacity: 0.44, shadowRadius: 10.32}} onPress={() => navigation.navigate('Dificil')}>  
             <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
                 <Image source={{ uri: 'https://live.staticflickr.com/65535/53349610231_3bf6747101_o.jpg' }} 
                 className= { "h-32 w-32 rounded-l-xl"}

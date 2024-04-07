@@ -1,13 +1,12 @@
-import React,{useState,useEffect} from "react"
-import { View,Text, Button, StyleSheet,TouchableOpacity, FlatList,Image,StatusBar,TextInput,Modal} from 'react-native'
+import React,{useState,useEffect} from 'react';
+import { View, Text, StyleSheet,TouchableOpacity, FlatList,Image,StatusBar,TextInput,Modal} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { ScrollView } from 'react-native-virtualized-view'
+import { ScrollView } from 'react-native-virtualized-view';
+import {MagnifyingGlassIcon} from 'react-native-heroicons/solid';
 
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot } from 'firebase/firestore';
 
-import database from "../assets/config/firebaseconfig"
-
-import {MagnifyingGlassIcon} from 'react-native-heroicons/solid'
+import database from '../assets/config/firebaseconfig';
 
 const FindScreen= ({navigation}) =>{
     //Cores pro gradiente da barra de status
