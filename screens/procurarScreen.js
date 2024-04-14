@@ -8,7 +8,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 
 import database from '../assets/config/firebaseconfig';
 
-const FindScreen= ({navigation}) =>{
+const FindScreen = ({navigation}) =>{
     //Cores pro gradiente da barra de status
     const gradientColors = ['#3165b0', '#c76828', '#42385D'];
     useEffect(() => {
@@ -38,34 +38,34 @@ const FindScreen= ({navigation}) =>{
     //Carregando os dados, da fauna primeiro
     // o onSnapshot adiciona um dado logo q é inserido
     useEffect(() => {
-        const unsubscribe = onSnapshot(collection(database, "Fauna"), (querySnapshot) => {
+        const unsubscribe = onSnapshot(collection(database, 'Fauna'), (querySnapshot) => {
           const list = [];
           querySnapshot.forEach((doc) => {
             list.push({ ...doc.data(), id: doc.id });
           });
           setData(list);
           filterData(list, searchText); // Filtra os dados inicialmente
-          
+
         });
-    
+
         return () => unsubscribe();
       }, []);
 
       useEffect(() => {
-        const unsubscribe = onSnapshot(collection(database, "Flora"), (querySnapshot) => {
+        const unsubscribe = onSnapshot(collection(database, 'Flora'), (querySnapshot) => {
           const list = [];
           querySnapshot.forEach((doc) => {
             list.push({ ...doc.data(), id: doc.id });
           });
           setDataFlora(list);
           filterDataFlora(list, searchText); // Filtra os dados inicialmente
-          
+
         });
-    
+
         return () => unsubscribe();
       }, []);
-    
-      
+
+
     const filterData = (dataToFilter, text) => {
         const filtered = dataToFilter.filter(item =>
             item.nome && item.nome.toLowerCase().includes(text.toLowerCase())
@@ -88,12 +88,12 @@ const FindScreen= ({navigation}) =>{
     const renderItem = ({ item }) => (
         <View style={styles.itemContainer}>
             <TouchableOpacity onPress={() => handleItemClick(item)}>
-                <Image source={{ uri: item.imagem }} style={styles.itemImage} resizeMethod='resize' />
-                <Text style={styles.itemText} ellipsizeMode="tail">{item.nome}</Text>
+                <Image source={{ uri: item.imagem }} style={styles.itemImage} resizeMethod="resize" />
+                <Text style={[styles.itemText, activeCategory === 'Flora' ? { fontStyle: 'italic' } : 0]} ellipsizeMode="tail">{item.nome}</Text>
             </TouchableOpacity>
         </View>
       );
-    
+
     //FAZENDO O NAVBAR SUMIR
     const handleScroll = (event) => {
         const offsetY = event.nativeEvent.contentOffset.y;
@@ -113,7 +113,7 @@ const FindScreen= ({navigation}) =>{
                 borderTopLeftRadius: 15,
                 borderTopRightRadius: 15,
                 height:70,
-            } // Mostra o navigator quando a tela é rolada para cima
+            }, // Mostra o navigator quando a tela é rolada para cima
           });
         }
     };
@@ -128,14 +128,14 @@ const FindScreen= ({navigation}) =>{
       <StatusBar translucent={false}  />
 
       <Modal animationType="slide" transparent={true} visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
-        
+
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
-            
+
           <View style={{ flex: 0.8, width: '90%', backgroundColor: 'white', borderRadius: 10 }}>
             {selectedItem && (
               <>
                 <Image source={{ uri: selectedItem.imagem }} style={{ flex: 1, borderTopLeftRadius: 10,borderTopRightRadius: 10, resizeMode: 'cover' }} />
-                <Text style={{ marginLeft:'5%',fontSize: 20, fontWeight: 'bold', marginBottom: 0, color: '#C73E28',marginTop:5 }}>{selectedItem.nome}</Text>
+                <Text style={[styles.itemSelecionado, activeCategory === 'Flora' ? { fontStyle: 'italic' } : 0]}>{selectedItem.nome}</Text>
                 <Text style={{ marginLeft:'5%',fontSize: 15, marginTop: -4, fontWeight: 'bold', fontStyle: 'italic', marginBottom: 5 }}>{selectedItem.nomeCientifico}</Text>
                 <View style={{ marginLeft:'5%',width:'38%',height: '6%', borderRadius: 15, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center',borderWidth:1,borderColor:'grey' }}>
                   <Text style={{ fontSize: 15, color: 'grey',fontWeight:'bold' }}>{selectedItem.tipo}</Text>
@@ -167,7 +167,7 @@ const FindScreen= ({navigation}) =>{
             <View style={{ alignItems: 'center',paddingVertical: '13%',paddingLeft:'6%' }}>
                 <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#3165b0' }}>
                     Catálogo Ambiental
-                </Text>    
+                </Text>
                 <Text style={{ fontSize: 16, color: '#c76828', fontStyle: 'italic'  }}>Conheça mais sobre a caatinga</Text>
             </View>
 
@@ -200,7 +200,7 @@ const FindScreen= ({navigation}) =>{
             styles.categoryButton,
             { backgroundColor: '#c76828' }, // Cor laranja
             { zIndex: activeCategory === 'Fauna' ? 1 : 0 },
-            
+
           ]}
           onPress={() => changeCategory('Fauna')}
         >
@@ -212,7 +212,7 @@ const FindScreen= ({navigation}) =>{
             styles.categoryButton,
             { backgroundColor: '#529c44' }, // Cor verde
             { zIndex: activeCategory === 'Flora' ? 1 : 0 },
-            
+
           ]}
           onPress={() => changeCategory('Flora')}
         >
@@ -230,10 +230,10 @@ const FindScreen= ({navigation}) =>{
         </ScrollView>
     </View>
     </LinearGradient>
-    )
-}
+    );
+};
 
-export default FindScreen
+export default FindScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginBottom: '-28%',
-        marginTop: 15
+        marginTop: 15,
       },
       categoryButton: {
         height: '30%',
@@ -267,13 +267,20 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       margin: 8,
     },
-    
+    itemSelecionado: {
+      marginLeft:'5%',
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginBottom: 0,
+      color: '#C73E28',
+      marginTop:5,
+    },
     itemImage: {
       width: 150,
       height: 150,
       borderRadius: 10,
       borderWidth:2,
-      borderColor:"#ffffff"
+      borderColor:'#ffffff',
     },
     searchIcon: {
         marginLeft: 10,
@@ -285,9 +292,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         backgroundColor: '#fff',
         borderRadius: 15,
-        borderWidth: 2, 
-        borderColor: '#3165b0'
-      },    
+        borderWidth: 2,
+        borderColor: '#3165b0',
+      },
     itemText: {
       marginTop: 8,
       fontSize: 16,
@@ -298,5 +305,5 @@ const styles = StyleSheet.create({
     activeButton: {
         zIndex: 1, // Configura a sobreposição // Cor diferente para a categoria ativa
     },
-    
+
   });

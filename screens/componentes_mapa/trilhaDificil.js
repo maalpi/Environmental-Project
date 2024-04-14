@@ -50,6 +50,10 @@ const Media = ({navigation}) => {
           longitude: -36.3076806,
         },
         {
+          latitude: -6.44775833333,
+          longitude: -36.3084472222,
+        },
+        {
           latitude: -6.4478361,
           longitude:  -36.3088333,
         },
@@ -107,7 +111,7 @@ const Media = ({navigation}) => {
                           navigation.navigate('Cactaceas'); // Navegar para 'Mirante'
                       }}/>
 
-                        <Marker coordinate={coordinates_three[8]} description={'Ponto UM'} image={require('../../assets/logo/MarkerMarrom.png')}
+                        <Marker coordinate={coordinates_three[9]} description={'Ponto UM'} image={require('../../assets/logo/MarkerMarrom.png')}
                         onPress={() => {
                           navigation.navigate('OlhoDagua'); // Navegar para 'Mirante'
                       }}/>
@@ -129,7 +133,7 @@ const Media = ({navigation}) => {
             </View>
             
             <View style={{alignItems:'center'}}> 
-                <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha do Marsupial:</Text>   
+                <Text style={{fontSize:32,fontWeight:'bold'}}>Trilha do Marsupial:</Text> 
                 <Text>Contemple as belezas naturais da região</Text>
                 <Image source={{uri: 'https://live.staticflickr.com/65535/53349610231_3bf6747101_o.jpg' }} 
                 style ={{width:'100%',overflow:'hidden',height:'50%',marginTop:'5%'}}
@@ -142,7 +146,7 @@ const Media = ({navigation}) => {
                 </View>
                 <View style={{backgroundColor:"#C76828",color:"#fff",width:"30%",alignItems:'center',flexDirection:'row',borderRadius:20}}>
                     <Image source={require('../../assets/icons/ponto.png')} style={{ width:8,height:8, borderRadius: 25,marginLeft:'5%'}}></Image>
-                    <Text  style={{color:"#fff",fontWeight:"bold",fontSize:14}} > Trilha Difícil</Text> 
+                    <Text  style={{color:"#fff",fontWeight:"bold",fontSize:14}} > Trilha Difícil</Text>
                     <Image source={require('../../assets/icons/passos.png')} style={{ width: '15%', height: '50%', borderRadius: 25,marginLeft:'20%',marginTop:'2.5%' }}></Image>
                     <Text style={{fontSize:16,marginTop:'2.5%'}}>1300m</Text>
                     <Image source={require('../../assets/icons/relogio.png')} style={{ width: '15%', height: '60%', borderRadius: 25,marginLeft:'10%',marginTop:'2.5%' }}></Image>
@@ -156,7 +160,7 @@ const Media = ({navigation}) => {
 
                 <View style={{flexDirection:'row',marginTop:'3%'}}>
                     <Image source={require('../../assets/icons/Vector.png')} style={{ width:'4%',height:'100%', borderRadius: 25}}></Image>
-                    <Text style={{fontWeight:'bold',fontSize:15}}> 10 Pontos:</Text>
+                    <Text style={{fontWeight:'bold',fontSize:15}}> 9 Pontos:</Text>
 
                 </View>
                 <ScrollView style={{marginLeft:'9%',height:'10.5%',width:'70%'}} indicatorStyle={{backgroundColor: 'red'}}>
@@ -206,6 +210,15 @@ const Media = ({navigation}) => {
 
                     <View style={{flexDirection:'row'}}>
                         <Image source={require('../../assets/icons/bandeiraMarrom.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
+                        <Text style={{fontWeight:'bold',color:'#C76828',fontSize:13}}>Área de recuperação florestal</Text>
+                    </View>
+
+                    <Text style={styles.linha}>|</Text>
+                    <Text style={styles.linha}>|</Text>
+                    <Text style={styles.linha}>|</Text>
+
+                    <View style={{flexDirection:'row'}}>
+                        <Image source={require('../../assets/icons/bandeiraMarrom.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
                         <Text style={{fontWeight:'bold',color:'#C76828',fontSize:13}}>Marsupial</Text>
                     </View>
 
@@ -244,9 +257,8 @@ const Media = ({navigation}) => {
                         <Image source={require('../../assets/icons/bandeiraMarrom.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
                         <Text style={{fontWeight:'bold',color:'#C76828',fontSize:13}}>Chegada</Text>
                     </View>
-                    
                 </ScrollView>
-                
+
                 <TouchableOpacity style={styles.button} onPress={toggleModal} >
                 <Image source={require('../../assets/icons/Walking.png')} style={{ width:'4%',height:'100%', marginLeft:'21.5%'}}></Image>
                     <Text style={styles.buttonText}>Iniciar Trilha</Text>

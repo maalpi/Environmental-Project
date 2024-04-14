@@ -27,6 +27,9 @@ const Media = ({navigation}) => {
     };
     // COORDENADAS TRILHA UM
     const [coordinates] = useState([
+      { latitude:-6.45058055556,
+        longitude: -36.3064,
+      },
       {
         latitude: -6.4508533,
         longitude: -36.3063767,
@@ -72,9 +75,9 @@ const Media = ({navigation}) => {
                         customMapStyle={customMapStyle}>
                         
 
-                        <Marker coordinate={coordinates[0]} />
+                        <Marker coordinate={coordinates[1]} />
 
-                        <Marker coordinate={coordinates[2]} description={'Ponto UM'} image={require('../../assets/logo/MarkerVerde.png')}
+                        <Marker coordinate={coordinates[3]} description={'Ponto UM'} image={require('../../assets/logo/MarkerVerde.png')}
                         onPress={() => {
                           navigation.navigate('Mirante'); // Navegar para 'Mirante'
                       }}/>
@@ -124,13 +127,21 @@ const Media = ({navigation}) => {
 
                 <View style={{flexDirection:'row',marginTop:'3%'}}>
                     <Image source={require('../../assets/icons/Vector.png')} style={{ width:'4%',height:'100%', borderRadius: 25}}></Image>
-                    <Text style={{fontWeight:'bold',fontSize:15}}> 2 Pontos:</Text>
+                    <Text style={{fontWeight:'bold',fontSize:15}}> 3 Pontos:</Text>
 
                 </View>
                 <ScrollView style={{marginLeft:'9%',height:'10%',width:'70%'}} indicatorStyle={{backgroundColor: 'red'}}>
                     <View style={{flexDirection:'row'}}>
+                          <Image source={require('../../assets/icons/bandeiraVerde.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
+                          <Text style={{fontWeight:'bold',color:'#2D821D',fontSize:13}}>Área de camping</Text>
+                      </View>
+                      <Text style={styles.linha}>|</Text>
+                      <Text style={styles.linha}>|</Text>
+                      <Text style={styles.linha}>|</Text>
+
+                    <View style={{flexDirection:'row'}}>
                         <Image source={require('../../assets/icons/bandeiraVerde.png')} style={{ width:'4%',height:'100%', marginRight: '2%'}}></Image>
-                        <Text style={{fontWeight:'bold',color:'#2D821D',fontSize:13}}>Saída</Text>
+                        <Text style={{fontWeight:'bold',color:'#2D821D',fontSize:13}}>Saída do Mirante</Text>
                     </View>
                     <Text style={styles.linha}>|</Text>
                     <Text style={styles.linha}>|</Text>

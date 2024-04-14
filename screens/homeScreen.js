@@ -38,7 +38,7 @@ const HomeScreen = ({navigation}) =>{
                     <View className="absolute" style={{marginTop:"35%",width:'110%',marginLeft:'8%'}}>
                         <Text style={{fontWeight:'bold',fontSize:21.5,width:'160%'}}>Trilha do Mirante</Text>
                         <View style={{backgroundColor:"#2D821D",color:"#fff",width:"50%",alignItems:'center',borderRadius:70,marginTop:'4%'}}>
-                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >2 PONTOS</Text> 
+                          <Text  style={{color:"#fff",fontWeight:"bold",fontSize:10}} >3 PONTOS</Text> 
                         </View>
                         <View style={{flexDirection:"row",marginTop:'4.5%'}}>
                           <Image source={require('../assets/icons/passos.png')} style={{ width: '10%', height: '100%', borderRadius: 25 }}></Image>
@@ -84,8 +84,8 @@ const HomeScreen = ({navigation}) =>{
                     </View>
                     <View className="absolute" style={{marginLeft:'9%',marginTop:'95%',height:'130%',width:'190%'}}>
                         <View style={{flexDirection:'row'}}>
-                          <Text style={{fontSize:14}}>Pontos de visita: umburada, mirante e ponto 3</Text>
-                          <Text style={{marginTop:'7.5%',left:'53%',position:'absolute',fontSize:14.5,color:"#3165B0",fontWeight:'bold'}}>ver mais...</Text>
+                          <Text style={{fontSize:14}}>Pontos de visita: umburada, mirante e Olho D'agua</Text>
+                          <Text style={{marginTop:'7.5%',left:'66%',position:'absolute',fontSize:14.5,color:"#3165B0",fontWeight:'bold'}}>ver mais...</Text>
                         </View>
 
                     </View>

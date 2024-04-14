@@ -8,6 +8,7 @@ const Carrossel = ({data}) =>{
     const SIZE = (width) * 0.7;
     const SPACER = (width - SIZE) / 3;
 
+    console.log(data);
     const [newData] = useState([{key:'spacer-left'}, ...data, {key: 'spacer-right'}])
 
     const x = useSharedValue(0);
@@ -17,8 +18,8 @@ const Carrossel = ({data}) =>{
         }
     })
     return (
-        <Animated.ScrollView 
-        horizontal 
+        <Animated.ScrollView
+        horizontal
         showsHorizontalScrollIndicator={false} 
         bounces={false}
         scrollEventThrottle={16}
@@ -44,15 +45,13 @@ const Carrossel = ({data}) =>{
                         <View style={{width: SIZE}} key={index}>
                             <Animated.View style={[styles.imageContainer,style]}>
                                 <View style={{width:'200%'}}>
-                                    <Image 
-                                    source={{uri: item.image ? item.image : "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/g7.png?w=1038&h=576&crop=1"}} 
+                                    <Image
+                                    source={{uri: item.image ? item.image : "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/g7.png?w=1038&h=576&crop=1"}}
                                     style={styles.image}
                                     resizeMode="cover"/>
                                 </View>
                             </Animated.View>
-                            
-                        </View>   
-                    
+                        </View>
                 )
             })}
         </Animated.ScrollView>
