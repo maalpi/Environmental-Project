@@ -10,7 +10,7 @@ const Carrossel = ({data}) =>{
 
     console.log(data);
     const [newData] = useState([{key:'spacer-left'}, ...data, {key: 'spacer-right'}])
-
+    console.log(newData);
     const x = useSharedValue(0);
     const onScroll = useAnimatedScrollHandler({
         onScroll: event => {

@@ -26,18 +26,18 @@ const Leitor = ({navigation, route}) => {
     const dia = dateObj.getDate();
     let mes = dateObj.toLocaleString('default', { month: 'long' });
     const ano = dateObj.getFullYear();
-    
 
+    
     const data = [
         {
-        image: item.urlToImage,
+        image: item.urlToImage[0],
         },
         {
-         image: item.urlToImage,  
+         image: item.urlToImage[1],
         },
         {
-         image: item.urlToImage,  
-        }
+         image: item.urlToImage[2],
+        },
     ]
    
     const [playing, setPlaying] = useState(false);

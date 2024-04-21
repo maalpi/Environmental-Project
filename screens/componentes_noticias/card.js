@@ -26,7 +26,7 @@ const Card = ({navigation,item,cont}) => {
         
         <TouchableOpacity className="flex-1 shadow-xl relative mb-4 rounded-xl overflow-hidden ml-4 mr-4" style={{width:'92%',height:'92%'}}onPress={() => navigation.navigate('Leitor',  {item: item, cont: cont})}>  
             <View className= {"flex-1 relative flex-row bg-white my-0 mx-0"}>
-                <Image source={{uri: item.urlToImage ? item.urlToImage : "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/g7.png?w=1038&h=576&crop=1"}} 
+                <Image source={{uri: item.url ? item.url : "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/11/g7.png?w=1038&h=576&crop=1"}} 
                 className= { "h-32 w-32 rounded-l-xl"}
                 resizeMethod='resize'></Image>
 

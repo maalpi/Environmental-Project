@@ -11,7 +11,7 @@
                 "title": "Informações sobre a Reserva Ambiental",
                 "description": "A Reserva Olho D'água das Onças está localizada na zona rural do município de Picuí estado da Paraíba. Foi fundada em 2005 e hoje está prestes a ser classificada como Reserva Particular do Patrimônio Natural (RPPN). A reserva possui 20 hectares de área, sendo 75% de Caatinga preservada. A área preservada é circundada por trilhas, permitindo o desenvolvimento de Pesquisa e atividades de Educação Ambiental. Os 25% restantes corresponde a área de sustentabilidade da Reserva, e conta com restaurante, área de camping,  museu da caatinga, viveiro e cactário, loja de produtos regionais e área de lazer composta por quadra poliesportiva, minicampo socyt e espaço kids (Cidade da Criança) com jogos e brinquedos educativos. Ainda está previsto a construção de pousada, anfiteatro e piscina. \nA Reserva possui parcerias com Universidades e Associações que atuam em prol da conservação e sustentabilidade ambiental, estando suas atividades alinhadas aos 17 Objetivos de Desenvolvimento Sustentável (ODS) propostos pela Organização das Nações Unidas (ONU).",
                 "url": "https://live.staticflickr.com/65535/53472802470_aca7977881_z.jpg",
-                "urlToImage": "https://live.staticflickr.com/65535/53472802470_aca7977881_z.jpg",
+                "urlToImage": ["https://live.staticflickr.com/65535/53472802470_aca7977881_z.jpg","https://live.staticflickr.com/65535/53472802470_aca7977881_z.jpg","https://live.staticflickr.com/65535/53472802470_aca7977881_z.jpg"],
                 "publishedAt": "2024-01-17T16:21:00Z",
                 "content": "PHILADELPHIA, Nov 11 (Reuters) - Novo Nordisk (NOVOb.CO) on Saturday said the heart protective benefits of its wildly popular Wegovy obesity treatment are due to more than weight loss alone, accordin… [+3928 chars]",
                 "category": "informação",
@@ -65,7 +65,7 @@
                     "textIndent": 20
                   },
                 "url": "https://live.staticflickr.com/65535/53472693814_5483417d99_z.jpg",
-                "urlToImage": "https://live.staticflickr.com/65535/53472693814_5483417d99_z.jpg",
+                "urlToImage": ["https://live.staticflickr.com/65535/53472693814_5483417d99_z.jpg","https://live.staticflickr.com/65535/53472693814_5483417d99_z.jpg","https://live.staticflickr.com/65535/53472693814_5483417d99_z.jpg"],
                 "publishedAt": "2024-01-17T15:59:48Z",
                 "content": "GAZA/JERUSALEM, Nov 11 (Reuters) - Palestinian officials said a baby died and dozens more patients were at risk from Israeli fire around Gaza's largest hospital on Saturday, while Israel said it had … [+6907 chars]",
                 "category": "turismo",
@@ -113,7 +113,7 @@
                     "textIndent": 20
                   },
                 "url": "https://live.staticflickr.com/65535/53651517893_f4d9c70fdb_o.jpg",
-                "urlToImage": "https://live.staticflickr.com/65535/53651517893_f4d9c70fdb_o.jpg",
+                "urlToImage": ["https://live.staticflickr.com/65535/53651517893_f4d9c70fdb_o.jpg","https://live.staticflickr.com/65535/53651517893_f4d9c70fdb_o.jpg","https://live.staticflickr.com/65535/53651517893_f4d9c70fdb_o.jpg"],
                 "publishedAt": "2024-01-17T15:38:00Z",
                 "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
                 "category": "turismo",
@@ -195,7 +195,7 @@
                       "textIndent": 10
                     },
                   "url": "https://live.staticflickr.com/65535/53498109396_b29b7e9481_w.jpg",
-                  "urlToImage": "https://live.staticflickr.com/65535/53498109396_b29b7e9481_w.jpg",
+                  "urlToImage": ["https://live.staticflickr.com/65535/53498109396_b29b7e9481_w.jpg","https://live.staticflickr.com/65535/53498109396_b29b7e9481_w.jpg","https://live.staticflickr.com/65535/53498109396_b29b7e9481_w.jpg"],
                   "publishedAt": "2024-01-28T15:59:48Z",
                   "content": "GAZA/JERUSALEM, Nov 11 (Reuters) - Palestinian officials said a baby died and dozens more patients were at risk from Israeli fire around Gaza's largest hospital on Saturday, while Israel said it had … [+6907 chars]",
                   "category": "noticia",
@@ -230,8 +230,8 @@
                     ],
                     "textIndent": 20
                   },
-                "url": "https://live.staticflickr.com/65535/53560037513_20d0e58522_w.jpg",
-                "urlToImage": "https://live.staticflickr.com/65535/53560173154_f58c83a474_o.png",
+                "url": "https://live.staticflickr.com/65535/53560173154_f58c83a474_o.png",
+                "urlToImage": ["https://live.staticflickr.com/65535/53560173154_f58c83a474_o.png","https://live.staticflickr.com/65535/53560173154_f58c83a474_o.png","https://live.staticflickr.com/65535/53560173154_f58c83a474_o.png"],
                 "publishedAt": "2024-01-29T15:38:00Z",
                 "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
                 "category": "ensino",
@@ -259,8 +259,8 @@
                       ],
                       "textIndent": 20
                     },
-                  "url": "https://live.staticflickr.com/65535/53560037513_20d0e58522_w.jpg",
-                  "urlToImage": "https://live.staticflickr.com/65535/53595303507_f659344778_o.png",
+                  "url": "https://live.staticflickr.com/65535/53595303507_f659344778_o.png",
+                  "urlToImage": ["https://live.staticflickr.com/65535/53595303507_f659344778_o.png","https://live.staticflickr.com/65535/53595303507_f659344778_o.png","https://live.staticflickr.com/65535/53595303507_f659344778_o.png"],
                   "publishedAt": "2024-03-14T15:38:00Z",
                   "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
                   "category": "ensino",
@@ -301,8 +301,8 @@
                         ],
                         "textIndent": 20
                       },
-                    "url": "https://live.staticflickr.com/65535/53596506684_bae431a197_o.png",
-                    "urlToImage": "https://live.staticflickr.com/65535/53596506684_bae431a197_o.png",
+                    "url": "https://live.staticflickr.com/65535/53669456711_a1a68ac936_o.png",
+                    "urlToImage": ["https://live.staticflickr.com/65535/53668584922_88994c04aa_o.png","https://live.staticflickr.com/65535/53669456711_a1a68ac936_o.png","https://live.staticflickr.com/65535/53669657003_bd14cdabd3_o.png"],
                     "publishedAt": "2024-03-18T15:38:00Z",
                     "content": "There will be no ruling on the University of Michigan and coach Jim Harbaugh's request for a temporary restraining order halting the three-game suspension handed down by the Big Ten on Friday, source… [+3766 chars]",
                     "category": "ensino",
