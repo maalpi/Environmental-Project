@@ -1,4 +1,5 @@
 {
   "name": "projetoAmbiental",
-  "displayName": "projetoAmbiental"
+  "displayName": "projetoAmbiental",
+  "orientation": "portrait"
 }
